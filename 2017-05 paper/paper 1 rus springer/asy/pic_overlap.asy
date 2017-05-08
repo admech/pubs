@@ -1,6 +1,6 @@
-unitsize(1.3cm);
+include "./asy/helper.asy";
 
-path DOT = scale(0.03) * unitcircle;
+unitsize(1.3cm);
 
 // PLANE
 

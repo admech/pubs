@@ -1,3 +1,5 @@
+include "./asy/helper.asy";
+
 unitsize(0.8cm);
 
 import three;

@@ -1,6 +1,6 @@
-unitsize(1.3cm);
+include "./asy/helper.asy";
 
-path DOT = scale(0.03) * unitcircle;
+unitsize(1.3cm);
 
 // INERTIAL COORDINATES
 
@@ -47,12 +47,19 @@ draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 // ANGLES
 
 label("$\alpha_i$", 0.65*(cos(pi/4+pi/6),sin(pi/4+pi/6)), blue);
-draw((0,0) -- 1.2*(cos(pi-pi/6),sin(pi-pi/6)), dashed+gray);
+path R_dim_line = (0,0) -- 1.2*(cos(pi-pi/6),sin(pi-pi/6));
+draw(R_dim_line, dashed+gray);
 draw(arc(
     (0,0),
     0.5*(cos(pi/6),sin(pi/6)),
     0.5*(cos(pi-pi/6),sin(pi-pi/6))
 ), arrow=Arrow(TeXHead), blue);
+
+// also R dimension here
+label("$R$", (-0.75, 0.2));
+addarrow(R_dim_line, black);
+addarrow(reverse(R_dim_line), black);
+
 
 label("$\theta$", 0.75*(cos(-pi/12+pi/6),sin(-pi/12+pi/6)), heavygreen);
 draw((0,0) -- (1.2,0), dashed+gray);
@@ -69,3 +76,4 @@ draw(arc(
     1.3*(cos(pi/6),sin(pi/6)) + 0.3*(cos(pi/6-pi/4),sin(pi/6 - pi/4)),
     CW
 ), arrow=Arrow(TeXHead), red);
+
