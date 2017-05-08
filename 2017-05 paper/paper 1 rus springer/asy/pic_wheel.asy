@@ -18,6 +18,7 @@ unitsize(1.3cm);
 
     path HUB = unitcircle;
     draw(HUB, black);
+    label("$P_i$", 0.4*dr(pi/2 - pi/12));
     drawdot((0,0));
     
     path ROLLER_TEMPLATE = 
@@ -80,12 +81,12 @@ unitsize(1.3cm);
 // DIMENSIONS
 ////////////////////////////////////////////////
 
-    // R - HUB RADIUS
+    // r - HUB RADIUS
 
-        label("$r$", (-0.3,0));
+        label("$r$", (-0.4,-0.1));
         draw((0,0) -- dr(pi + pi/6), dashed+grey);
     
-    // L - WHEEL RADIUS TOGETHER WITH ROLLERS
+    // l - WHEEL RADIUS TOGETHER WITH ROLLERS
 
         label("$l$", (1.7,-0.7));
         path pldim = (1.5,0) -- (1.5,-1.4);
@@ -94,7 +95,7 @@ unitsize(1.3cm);
         addarrow(reverse(pldim), grey);
     
     
-    // RHO - DISTANCE FROM ROLLER AXIS TO CONTACT POINT
+    // rho - DISTANCE FROM ROLLER AXIS TO CONTACT POINT
     
         real chi_0 = pi/6;
         real fst_roller = -pi/2 + chi_0;
