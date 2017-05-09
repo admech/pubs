@@ -1,0 +1,143 @@
+% First comes an example EPS file -- just ignore it and
+% proceed on the \documentclass line
+% your LaTeX will extract the file if required
+\begin{filecontents*}{example.eps}
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 19 19 221 221
+%%CreationDate: Mon Sep 29 1997
+%%Creator: programmed by hand (JK)
+%%EndComments
+gsave
+newpath
+  20 20 moveto
+  20 220 lineto
+  220 220 lineto
+  220 20 lineto
+closepath
+2 setlinewidth
+gsave
+  .4 setgray fill
+grestore
+stroke
+grestore
+\end{filecontents*}
+
+
+
+\RequirePackage{fix-cm}
+
+\documentclass[smallextended]{./springer/svjour3}       % onecolumn (second format)
+
+\smartqed  % flush right qed marks, e.g. at end of proof
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%--------------------------------------
+
+% Asymptote for pictures
+%--------------------------------------
+\usepackage{asymptote} %% comes with options inline and attach
+%--------------------------------------
+
+% graphicx for graphs
+%--------------------------------------
+\usepackage{graphicx}
+% \usepackage{subfig} % incompatible with subcaption package
+% \graphicspath{ % not used here
+    % {./pic/,./asy/}
+% }
+%--------------------------------------
+
+% subcaption for many figures under one big caption
+% each having its own small caption
+%--------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+%--------------------------------------
+
+\newtheorem{stmt}{Утверждение}
+\newtheorem{prblm}{Затруднение}
+
+% --------------------------------------------------------------
+% ТИТУЛЬНЫЙ ЛИСТ И АННОТАЦИЯ
+% --------------------------------------------------------------
+
+\begin{document}
+
+\title{Движение симметричного экипажа на омни-колесах\\с массивными роликами}
+\subtitle{Уравнения движения и сравнение со случаем без роликов}
+
+\author{Герасимов К.В. \and
+        Зобова А.А
+}
+
+\institute{Кафедра теоретической механики и мехатроники\\
+Механико-математический факультет\\
+МГУ им. М.В. Ломоносова \at
+              Москва\\
+              Тел.: (495) 939-36-81\\
+              \email{kiriger@gmail.com, azobova@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+В статье рассматривается модель экипажа с роликонесущими колесами, учитывающая массы роликов, оценивается отличие в уравнениях движения от постановки без роликов и приводятся результаты численного решения для некоторых движений.
+
+Ключевые слова: омни-колеса, роликонесущие колеса, лаконичная форма уравнений движения Я.В. Татаринова
+
+\end{abstract}
+
+\newpage
+
+% --------------------------------------------------------------
+% ОСНОВНОЙ МАТЕРИАЛ
+% --------------------------------------------------------------
+
+\input{1_intro}
+
+\input{2_problem}
+
+\input{3_eqs}
+
+\input{4_change}
+
+\input{5_examples}
+
+
+\section{Заключение}
+
+Результаты проведенной работы следующие:
+\begin{enumerate}
+    \item получены уравнения движения экипажа с полным набором роликов в неголономной постановке,
+
+    \item показано, что разница с уравнениями для системы без роликов пропорциональна моменту инерции ролика,
+
+    \item предложена модель перехода с ролика на ролик,
+
+    \item получены численные решения при неподвижных свободных роликах для симметричной конфигурации.
+\end{enumerate}
+
+Поведение системы существенно меняется при добавлении роликов, но их конкретное расположение а также способ отслеживания контакта непосредственно влияют на наблюдаемые величины. Данная модель является одним из простейших способов получить решение, но возможны и более сложные: например, учет вращения "свободных" роликов, расположение роликов рядами и под углом, различные конфигурации колес, -- что позволяет говорить о построении иерархии моделей омни-колесных экипажей, все более точно описывающих их движения, первой ступенью в которой и является настоящая.
+
+% --------------------------------------------------------------
+% ПРИЛОЖЕНИЯ И СПИСОК ЛИТЕРАТУРЫ
+% --------------------------------------------------------------
+
+\bibliographystyle{./springer/spmpsci}      % mathematics and physical sciences
+\bibliography{omni}   % name your BibTeX data base
+
+\newpage
+\section{Приложение}
+\input{graphs}
+\newpage
+
+\end{document}
+
+

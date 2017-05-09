@@ -1,0 +1,81 @@
+\section{Уравнения движения}
+
+Воспользуемся лаконичным методом получения уравнений движения для систем с дифференциальными связями, предложенным Я.В. Татариновым \cite{Tatarinov}:
+\begin{equation}\label{Tatarinov}
+    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha}  + \{P_\alpha, L^{*}\} = \{P_\alpha, \nu_\mu P_\mu\}, 
+\end{equation}
+$$\nu_\mu P_\mu = \dot{q_i} p_i, \hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i},$$
+где $P_\alpha, p_i$ -- формальные ``импульсы'', $L$ -- лагранжиан, $L^*$ -- он же с учетом связей, $\{\cdot, \cdot\}$ -- формальная скобка Пуассона.
+
+Кинетическая энергия имеет вид:
+\begin{equation}\label{kin_en}
+    2T = 2L = M\vec{v}_S^2 + I_S\dot{\theta}^2 + J\sum_i\dot{\chi}_i^2 + B\sum_{i,j}(\dot{\phi}_{ij}^2 + 2\dot{\theta}\sin(\kappa_j + \chi_i)\dot{\phi}_{ij}),
+\end{equation}
+в котором, по сравнению со случаем без роликов, добавилось слагаемое, пропорциональное $B$ -- моменту инерции ролика относительно его оси вращения.
+
+Также, изменились значения коэффициентов: полная масса системы -- $M = \mathring{M} + Nnm$, момент инерции всей системы относительно $SZ$ -- $I_S = \mathring{I_S} + Nn(\frac{A+B}{2} + mR^2 + \frac{mr^2}{2})$, момент инерции колеса (с роликами) относительно его оси $J = \mathring{J} + n(A + mr^2)$, где $\mathring{M}, \mathring{I_S}, \mathring{J}$ -- масса и моменты инерции системы и колес без учета роликов; $m$ -- масса ролика; $A$ -- момент инерции ролика относительно любой оси, перпендикулярной его оси собственного вращения и проходящей через его центр масс; $r$ -- радиус диска колеса (расстояние от центра колеса до центра ролика).
+
+Лагранжиан с учетом связей имеет вид:
+$$ 2L^{*} = \mathring{\nu}^T \mathring{V}^T \mathring{M} \mathring{V} \mathring{\nu} + $$
+$$ + B\sum_{i}(
+	\frac{(\nu_2\sin\alpha_i+\nu_1\cos\alpha_i)^2R^2}
+	{\rho_i^2} +
+	\frac{2R\nu_3(\nu_2\sin\alpha_i+\nu_1\cos\alpha_i)\sin\chi_i}
+	{\rho_i\Lambda}
+) + $$
+$$+ B\sum_{i,j}(
+	\frac{2\nu_3\nu_{3+ni+j}\sin(\kappa_j+\chi_i)}
+	{\Lambda}
+	+
+	\nu_{3+ni+j}^2
+)
+$$
+где $\frac{1}{2}\mathring{\nu}^T \mathring{V}^T \mathring{M} \mathring{V} \mathring{\nu} = \mathring{L}^{*}$ -- лагранжиан системы без роликов, матрицы кинетической энергии и связей для системы без роликов:
+$$
+\mathring{M} = diag(M, M, I_S, J...J),
+\quad
+\mathring{V} = \begin{bmatrix}
+    R\cos\theta & -R\sin\theta & 0 \\
+    R\sin\theta & R\cos\theta  & 0 \\
+    0           & 0            & \frac{1}{\Lambda} \\
+    \frac{R}{l}\sin\alpha_i & -\frac{R}{l}\cos\alpha_i & -\frac{R}{l\Lambda} \\
+\end{bmatrix},
+$$
+$\nu_{3+nu+j} = \nu_s$ соответствуют свободным роликам.
+
+Таким образом, лагранжиан и ``импульсы'' отличаются от оных в случае без роликов аддитивными членами:
+$$ L^{*} = \mathring{L}^{*} + BL^{*}_\Delta(\nu, \chi),$$
+$$ P_\alpha = \mathring{P_\alpha}(\theta, p_x, p_y, p_\chi) + P_\Delta(p_{\phi_i}, \chi),$$
+что для последних проверяется прямым подсчетом. Поэтому имеет место следующий факт.
+
+\begin{stmt}
+    Учет массы роликов приводит к появлению в правой части дифференциальных уравнений, описывающих динамику экипажа, слагаемых, пропорциональных собственному моменту инерции роликов $B$ и квадратично зависящих от псевдоскоростей. Эти новые слагаемые явно зависят от углов поворота колес $\chi_i$.
+    $$\boldsymbol{A}\dot{\boldsymbol{\nu}} = \frac1\Lambda
+    \left(
+    \begin{array}{c}
+         \nu_2\nu_3  \\
+         -\nu_1\nu_3 \\
+         0
+    \end{array}
+    \right) + B
+     \left(
+    \begin{array}{c}
+         \boldsymbol{\nu}^T\boldsymbol{F}_1(\chi_i)\boldsymbol{\nu}  \\
+         \boldsymbol{\nu}^T\boldsymbol{F}_2(\chi_i)\boldsymbol{\nu} \\
+         \boldsymbol{\nu}^T\boldsymbol{F}_3(\chi_i)\boldsymbol{\nu}
+    \end{array}
+    \right),
+    $$
+    $$
+    \dot{\chi}_i = \frac{R\sin\alpha_i}{l}\nu_1 - \frac{R\cos(\alpha_i)}{l}\nu_2 - \frac{R}{l\Lambda}\nu_3, \quad i = 1..N,
+    $$
+    $$
+    \Lambda\dot{\nu}_{ni+j} = -\dot{\nu}_3\sin(\chi_i+\kappa_j) - \dot{\chi_i}\nu_3\cos(\chi_i+\kappa_j), \quad j = 2..n.
+    $$
+\end{stmt}
+
+Для доказательства достаточно рассмотреть по очереди члены в лаконичной форме уравнений \ref{Tatarinov}:
+
+$$ \frac{d}{dt}\frac{\partial }{\partial \nu_\alpha}(L^{*} - \mathring{L^{*}}) = B\frac{d}{dt}\frac{\partial}{\partial \nu_\alpha}L^{*}_\Delta(\nu, \chi), $$
+$$ \{P_\alpha, L^{*}\} - \{\mathring{P}_\alpha, \mathring{L}^{*}\} = B\{ P_\alpha, L^{*}_\Delta(\nu, \chi) \} $$
+$$\{P_\alpha, P_\mu\} - \{\mathring{P}_\alpha, \mathring{P}_\mu\} = B\frac{R^2}{\Lambda}\sum_i\frac{f_\alpha(\nu, \chi)}{\rho^2_i}(\frac{R}{\rho_i}(\nu_1\cos\alpha_i + \nu_2\sin\alpha_i) + \frac{\sin\chi_i}{\Lambda}\nu_3).$$
