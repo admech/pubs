@@ -1,0 +1,29 @@
+
+Матрица кинетической энергии:
+$$
+M = \begin{bmatrix}
+    M &   &               &   &        &   &                        &        &                        \\
+      & M &               &   &        &   &                        &        &                        \\
+      &   & I_S           &   & \cdots &   & B\sin(\chi_k+\kappa_1) & \cdots & B\sin(\chi_i+\kappa_j) \\
+      &   &               & J &        &   &                        &        &                        \\
+      &   &               &   & \ddots &   &                        &        &                        \\
+      &   &               &   &        & J &                        &        &                        \\
+      &   & \text{\huge*} &   &        &   & B                      &        &                        \\
+      &   &               &   &        &   &                        & \ddots &                        \\
+      &   &               &   &        &   &                        &        & B                      \\
+\end{bmatrix}
+$$
+
+Матрица связей:
+$$
+V = \begin{bmatrix}
+    \begin{matrix}
+        R\cos\theta                  & -R\sin\theta                  & 0                    \\[6pt]
+        R\sin\theta                  &  R\cos\theta                  & 0                    \\[6pt]
+        0                            & 0                             & \frac{1}{\Lambda}    \\[6pt]
+        \frac{R\sin\alpha_i}{l}      & -\frac{R\cos\alpha_i}{l}      & -\frac{R}{\Lambda l} \\[6pt]
+        \frac{R\cos\alpha_k}{\rho_k} &  \frac{R\sin\alpha_k}{\rho_k} & 0                    \\[6pt]
+    \end{matrix}   & \text{\huge 0}                \\[50pt]
+    \text{\huge 0} & \text{\huge E}_{N(n-1)} \quad \\[10pt]
+\end{bmatrix}.
+$$

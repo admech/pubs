@@ -61,6 +61,13 @@ grestore
 \usepackage{subcaption}
 %--------------------------------------
 
+% \ddfrac command to show big fractions, not cramped up
+% https://tex.stackexchange.com/questions/173899/
+%--------------------------------------
+\newcommand\ddfrac[2]{\displaystyle\frac{\displaystyle #1}{\displaystyle #2}}
+%--------------------------------------
+
+
 \newtheorem{stmt}{Утверждение}
 \newtheorem{prblm}{Затруднение}
 
@@ -106,9 +113,11 @@ grestore
 
 \input{3_eqs}
 
-\input{4_change}
+\input{4_compare}
 
-\input{5_examples}
+\input{5_change}
+
+\input{6_examples}
 
 
 \section{Заключение}
@@ -134,9 +143,14 @@ grestore
 \bibliography{omni}   % name your BibTeX data base
 
 \newpage
-\section{Приложение}
+
+\appendix
+
+\section{Явные виды выражений}
+\input{7_appendix}
+
+\section{Результаты расчетов}
 \input{graphs}
-\newpage
 
 \end{document}
 
