@@ -1,28 +1,6 @@
 \documentclass{article}
 
-% Asymptote for pictures
-%--------------------------------------
-% \usepackage{asymptote} %% comes with options inline and attach
-%--------------------------------------
-
-% Amsmath for formulas
-%--------------------------------------
-\usepackage{amsmath}
-\usepackage{amsfonts}
-%--------------------------------------
-
-% Russian-specific packages
-%--------------------------------------
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
-%--------------------------------------
-
-% \ddfrac command to show big fractions, not cramped up
-% https://tex.stackexchange.com/questions/173899/
-%--------------------------------------
-\newcommand\ddfrac[2]{\displaystyle\frac{\displaystyle #1}{\displaystyle #2}}
-%--------------------------------------
+\input{imports}
 
 
 \begin{document}
@@ -35,33 +13,19 @@
         % \asyinclude{./asy/pic_change.asy}
 % \end{figure}
 
+% $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$
 % $$
-% M = \begin{bmatrix}
-%     M &   &               &   &        &   &                        &        &                        \\
-%       & M &               &   &        &   &                        &        &                        \\
-%       &   & I_S           &   & \cdots &   & B\sin(\chi_k+\kappa_1) & \cdots & B\sin(\chi_i+\kappa_j) \\
-%       &   &               & J &        &   &                        &        &                        \\
-%       &   &               &   & \ddots &   &                        &        &                        \\
-%       &   &               &   &        & J &                        &        &                        \\
-%       &   & \text{\huge*} &   &        &   & B                      &        &                        \\
-%       &   &               &   &        &   &                        & \ddots &                        \\
-%       &   &               &   &        &   &                        &        & B                      \\
-% \end{bmatrix}
+%     \ddddt{}\ddpd{L^*}{\nu_\alpha} = M^*_{\alpha\beta}\dot{\nu}^\beta + \ddpd{M^*_{\alpha\beta}}{\chi_\gamma}V^\gamma_\xi\nu^\xi\nu^\beta,
+% $$
+% $$
+%     \begin{array}{rcl}
+%         \ddddt{}\ddpd{L^*}{\nu_1} & = & B\sum\limits_{i}\bigg(\bigg),\vsp
+%         \ddddt{}\ddpd{L^*}{\nu_2} & = & ,\vsp
+%         \ddddt{}\ddpd{L^*}{\nu_3} & = & ,\vsp
+%         \ddddt{}\ddpd{L^*}{\nu_s} & = & ,\vsp
+%     \end{array}
 % $$
 
-
-% $$
-% V = \begin{bmatrix}
-%     \begin{matrix}
-%         R\cos\theta                  & -R\sin\theta                  & 0                    \\[6pt]
-%         R\sin\theta                  &  R\cos\theta                  & 0                    \\[6pt]
-%         0                            & 0                             & \ddfrac{1}{\Lambda}    \\[6pt]
-%         \ddfrac{R\sin\alpha_i}{l}      & -\ddfrac{R\cos\alpha_i}{l}      & -\ddfrac{R}{\Lambda l} \\[6pt]
-%         \ddfrac{R\cos\alpha_k}{\rho_k} &  \ddfrac{R\sin\alpha_k}{\rho_k} & 0                    \\[6pt]
-%     \end{matrix}   & \text{\huge 0}                \\[50pt]
-%     \text{\huge 0} & \text{\huge E}_{N(n-1)} \quad \\[10pt]
-% \end{bmatrix}
-% $$
 
 
 \end{document}

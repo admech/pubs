@@ -27,3 +27,18 @@ V = \begin{bmatrix}
     \text{\huge 0} & \text{\huge E}_{N(n-1)} \quad \\[10pt]
 \end{bmatrix}.
 $$
+
+Формальные импульсы $\vec{p} = \ddpd{L}{\dot{\vec{q}}}$:
+
+\begin{equation}\label{p}
+    \begin{array}{rcl}
+        p_x & = & MR(\nu_1\cos\theta-\nu_2\sin\theta),\vsp
+        p_y & = & MR(\nu_1\sin\theta+\nu_2\cos\theta),\vsp
+        p_\theta & = & BR\sum\limits_i\ddfrac{\sin(\chi_i + \kappa_1)}{\rho_i}(\nu_1\cos\alpha_i + \nu_2\sin\alpha_i) + \ddfrac{I_S}{\Lambda}\nu_3 + B\sum\limits_s\sin(\chi_s)\nu_s,\vsp
+        p_{\chi_i} & = & J\ddfrac{R}{l}(\nu_1\sin\alpha_i - \nu_2\cos\alpha_i - \ddfrac{1}{\Lambda}\nu_3),\vsp
+        p_{\phi_{k1}} & = & \ddfrac{BR}{\rho_k}(\nu_1\cos\alpha_k + \nu_2\sin\alpha_k) + \ddfrac{B}{\Lambda}\nu_3\sin(\chi_k+\kappa_1),\vsp
+        p_{\phi_s} & = & \ddfrac{B}{\Lambda}\nu_3\sigma_s.
+    \end{array}
+\end{equation}
+
+TODO: ДОПИСАТЬ $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$, см. test.tex.
