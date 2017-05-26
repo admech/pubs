@@ -12,40 +12,23 @@ $$\hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i}$$
 
 Так как потенциальная энергия системы во время движения не меняется, то лагранжиан  равен кинетической энергии:
 \begin{equation}\label{kin_en}
-    2L = 2T = M\vec{v}_S^2 + I_S\dot{\theta}^2 + J\sum_i\dot{\chi}_i^2 + B\sum_{i,j}(\dot{\phi}_{ij}^2 + 2\dot{\theta}\sin(\kappa_j + \chi_i)\dot{\phi}_{ij})=\dot{\vec{q}}^\mathrm{T}M\dot{\vec{q}}
+    2L = 2T = M\vec{v}_S^2 + I_S\dot{\theta}^2 + J\sum_i\dot{\chi}_i^2 + B\sum_{i,j}(\dot{\phi}_{ij}^2 + 2\dot{\theta}\sin(\kappa_j + \chi_i)\dot{\phi}_{ij})=\dot{\vec{q}}^\mathrm{T}\M\dot{\vec{q}}
 \end{equation}
 \sout{Здесь полная масса системы -- $M = \mathring{M} + Nnm$, момент инерции всей системы относительно $SZ$ -- $I_S = \mathring{I_S} + Nn(\frac{A+B}{2} + mR^2 + \frac{mr^2}{2})$, момент инерции колеса (с роликами) относительно его оси $J = \mathring{J} + n(A + mr^2)$, где $\mathring{M}, \mathring{I_S}, \mathring{J}$ -- масса и моменты инерции системы и колес без учета роликов; $m$ -- масса ролика; $A$ -- момент инерции ролика относительно любой оси, перпендикулярной его оси собственного вращения и проходящей через его центр масс; $r$ -- радиус диска колеса (расстояние от центра колеса до центра ролика),}
 Здесь $M,\ I_S,\ J$ --- массово-инерционные характеристики экипажа (см. приложение), $B$ -- момент инерции ролика относительно его оси вращения.
 
 Лагранжиан с учетом связей имеет вид:
-$$ 2L^{*} = \nu M^*\nu = \nu^T V^TMV\nu, $$
-где $M, V$ -- матрицы кинетической энергии и связей (см. приложение).
+$$ 2L^{*} = \nu \M^*\nu = \nu^T V^T\M V\nu, $$
+где $\M, V$ -- матрицы кинетической энергии и связей (см. приложение).
 
-Структура матрицы $M^*$ следующая:
+Структура матрицы $\M^*$ следующая:
 $$
-M^* = \begin{bmatrix}
+\M^* = \begin{bmatrix}
         (m^*_{ij}) \quad & \begin{matrix} 0 \\ 0 \\ \ddfrac{B}{\Lambda}\sigma_s \end{matrix} \\[25pt]
-        *          & BE_{N(n-1)}                                                                  \\
+        *          & \begin{matrix} B & & \\ & \ddots & \\ & & B \end{matrix} \\
     \end{bmatrix},
 $$
-Элементы $m_{ii}$ на диагонали постоянны, элементы $m_{ij},\ i\neq j$ зависят от углов поворота колес $\chi_i$, причем содержат функцию $...$ которая имеет разрыв второго рода при смене роликов. 
+где диагональные элементы $m^*_{ii}$ постоянны, а элементы $m_{ij} = m^*_{ij}(\chi_1,\ldots,\chi_N),\ i\neq j$ зависят от углов поворота колес $\chi_i$, причем содержат функцию $\frac{1}{\rho_i}$ которая имеет разрыв второго рода при смене роликов (см.\upr{mstar}); $\sigma_s = \sin(\chi_k+\kappa_l)$, и $k, l$ соответствуют свободным роликам ($k = 1,\dots,N$ -- номер колеса, $l = 2,\ldots,n$ -- номер ролика на колесе ($l = 1$ -- ролик, находящийся в контакте), $s = (k-1)(n-1) + (l-1) = 1,\ldots,N(n-1)$). Формальные импульсы $\vec{P}$ также зависят от углов поворота колес, см.\upr{P}.
 
-где $\sigma_s = \sin(\chi_k+\kappa_l)$, и $k, l$ соответствуют свободным роликам, $E$ -- единичная матрица указанной размерности,
-$$ m^*_{11} = MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg), $$
-$$ m^*_{22} = MR^2 + \sum\limits_i \bigg(J\ddfrac{R^2}{l^2}\cos^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\sin^2\alpha_i\bigg), $$
-$$ m^*_{33} = \ddfrac{1}{\Lambda}(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}), $$
-$$ m^*_{12} = \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i, $$
-$$ m^*_{13} = \ddfrac{1}{\Lambda}\sum\limits_i \bigg(-J\ddfrac{R^2}{l^2}\sin\alpha_i +  B\ddfrac{R\sin\chi_i}{\rho_i}\cos\alpha_i\bigg), $$
-$$ m^*_{23} = \ddfrac{1}{\Lambda}\sum\limits_i \bigg(J\ddfrac{R^2}{l^2}\cos\alpha_i +  B\ddfrac{R\sin\chi_i}{\rho_i}\sin\alpha_i\bigg),$$
-причем диагональные элементы постоянны, а $m^*_{ij} = m^*_{ij}(\chi_1,\ldots,\chi_N), i \neq j$, зависят от углов поворота колес. Формальные импульсы $\vec{P}$:
-\begin{equation}\label{P}
-    \begin{array}{rcl}
-        P_1 & = & R\bigg(p_x\cos\theta + p_y\sin\theta + \sum\limits_{i}\bigg(\ddfrac{\sin\alpha_ip_{\chi_i}}{l} +  \ddfrac{\cos\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
-        P_2 & = & R\bigg(-p_x\sin\theta + p_y\cos\theta + \sum\limits_{i}\bigg(-\ddfrac{\cos\alpha_ip_{\chi_i}}{l} +  \ddfrac{\sin\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
-        P_3 & = & \ddfrac{1}{\Lambda}\bigg(p_\theta + \sum\limits_{i}\ddfrac{R}{l}p_{\chi_i}\bigg),\vsp
-        P_s & = & p_{\phi_s},
-    \end{array}
-\end{equation}
-где от $\chi_i$ зависят $p_{\phi_{i1}}, p_\theta, \rho_i$ (см.\upr{p}), а потому и $P_1$ и $P_2$, отвечающие проекциям скорости центра масс платформы на подвижные оси, а также $P_3$, соответствующий вращению платформы.
 
 Явные выражения для $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$ более громоздки и находятся в приложении.

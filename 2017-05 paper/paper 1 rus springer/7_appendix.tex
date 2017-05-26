@@ -28,6 +28,19 @@ V = \begin{bmatrix}
 \end{bmatrix}.
 $$
 
+Элементы матрицы кинетической энергии с учетом связей:
+
+\begin{equation}\label{mstar}
+    \begin{array}{rcl}
+        m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg),
+        m^*_{22} & = & MR^2 + \sum\limits_i \bigg(J\ddfrac{R^2}{l^2}\cos^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\sin^2\alpha_i\bigg),
+        m^*_{33} & = & \ddfrac{1}{\Lambda}(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}),
+        m^*_{12} & = & \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i,
+        m^*_{13} & = & \ddfrac{1}{\Lambda}\sum\limits_i \bigg(-J\ddfrac{R^2}{l^2}\sin\alpha_i +  B\ddfrac{R\sin\chi_i}{\rho_i}\cos\alpha_i\bigg),
+        m^*_{23} & = & \ddfrac{1}{\Lambda}\sum\limits_i \bigg(J\ddfrac{R^2}{l^2}\cos\alpha_i +  B\ddfrac{R\sin\chi_i}{\rho_i}\sin\alpha_i\bigg),
+    \end{array}
+\end{equation}
+
 Формальные импульсы $\vec{p} = \ddpd{L}{\dot{\vec{q}}}$:
 
 \begin{equation}\label{p}
@@ -40,5 +53,16 @@ $$
         p_{\phi_s} & = & \ddfrac{B}{\Lambda}\nu_3\sigma_s.
     \end{array}
 \end{equation}
+
+Формальные импульсы $\vec{P}$:
+\begin{equation}\label{P}
+    \begin{array}{rcl}
+        P_1 & = & R\bigg(p_x\cos\theta + p_y\sin\theta + \sum\limits_{i}\bigg(\ddfrac{\sin\alpha_ip_{\chi_i}}{l} +  \ddfrac{\cos\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
+        P_2 & = & R\bigg(-p_x\sin\theta + p_y\cos\theta + \sum\limits_{i}\bigg(-\ddfrac{\cos\alpha_ip_{\chi_i}}{l} +  \ddfrac{\sin\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
+        P_3 & = & \ddfrac{1}{\Lambda}\bigg(p_\theta + \sum\limits_{i}\ddfrac{R}{l}p_{\chi_i}\bigg),\vsp
+        P_s & = & p_{\phi_s},
+    \end{array}
+\end{equation}
+где от $\chi_i$ зависят $p_{\phi_{i1}}, p_\theta, \rho_i$ (см.\upr{p}), а потому и $P_1$ и $P_2$, отвечающие проекциям скорости центра масс платформы на подвижные оси, а также $P_3$, соответствующий вращению платформы.
 
 TODO: ДОПИСАТЬ $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$, см. test.tex.
