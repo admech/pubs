@@ -31,7 +31,7 @@ $$
 %\end{array} \right] \]
 Явные формулы для коэффициентов $m^*_{ij}$ главного минора $3\times3$ выписаны в приложении; отметим, что они зависят только от координат $\chi_i$, которые входят в дроби вида $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие неустранимый разрыв при смене роликов (см. (\ref{constraint_roller_contact})). Этот минор соответствует псевдоскоростям $\nu_1,\ \nu_2,\ \nu_3$. Остальные элементы матрицы $\M^*$
 соответствуют скоростям свободных роликoв $\nu_s$, для которых 
- введено  обозначение угла поворота оси ролика с вертикалью $\chi_{kl} = \chi_k+\kappa_l$  --- это . Индекс $k = 1,\dots,N$ означает номер колеса, индекс $l = 1, 2,\ldots,\not{k},\ldots, n$ -- номер ролика на колесе, вычеркнут индекс ролика, находящегося в контакте.
+ $\chi_{kl} = \chi_k+\kappa_l$  --- угол между вертикалью и осью ролика. Индекс $k = 1,\dots,N$ означает номер колеса, индекс $l = 1, 2,\ldots,\not{k},\ldots, n$ -- номер ролика на колесе, вычеркнут индекс ролика, находящегося в контакте.
   %($l = 1$ -- ролик, находящийся в контакте).
  
  Выпишем выражения для $P_\alpha$:
@@ -53,32 +53,46 @@ $$
 \{P_3, L^*\} = \frac{R}{2l\Lambda}\vec{\nu}^\mathrm{T}\M^*_i\vec{\nu},\quad \{P_s,L^*\} = 0, s>3
 $$
 
-Скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка формальных импульсов $p_i$ -- выражения для них см. в приложении):
+Скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка формальных импульсов $p_i$ -- выражения для них см. в приложении; дополнительно введено обозначение $\tau_k = \ddfrac{sin\chi_k}{\rho_k^2}$):
+
 $$
-(\{P_1,P_2\})^* = (-\sum\limits_{k=1}^{N} R^2\frac{\sin\chi_k}{\rho_i^2}p_{\phi_k})^* =
--BR(R\nu_1 S_1 + R\nu_2 S_2 + \Lambda^{-1}\nu_3S_3)$$
+(\{P_1,P_2\})^* = (-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k})^* =
+-BR^2(R\nu_1 S_1^1 + R\nu_2 S_2^1 + \Lambda^{-1}\nu_3S_3^1)$$
 $$
-S_1 = \sum\limits_{k=1}^{N}\frac{\cos\alpha_k\sin\chi_k}{\rho_k^2},\
-S_2 = \sum\limits_{k=1}^{N}\frac{\sin\alpha_k\sin\chi_k}{\rho_k^2},\
-S_3 = \sum\limits_{k=1}^{N}\frac{\sin(\chi_k+\kappa_k)\sin\chi_k}{\rho_k^2},
+S_1^1 = \sum\limits_{k=1}^{N}\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+S_2^1 = \sum\limits_{k=1}^{N}\frac{\sin\alpha_k}{\rho_k}\tau_k,\
+S_3^1 = \sum\limits_{k=1}^{N}\sin\chi_k\tau_k,
 $$
 
 \begin{eqnarray*}
-&(\{P_1,P_3\})^* = \frac{R}{\Lambda}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\frac{c_k\sin\chi_k}{\rho_i^2}p_{\phi_k}\right)^* 
+(\{P_1,P_3\})^* &=& \frac{R}{\Lambda}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* =\\
+&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^2 + R\nu_2 S_2^2 + \Lambda^{-1}\nu_3S_3^2),
 \end{eqnarray*}
-Попробовать написать также, как первую сумму, если не очень громоздко получится.
+$$
+S_1^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+S_2^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k - \frac{M}{BR},
+$$$$
+S_3^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\sin\chi_k\tau_k,
+$$
 
 \begin{eqnarray*}
-(\{P_2,P_3\})^* &=& \frac{R}{\Lambda}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\frac{c_k\sin\chi_k}{\rho_i^2}p_{\phi_k}\right)^* 
+(\{P_2,P_3\})^* &=& \frac{R}{\Lambda}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  =\\
+&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^3 + R\nu_2 S_2^3 + \Lambda^{-1}\nu_3S_3^3),
 \end{eqnarray*}
+$$
+S_1^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k + \frac{M}{BR},\
+S_2^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k,
+$$$$
+S_3^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\sin\chi_k\tau_k,
+$$
 $$
 \{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
 $$
 Собирая все вместе, окончательно получим следующую структуру уравнений:
-\begin{eqnarray*}
+\begin{eqnarray}\label{eq:full_system}
 \M^*\dot{\vec{\nu}} + \frac{R}{l}\sum\limits_{i=1}^{N}
 \Big(\M^*_i(\nu_1\sin\alpha_i-\nu_2\cos\alpha_i - \Lambda^{-1}\nu_3)\Big)\vec{\nu} + 
-\\
+\\ \nonumber
 +\frac{R}{2l}\vec{\nu}^\mathrm{T}
 \left(\begin{matrix}
 -\sin\alpha_i \M^*_i\\
@@ -111,7 +125,7 @@ $$
 \\
 0
 \end{matrix}\right)
-\end{eqnarray*}
+\end{eqnarray}
 
 Что хочу от такой структуры уравнений:
 
