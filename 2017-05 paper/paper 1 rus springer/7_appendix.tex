@@ -3,16 +3,16 @@ $$
 \M = \begin{bmatrix}
     M &   &               &   &        &   &                        &        &                        \\
       & M &               &   &        &   &                        &        &                        \\
-      &   & I_S           &   & \cdots &   & B\sin(\chi_k+\kappa_1) & \cdots & B\sin(\chi_i+\kappa_j) \\
+      &   & I_S           &   & \cdots &   & B\sin(\chi_k+\kappa_1) & \cdots & B\sin(\chi_N+\kappa_n) \\
       &   &               & J &        &   &                        &        &                        \\
       &   &               &   & \ddots &   &                        &        &                        \\
       &   &               &   &        & J &                        &        &                        \\
       &   & \text{\huge*} &   &        &   & B                      &        &                        \\
       &   &               &   &        &   &                        & \ddots &                        \\
       &   &               &   &        &   &                        &        & B                      \\
-\end{bmatrix}
+\end{bmatrix},
 $$
-
+где в третьей строке сначала указаны элементы $B\sin(\chi_k + \kappa_1)$, соответствующие роликам, находящимся в контакте, а затем -- $B\sin(\chi_i + \kappa_j), i = 1,\ldots,N, j = 2,\ldots,n$, соответствующие ``свободным'' роликам, упорядоченные по возрастанию индексов так, что ролики одного колеса соседствуют.
 
 Матрица связей:
 $$
@@ -54,7 +54,7 @@ $$
     \end{array}
 \end{equation}
 
-Линейные комбинации $\vec{P}$:
+Линейные комбинации $P_\alpha$:
 \begin{equation}\label{P}
     \begin{array}{rcl}
         P_1 & = & R\bigg(p_x\cos\theta + p_y\sin\theta + \sum\limits_{i}\bigg(\ddfrac{\sin\alpha_ip_{\chi_i}}{l} +  \ddfrac{\cos\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
@@ -64,8 +64,6 @@ $$
     \end{array}
 \end{equation}
 где от $\chi_i$ зависят $p_{\phi_{i1}}, p_\theta, \rho_i$ (см.\upr{p}), а потому и $P_1$ и $P_2$, отвечающие проекциям скорости центра масс платформы на подвижные оси, а также $P_3$, соответствующий вращению платформы.
-
-TODO: ДОПИСАТЬ $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$, см. test.tex.
 
 Скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка формальных импульсов $p_i$; дополнительно введено обозначение $\tau_k = \ddfrac{sin\chi_k}{\rho_k^2}$):
 
@@ -102,3 +100,5 @@ $$
 $$
 \{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
 $$
+
+TODO: ДОПИСАТЬ $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}$
