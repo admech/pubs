@@ -66,3 +66,39 @@ $$
 где от $\chi_i$ зависят $p_{\phi_{i1}}, p_\theta, \rho_i$ (см.\upr{p}), а потому и $P_1$ и $P_2$, отвечающие проекциям скорости центра масс платформы на подвижные оси, а также $P_3$, соответствующий вращению платформы.
 
 TODO: ДОПИСАТЬ $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$, см. test.tex.
+
+Скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка формальных импульсов $p_i$; дополнительно введено обозначение $\tau_k = \ddfrac{sin\chi_k}{\rho_k^2}$):
+
+$$
+(\{P_1,P_2\})^* = (-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k})^* =
+-BR^2(R\nu_1 S_1^1 + R\nu_2 S_2^1 + \Lambda^{-1}\nu_3S_3^1)$$
+$$
+S_1^1 = \sum\limits_{k=1}^{N}\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+S_2^1 = \sum\limits_{k=1}^{N}\frac{\sin\alpha_k}{\rho_k}\tau_k,\
+S_3^1 = \sum\limits_{k=1}^{N}\sin\chi_k\tau_k,
+$$
+
+\begin{eqnarray*}
+(\{P_1,P_3\})^* &=& \frac{R}{\Lambda}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* =\\
+&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^2 + R\nu_2 S_2^2 + \Lambda^{-1}\nu_3S_3^2),
+\end{eqnarray*}
+$$
+S_1^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+S_2^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k - \frac{M}{BR},
+$$$$
+S_3^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\sin\chi_k\tau_k,
+$$
+
+\begin{eqnarray*}
+(\{P_2,P_3\})^* &=& \frac{R}{\Lambda}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  =\\
+&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^3 + R\nu_2 S_2^3 + \Lambda^{-1}\nu_3S_3^3),
+\end{eqnarray*}
+$$
+S_1^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k + \frac{M}{BR},\
+S_2^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k,
+$$$$
+S_3^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\sin\chi_k\tau_k,
+$$
+$$
+\{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
+$$

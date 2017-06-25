@@ -53,82 +53,73 @@ $$
 \{P_3, L^*\} = \frac{R}{2l\Lambda}\vec{\nu}^\mathrm{T}\M^*_i\vec{\nu},\quad \{P_s,L^*\} = 0, s>3
 $$
 
-Скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка формальных импульсов $p_i$ -- выражения для них см. в приложении; дополнительно введено обозначение $\tau_k = \ddfrac{sin\chi_k}{\rho_k^2}$):
+Cуммы $\{P_\alpha, \nu_\mu P_\mu\}$ в правой части также отличны от нуля лишь для первых трех уравнений, и после подстановки формальных импульсов $p_i$ их можно записать как $$\ddfrac{MR^2}{\Lambda}(\nu_2\nu_3, -\nu_1\nu_3, 0, 0, \ldots, 0)^T - BR^2 \vec{\nu}^T (\Prhs_\alpha)^T \vec{\nu},$$ где матрицы $\Prhs_\alpha$ квадратичных форм задаются следующим образом:
 
 $$
-(\{P_1,P_2\})^* = (-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k})^* =
--BR^2(R\nu_1 S_1^1 + R\nu_2 S_2^1 + \Lambda^{-1}\nu_3S_3^1)$$
+\tau_k = \ddfrac{sin\chi_k}{\rho_k^2}, \quad s_k = ( R\frac{\cos\alpha_k}{\rho_k}, R\frac{\sin\alpha_k}{\rho_k}, \frac{1}{\Lambda}\sin\chi_k )\tau_k,
 $$
-S_1^1 = \sum\limits_{k=1}^{N}\frac{\cos\alpha_k}{\rho_k}\tau_k,\
-S_2^1 = \sum\limits_{k=1}^{N}\frac{\sin\alpha_k}{\rho_k}\tau_k,\
-S_3^1 = \sum\limits_{k=1}^{N}\sin\chi_k\tau_k,
 $$
+u_k = ( 1, \frac{1}{\Lambda}\cos\alpha_k, \frac{1}{\Lambda}\sin\alpha_k ), \quad \AntiU_k = \left(\begin{matrix}
+    0      & u_k^1  & u_k^2\\
+    -u_k^1 & 0      & u_k^3\\
+    -u_k^2 & -u_k^3 & 0    \\
+\end{matrix}
+\right),
+$$
+$$
+(\Prhs_\alpha)_{ij} = \sum_k (\AntiU_k)_{\alpha j}s^i_k, i,j \leq 3; \quad (\Prhs_\alpha)_{ij} = 0, i,j > 3; \quad \Prhs_\alpha = 0, \alpha > 3. \\
+$$
+Более подробные выражения для $p_i$ и $\{P_i, P_j\}$ см. в приложении.
 
-\begin{eqnarray*}
-(\{P_1,P_3\})^* &=& \frac{R}{\Lambda}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* =\\
-&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^2 + R\nu_2 S_2^2 + \Lambda^{-1}\nu_3S_3^2),
-\end{eqnarray*}
-$$
-S_1^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k,\
-S_2^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k - \frac{M}{BR},
-$$$$
-S_3^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\sin\chi_k\tau_k,
-$$
-
-\begin{eqnarray*}
-(\{P_2,P_3\})^* &=& \frac{R}{\Lambda}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  =\\
-&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^3 + R\nu_2 S_2^3 + \Lambda^{-1}\nu_3S_3^3),
-\end{eqnarray*}
-$$
-S_1^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k + \frac{M}{BR},\
-S_2^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k,
-$$$$
-S_3^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\sin\chi_k\tau_k,
-$$
-$$
-\{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
-$$
 Собирая все вместе, окончательно получим следующую структуру уравнений:
 \begin{eqnarray}\label{eq:full_system}
-\M^*\dot{\vec{\nu}} + \frac{R}{l}\sum\limits_{i=1}^{N}
-\Big(\M^*_i(\nu_1\sin\alpha_i-\nu_2\cos\alpha_i - \Lambda^{-1}\nu_3)\Big)\vec{\nu} + 
-\\ \nonumber
-+\frac{R}{2l}\vec{\nu}^\mathrm{T}
+\M^*\dot{\vec{\nu}} = 
+\frac{MR^2}{\Lambda}\left(\begin{matrix}
+    \nu_2\nu_3\\
+    -\nu_1\nu_3\\
+    0\\
+    0\\
+    \vdots
+    \\
+    0
+\end{matrix}\right)
++\vec{\nu}^\mathrm{T}\left(
+\frac{R}{2l}
 \left(\begin{matrix}
--\sin\alpha_i \M^*_i\\
-\cos\alpha_i \M^*_i\\
-\Lambda^{-1}\M^*_i\\
-0\\
-\vdots
-\\
-0
+    -\sin\alpha_i \M^*_i\\
+    \cos\alpha_i \M^*_i\\
+    \Lambda^{-1}\M^*_i\\
+    0\\
+    \vdots
+    \\
+    0
+    \end{matrix}
+\right)
+-BR^2
+\left(\begin{matrix}
+    \Prhs_1\\
+    \Prhs_2\\
+    \Prhs_3\\
+    0\\
+    \vdots
+    \\
+    0
 \end{matrix}\right)
-\vec{\nu} = 
-\frac{MR^2}{\Lambda}\left(
-\begin{matrix}
-\nu_2\nu_3\\
--\nu_1\nu_3\\
-0\\
-0\\
-\vdots
-\\
-0
-\end{matrix}\right)
--B
-\left(
-\begin{matrix}
-\text{кв. ф. }\nu_1,\nu_2,\nu_2\\
-\text{кв. ф. }\nu_1,\nu_2,\nu_2\\
-\text{кв. ф. }\nu_1,\nu_2,\nu_2\\
-0\\
-\vdots
-\\
-0
-\end{matrix}\right)
+\right)
+\vec{\nu}
 \end{eqnarray}
+
+Заметим, что:
+\begin{enumerate}
+    \item при $B = 0$ квадратичные формы в правой части обращаются в ноль, как и все члены, соответствующие роликам, в левой части (см.\upr{mstar}), и остаются уравнения движения для системы без роликов;
+
+    \item для симметричных конфигураций (для которых $\sum_{k=1}^N\cos\alpha_k = \sum_{k=1}^N\sin\alpha_k = 0$, например, $\alpha_k = \ddfrac{2\pi (k-1)}{N}, k = 1,\ldots,N$) существует решение $\nu_1= 0, \nu_2 = 0, \nu_3 = const, \nu_s = 0$: действительно, левая часть и первые два слагаемых правой обращаются в ноль (второе -- т.к.\upr{mstar} $m^*_{33} = const$), третье принимает вид
+    $$\sum_{k}(\cos\alpha_k, \sin\alpha_k, 0, 0, \ldots, 0)^T\ddfrac{\sin^2\chi_k}{\Lambda^2\rho^2_k},$$
+    где, в силу характера движения и ортогональности плоскостей колес их радиус-векторам, $\chi_k = \chi$ (а потому и $\rho_k = \rho$), $\forall k$, и, следовательно, также равно нулю.
+
+\end{enumerate}
+
 
 Что хочу от такой структуры уравнений:
 
-1) ччтобы было понятно, что $B=0 \Rightarrow \M^*_i =0$ и остаются старые уравнения
-2) что решение $\nu_1= 0, \nu_2 = 0, \nu_3 = const,\ \nu_s = 0$, было видно из уравнений. Для тех ограничений, что приняты (колесы перпендикулярны радиусам $SP_i$) оно всегда должно существовать при любых $\alpha_i$. Это наводит на мысль, что какие-то суммы должны быть тождественно равны нулю (как сейчас кажется, при $\nu_3^2$ в последнем столбцы). А может и еще какие-то суммы? Может, Maxima спросить?
-3) сейчас кажется, что второе и третье слагаемое в левой части -- подобные слагаемые. Так ли это?
+что решение $\nu_1= 0, \nu_2 = 0, \nu_3 = const,\ \nu_s = 0$, было видно из уравнений. Для тех ограничений, что приняты (колесы перпендикулярны радиусам $SP_i$) оно всегда должно существовать при любых $\alpha_i$. Это наводит на мысль, что какие-то суммы должны быть тождественно равны нулю (как сейчас кажется, при $\nu_3^2$ в последнем столбцы). А может и еще какие-то суммы? Может, Maxima спросить?
