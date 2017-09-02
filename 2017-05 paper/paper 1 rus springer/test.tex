@@ -6,12 +6,12 @@
 \begin{document}
 
 
-\begin{figure}
-        \asyinclude{./asy/pic_cart.asy}
-        \asyinclude{./asy/pic_wheel.asy}
+% \begin{figure}
+        % \asyinclude{./asy/pic_cart.asy}
+        % \asyinclude{./asy/pic_wheel.asy}
         % \asyinclude{./asy/pic_overlap.asy}
         % \asyinclude{./asy/pic_change.asy}
-\end{figure}
+% \end{figure}
 
 % $\ddfrac{d}{dt}\pd{L^{*}}{\nu_\alpha}, \{P_\alpha, L^{*}\}, \{P_\alpha, \nu_\mu P_\mu\}$
 % $$
@@ -26,7 +26,45 @@
 %     \end{array}
 % $$
 
+В наших уравнениях
 
+\begin{equation}
+    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha}  + \{P_\alpha, L^{*}\} = \{P_\alpha, \nu_\mu P_\mu\}
+\end{equation}
+
+интерес представляет первое слагаемое, в котором:
+
+\begin{equation}
+    L^{*} = \frac{1}{2}\vec{\nu}^\mathrm{T} \M^*(\chi_i)\vec{\nu},
+\end{equation}
+
+что при дифференцировании даёт:
+
+\begin{equation}
+    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} = \frac{d}{dt}(\M^*(\chi_i)\vec{\nu}_\alpha) = 
+    \M^*(\chi_i)\dot{\vec{\nu}_\alpha} +
+    \color{blue}
+    \left(\frac{d}{dt}(\M^*(\chi_i))\vec{\nu}\right)_\alpha
+    \color{black},
+\end{equation}
+
+где для взятия производной в последнем слагаемом нужно воспользоваться связями $\dot{\chi_i} = (V\nu)_{3+i}$:
+
+\begin{equation}
+    \ddfrac{d}{dt}\M^*(\chi_i)\vec{\nu} = \sum_{i=1}^{N}\M^*_i(V\nu)_{3+i}\vec{\nu},
+\end{equation}
+
+что для $\nu_{s}$ равно:
+
+\begin{equation}
+    \frac{\cos\left( \chi_i+\kappa_j\right) \nu_3 B \left( -\ddfrac{\nu_3 R}{l \Lambda}-\ddfrac{\cos\alpha_i \nu_2 R}{l}+\ddfrac{\sin\alpha_i \nu_1 R}{l}\right) }{\Lambda},
+\end{equation}
+
+где $i,j$ соответствуют $s$. \\
+
+Эта штука оказывается в правой части (с противоположным знаком) и вероломно раскручивает нам ролики! \\
+
+Для $\nu_{1\ldots3}$, конечно, тоже свои слагаемые. Допишу это в структуру уравнений, стало быть, и выводы наши, наверно, немного уточнятся.
 
 \end{document}
 

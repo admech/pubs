@@ -31,11 +31,6 @@
 \usepackage{subcaption}
 %--------------------------------------
 
-%---INSERTED BY ZOBOVA
-%\sout for crossed text
-\usepackage{ulem}
-%--------------------
-
 
 % \ddfrac command to show big fractions, not cramped up
 % https://tex.stackexchange.com/questions/173899/
@@ -68,8 +63,10 @@
 \newcommand\AntiU[0]{\mathcal{U}} % Helper antisymmetric matrix for eqs' RHS
 \newcommand\Rhs[0]{\mathcal{R}} % RHS
 \newcommand\Prhs[0]{\mathcal{P}} % The family of matrices for RHS
+\newcommand\prhs[0]{\mathbf{p}} % Poisson brackets
 %--------------------------------------
 
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 
 \newtheorem{stmt}{Утверждение}
 \newtheorem{prblm}{Затруднение}
