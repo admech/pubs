@@ -62,7 +62,7 @@ $$
 \end{equation}
 
 Линейные комбинации $P_\alpha$:
-\begin{equation}\label{P}
+\begin{equation}\label{bigP}
     \begin{array}{rcl}
         P_1 & = & R\bigg(p_x\cos\theta + p_y\sin\theta + \sum\limits_{i}\bigg(\ddfrac{\sin\alpha_ip_{\chi_i}}{l} +  \ddfrac{\cos\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
         P_2 & = & R\bigg(-p_x\sin\theta + p_y\cos\theta + \sum\limits_{i}\bigg(-\ddfrac{\cos\alpha_ip_{\chi_i}}{l} +  \ddfrac{\sin\alpha_ip_{\phi_{i1}}}{\rho_i}\bigg)\bigg),\vsp
@@ -94,9 +94,10 @@ $$
 %$$
 
 \begin{eqnarray*}
-(\{P_1,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* =\\
-&=& {MR^2}{\Lambda}^{-1}\nu_2-{BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi])=\\
-&=&{MR^2}{\Lambda}^{-1}\nu_2-{BR^2} \prhs_{13}\vec{\nu}, \text{ где }\prhs_{13} =\Lambda^{-1}
+(\{P_1,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* = {MR^2}{\Lambda}^{-1}\nu_2 -\\
+&-& {BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi])=\\
+&=& {MR^2}{\Lambda}^{-1}\nu_2-{BR^2} \prhs_{13}\vec{\nu},\\
+\text{ где }\prhs_{13} &=& \Lambda^{-1}
 (R\sigma[\cos^2\alpha], R\sigma[\sin\alpha\cos\alpha], \Lambda^{-1}\sigma[\rho\cos\alpha\sin\chi], 0,\dots,0)
 \end{eqnarray*}
 %$$
@@ -107,10 +108,11 @@ $$
 %$$
 
 \begin{eqnarray*}
-(\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  =\\
-&=& -{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha]+\Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] =
+(\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  = -{MR^2}{\Lambda}^{-1}\nu_1 -\\
+&-& {BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha]+\Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] =
 \\
-&=&-{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}\prhs_{23}\vec{\nu}, \text{ где }\prhs_{23} =\Lambda^{-1}
+&=&-{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}\prhs_{23}\vec{\nu},\\
+\text{ где }\prhs_{23} &=& \Lambda^{-1}
 (R\sigma[\sin\alpha\cos^\alpha], R\sigma[\sin^2\alpha], \Lambda^{-1}\sigma[\rho\sin\alpha\sin\chi], 0,\dots,0),
 \end{eqnarray*}
 %$$
