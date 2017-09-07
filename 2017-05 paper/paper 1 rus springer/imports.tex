@@ -18,6 +18,13 @@
 % graphicx for graphs
 %--------------------------------------
 \usepackage{graphicx}
+
+%--------------------------------------
+% Specially for PMM: make all imported EPS grayscale:
+%--------------------------------------
+\usepackage[gray]{epspdfconversion}
+%--------------------------------------
+
 % \usepackage{subfig} % incompatible with subcaption package
 % \graphicspath{ % not used here
     % {./pic/,./asy/}
@@ -31,6 +38,10 @@
 \usepackage{subcaption}
 %--------------------------------------
 
+% so that refs were [1-10], not [1,2,3,4,5,...]
+%--------------------------------------
+\usepackage{cite}
+%--------------------------------------
 
 % \ddfrac command to show big fractions, not cramped up
 % https://tex.stackexchange.com/questions/173899/

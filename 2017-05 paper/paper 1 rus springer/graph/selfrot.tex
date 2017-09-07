@@ -1,17 +1,19 @@
 \begin{figure}
     \centering
-    \begin{subfigure}[t]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth, height=30mm]{pic/_sol__0_0_1__0__10__1e2_trajectory}
-        \caption{Траектория $X, Y$}
-        \label{fig:_sol__0_0_1__0__10__1e2_trajectory}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth, height=30mm]{pic/_sol__0_0_1__0__10__1e2_nu12}
-        \caption{$\nu_1(t), \nu_2(t)$}
-        \label{fig:_sol__0_0_1__0__10__1e2_nu12}    
-    \end{subfigure}
+
+    % \begin{subfigure}[t]{0.3\textwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth, height=30mm]{pic/_sol__0_0_1__0__10__1e2_trajectory}
+    %     \caption{Траектория $X, Y$}
+    %     \label{fig:_sol__0_0_1__0__10__1e2_trajectory}
+    % \end{subfigure}
+    % \begin{subfigure}[t]{0.3\textwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth, height=30mm]{pic/_sol__0_0_1__0__10__1e2_nu12}
+    %     \caption{$\nu_1(t), \nu_2(t)$}
+    %     \label{fig:_sol__0_0_1__0__10__1e2_nu12}    
+    % \end{subfigure}
+    
     % \begin{subfigure}[t]{0.3\textwidth}
     %     \centering
     %     \includegraphics[width=\linewidth, height=30mm]{pic/_sol__0_0_1__0__10__1e2_theta}
@@ -41,6 +43,26 @@
     %     \label{fig:_sol__0_0_1__0__10__1e2_kin_en}
     % \end{subfigure}
     
-    \caption{Экипаж с роликами. Вращение вокруг своей оси ($\nu_{1,2}(0) = 0, \nu_3 = 1$). Идентично случаю без роликов.}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pic/rol__self_rot__velocities_of_rollers_of_wheel_1}
+        \caption{Скорости роликов $\dot{\phi}_{ij}(t)$ на любом колесе}
+        \label{fig:rol__self_rot__velocities_of_rollers_of_wheel_1}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pic/rol__self_rot__kinetic_energy}
+        \caption{Кинетическая энергия}
+        \label{fig:rol__self_rot__kinetic_energy}    
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pic/rol__self_rot__velocity_of_self_rotation}
+        \caption{Угловая скорость собственного вращения $\nu_3(t)$}
+        \label{fig:rol__self_rot__velocity_of_self_rotation}    
+    \end{subfigure}
+
+    \caption{Экипаж с роликами. Вращение вокруг своей оси ($\nu_{1,2}(0) = 0, \nu_3 = 1$).}
     \label{fig:selfrot}
+    
 \end{figure}
