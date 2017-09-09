@@ -73,7 +73,21 @@ unitsize(1.3cm);
         -1.15*(cos(pi/2+pi/6),sin(pi/2+pi/6)),
         1.15*(cos(pi/6),sin(pi/6))
     ), arrow=Arrow(TeXHead), blue);
-    
+
+    // direction of positive roller rotation
+    label(
+        "$\phi_{ij}$",
+        dr(pi/6) + 0.8*dr(pi/2 + pi/6) + 0.4*dr(pi/2 + pi/6 - pi/4) + 0.2*dr(pi/4),
+        purple
+    );
+    draw(dr(pi/6) -- dr(pi/6) + 1.5*dr(pi/2 + pi/6), dashed+gray);
+    draw(arc(
+        dr(pi/6) + dr(pi/2 + pi/6),
+        dr(pi/6) + dr(pi/2 + pi/6) + 0.3*dr(pi/2 + pi/6 + pi/4),
+        dr(pi/6) + dr(pi/2 + pi/6) + 0.3*dr(pi/2 + pi/6 - pi/4),
+        CW
+    ), arrow=Arrow(TeXHead), purple);
+
     label("$\chi_i$", 1.6*(cos(-pi/12+pi/6),sin(-pi/12+pi/6)), red);
     draw((0,0) -- (1.6,0), dashed+gray);
     
