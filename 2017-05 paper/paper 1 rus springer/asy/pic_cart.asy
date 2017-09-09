@@ -4,17 +4,19 @@ unitsize(1.3cm);
 
 // INERTIAL COORDINATES
 
-label("$X$", (1.85,-1.4));
-draw((-1.5,-1.4) -- (1.7,-1.4), arrow = Arrow(TeXHead));
+real delta = 0.7;
 
-label("$Y$", (-1.2, 1.6));
-draw((-1.4,-1.5) -- (-1.4,1.7), arrow = Arrow(TeXHead));
+label("$X$", (2.1,-1.4));
+draw((-1.5 - delta,-1.4) -- (1.95,-1.4), arrow = Arrow(TeXHead));
 
-label("$Z$", (-1.6, -1.2));
-draw(shift(-1.4, -1.4) * scale(0.1) * unitcircle);
+label("$Y$", (-1.6 - delta, 1.6));
+draw((-1.4 - delta,-1.5) -- (-1.4 - delta,1.7), arrow = Arrow(TeXHead));
 
-label("$O$", (-1.2, -1.2));
-filldraw(shift(-1.4, -1.4) * DOT, black);
+label("$Z$", (-1.6 - delta, -1.2));
+draw(shift(-1.4 - delta, -1.4) * scale(0.1) * unitcircle);
+
+label("$O$", (-1.2 - delta, -1.2));
+filldraw(shift(-1.4 - delta, -1.4) * DOT, black);
 
 // CART
 
@@ -24,14 +26,20 @@ filldraw(DOT, black);
 label("$S(x, y)$", (-0.1, -0.2));
 
 path WHEEL = shift(0, -1.2) * box((0.3,0.05), (-0.3,-0.05));
+real label_start_angle = pi/6 + pi/7;
+real label_radius = 1.3;
 
-fill(WHEEL, mediumgray);
-draw(WHEEL, black);
+label("1", dr(label_start_angle) * label_radius);
+path WHEEL_1 = WHEEL;
+fill(WHEEL_1, mediumgray);
+draw(WHEEL_1, black);
 
+label("2", dr(2*pi/3 + label_start_angle) * label_radius);
 path WHEEL_2 = rotate(120) * WHEEL;
 fill(WHEEL_2, mediumgray);
 draw(WHEEL_2, black);
 
+label("N", dr(4*pi/3 + label_start_angle) * label_radius);
 path WHEEL_3 = rotate(240) * WHEEL;
 fill(WHEEL_3, mediumgray);
 draw(WHEEL_3, black);

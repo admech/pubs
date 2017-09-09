@@ -31,16 +31,22 @@ unitsize(1.3cm);
     path ROLLER = 
         rotate(30) *
         ROLLER_TEMPLATE;
-    
     fill(ROLLER, lightgray + opacity(0.5));
+
+    real label_start_angle = pi/2 + pi/6 + pi/8;
+    real label_radius = 1.7;
+
+    label("1", -dr(label_start_angle - pi/32) * label_radius);
     draw(ROLLER, black);
     
+    label("2", -dr(pi/2 + label_start_angle) * label_radius);
     path ROLLER_2 = rotate(90) * ROLLER;
     draw(ROLLER_2, longdashed+gray);
     
     path ROLLER_3 = rotate(180) * ROLLER;
     draw(ROLLER_3, longdashed+gray);
     
+    label("n", -dr(3*pi/2 + label_start_angle - pi/8) * label_radius);
     path ROLLER_4 = rotate(270) * ROLLER;
     draw(ROLLER_4, longdashed+gray);
 
