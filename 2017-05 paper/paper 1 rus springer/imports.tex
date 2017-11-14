@@ -41,8 +41,8 @@
 % subcaption for many figures under one big caption
 % each having its own small caption
 %--------------------------------------
-\usepackage{caption}
-\usepackage{subcaption}
+%\usepackage{caption}
+%\usepackage{subcaption}
 %--------------------------------------
 
 % so that refs were [1-10], not [1,2,3,4,5,...]
@@ -78,6 +78,7 @@
 % Nice letters
 %--------------------------------------
 \newcommand\M[0]{\mathcal{M}} % Matrix of intertia
+\newcommand\const{\mathrm{const}} %константа
 \newcommand\AntiU[0]{\mathcal{U}} % Helper antisymmetric matrix for eqs' RHS
 \newcommand\Rhs[0]{\mathcal{R}} % RHS
 \newcommand\Prhs[0]{\mathcal{P}} % The family of matrices for RHS
@@ -85,6 +86,9 @@
 %--------------------------------------
 
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+%\renewcommand{\figurename}{Фиг.}
+\usepackage[labelsep=period]{caption}
+\addto\captionsrussian{\renewcommand{\figurename}{Фиг. }}
 
 \newtheorem{stmt}{Утверждение}
 \newtheorem{prblm}{Затруднение}
