@@ -1,0 +1,132 @@
+\documentclass[letterpaper,11pt]{article}
+
+% DEFINITIONS AND PACKAGES
+% -------------------------------------------------------------------------------
+\usepackage{lipsum} % Generates fake text
+\usepackage{mathptmx} % Use Times fonts (http://ctan.org/pkg/mathptmx)
+\usepackage{amsmath} % Bold Greek symbols
+\SetSymbolFont{operators}{bold}{OT1}{cmr}{bx}{n}
+\SetSymbolFont{letters}{bold}{OML}{cmm}{b}{it}
+\usepackage[letterpaper]{geometry} % Force letter size
+\usepackage{hyperref} % Hyperrefs
+\usepackage[font=scriptsize]{caption} % Small captions
+\usepackage{xcolor} % Defines colors
+\definecolor{imsd_gray}{rgb}{0.4,0.4,0.4}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Tab.}
+
+% Page layout
+\hoffset -1in
+\voffset -1in
+\oddsidemargin 0.8in
+\topmargin 0in
+\headheight 0in
+\headsep 0.6in
+\textheight 9.8in
+\textwidth 6.9in
+
+\pagestyle{empty}
+\date{}
+
+% Authors and affiliation formatting (https://www.ctan.org/pkg/authblk?lang=en)
+\usepackage[noblocks,auth-lg,affil-it]{authblk}
+\renewcommand\Authands{ and }
+\setlength{\affilsep}{0.5ex}
+
+% PAPER TITLE
+% -------------------------------------------------------------------------------
+\title{\vspace{-3ex} \bfseries
+Symmetric omni-wheel vehicle with massive rollers
+\vspace{-1ex}}
+
+% DEFINE AUTHORS AND AFFILIATIONS HERE
+% -------------------------------------------------------------------------------
+\author[1]{\underline{Alexandra A. Zobova}}
+\author[1]{Kirill V. Gerasimov}
+\affil[1]{\small Department of Mechanics and Mathematics, Lomonosov Moscow State University, azobova@mech.math.msu.su, kirill.gerasimov.msu@gmail.com }
+% DOCUMENT
+% -------------------------------------------------------------------------------
+\begin{document}
+
+% Conference information
+{\fontsize{9}{12} \selectfont \color{imsd_gray}
+\noindent\textit{Extended Abstract} \hfill The 5\textsuperscript{th} Joint International Conference on Multibody System Dynamics \linebreak
+\hphantom{} \hfill June 24 -- 28, 2018, Lisboa, Portugal}
+
+% Generates title
+{\let\newpage\relax\maketitle\thispagestyle{empty}\vspace{-1.5em}}
+
+% EXTENDED ABSTRACT STARTS HERE
+% -------------------------------------------------------------------------------
+We study the dynamics of a vehicle with omni-wheels moving along a horizontal plane. An omni-wheel carries the rollers on its periphery. Their axes are tangent to the circumference of the wheel. The rollers freely rotate so that the wheel can move in two principal direction: as an ordinary wheel going from one roller to the next one and in the perpendicular direction when the wheel touches the plane by one particular rotating roller. Combining these two motion,  the wheel can move in arbitrary directions. This property increases the manoeuvrability of the vehicles.
+
+
+% Figure
+\begin{figure}[h]
+  \centering
+  \fboxsep 1cm
+  \framebox[0.5\textwidth][c]{Example figure}
+  \caption{Omni-wheel and }
+  \label{fig:WheelVehicle}
+\end{figure}
+
+\lipsum[3] % Fake text (replace with your own text)
+
+% Equation
+\begin{equation}
+\mathbf{M} \dot{\mathbf{v}} + \mathbf{c} = \mathbf{A}^\mathrm{T} \boldsymbol{\lambda} + \mathbf{Q}
+\label{eq:equation}
+\end{equation}
+
+\lipsum[4] % Fake text (replace with your own text)
+\lipsum[5] % Fake text (replace with your own text)
+
+% Table
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    a & b & c \\
+    \hline
+    1 & 2& 3\\
+    \hline
+  \end{tabular}
+  \caption{Example table}
+  \label{tab:example}
+\end{table}
+
+% Cross referencing and citations
+Suspendisse vel felis Fig.~\ref{fig:example}. Ut lorem lorem, interdum eu, tincidunt sit amet, laoreet vitae Eq.~\eqref{eq:equation}, arcu. Aenean faucibus pede eu ante. Praesent enim elit Tab.~\ref{tab:example}, rutrum at,  molestie non, nonummy vel, nisl \cite{book}. Ut lectus eros, malesuada sit amet, fermentum eu, sodales cursus, magna. Donec eu purus. Quisque vehicula, urna sed ultricies auctor, pede lorem egestas dui, et convallis elit erat sed nulla \cite{article}. Donec luctus. Curabitur et nunc. Aliquam dolor odio, commodo pretium $\delta \mathbf{v}^\mathrm{T} \left( -\mathbf{M} \dot{\mathbf{v}} - \mathbf{c} +   \mathbf{A}^\mathrm{T} \boldsymbol{\lambda} + \mathbf{Q}\right) = 0$, ultricies non, pharetra in, velit. Integer arcu est, nonummy in, fermentum faucibus, egestas vel, odio \cite{conference}.
+
+%\section{Conclusions} % Usually no sections are needed
+
+\lipsum[7] % Fake text (replace with your own text)
+
+% REFERENCES
+% -------------------------------------------------------------------------------
+% BibTex is strongly recommended
+\bibliographystyle{ieeetr}
+\small
+\bibliography{bibliography} % File imsd2016.bib
+
+% Otherwise references can be included by hand
+%\begin{thebibliography}{1}
+%
+%\bibitem{book}
+%F. LastName1,
+%\newblock {\em Book title}.
+%\newblock Address: Publisher, 3 ed., 2016.
+%
+%\bibitem{article}
+%F. LastName1 and F. LastName2,
+%\newblock ``Paper title,''
+%\newblock {\em Journal}, vol. 1, no. 2, pp. 100--110, 2016.
+%
+%\bibitem{conference}
+%F. LastName1, F. LastName2, and F. LastName3,
+%\newblock ``Paper title,''
+%\newblock in {\em Proceedings}, pp. 1--10, May 29 -- June 1, Montr\'eal, Canada 2016.
+%
+%\end{thebibliography}
+
+\end{document}
