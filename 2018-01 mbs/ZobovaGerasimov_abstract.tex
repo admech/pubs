@@ -15,6 +15,16 @@
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Tab.}
 
+% Asymptote for pictures
+%--------------------------------------
+\usepackage{asymptote} %% comes with options inline and attach
+%--------------------------------------
+% so that it was possible to fix a figure's placement with [H]: \begin{figure}[H]
+%--------------------------------------
+% \usepackage{float}
+%--------------------------------------
+
+
 % Page layout
 \hoffset -1in
 \voffset -1in
@@ -58,8 +68,66 @@ Symmetric omni-wheel vehicle with massive rollers
 
 % EXTENDED ABSTRACT STARTS HERE
 % -------------------------------------------------------------------------------
-We study the dynamics of a vehicle with omni-wheels moving along a horizontal plane. An omni-wheel carries the rollers on its periphery. Their axes are tangent to the circumference of the wheel. The rollers freely rotate so that the wheel can move in two principal direction: as an ordinary wheel going from one roller to the next one and in the perpendicular direction when the wheel touches the plane by one particular rotating roller. Combining these two motion,  the wheel can move in arbitrary directions. This property increases the manoeuvrability of the vehicles.
+We study the dynamics of a vehicle with omni-wheels moving along a horizontal plane. An omni-wheel carries the rollers on its periphery. Their axes are tangent to the circumference of the wheel. The rollers freely rotate so that the wheel can move in two principal direction: as an ordinary wheel going from one roller to the next one and in the perpendicular direction when the wheel touches the plane by one particular rotating roller. Combining these two motions, the wheel can move in arbitrary directions. This property increases the manoeuvrability of the vehicles.
 
+\begin{figure}[h]
+    \minipage{0.3\textwidth}
+        \centering
+        \asyinclude{./asy/pic_wheel.asy}
+        \caption{Omni-wheel}
+        \label{fig:wheel}
+    \endminipage
+    \minipage{0.4\textwidth}
+        \centering
+        \asyinclude{./asy/pic_cart.asy}
+        \caption{Vehicle}
+        \label{fig:vehicle}
+    \endminipage
+    \minipage{0.3\textwidth}
+        \centering
+        \asyinclude{./asy/pic_overlap.asy}
+        \caption{Rollers overlap}
+        \label{fig:overlap}
+    \endminipage
+\end{figure}
+% Figures formatted as in the example -- they and the example appear at the end of the doc, for some reason.
+\begin{figure}[h]
+  \centering
+  \fboxsep 1cm
+  \framebox[0.3\textwidth][c]{
+    \asyinclude{./asy/pic_wheel.asy}
+  }
+  \caption{Omni-wheel}
+  \label{fig:wheel}
+  \framebox[0.4\textwidth][c]{
+    \asyinclude{./asy/pic_cart.asy}
+  }
+  \caption{Vehicle}
+  \label{fig:vehicle}
+  \framebox[0.3\textwidth][c]{
+    \asyinclude{./asy/pic_overlap.asy}
+  }
+  \caption{Rollers overlap}
+  \label{fig:overlap}
+\end{figure}
+
+The dynamics of a symmetrical vehicle with omni-wheels moving along a fixed horizontal absolutely rough plane is considered under the following assumptions: the mass of each roller is nonzero, point contact between the rollers and the plane, slippage is not allowed. The equations of motion are obtained using a system for symbolic calculations -- Maxima. In the equations of motion, additional terms proportional to the axial moment of inertia of the roller and depending on the angles of rotation of the wheels are observed. The massiveness of the rollers is taken into account both in those phases of the motion when the contacting rollers do not change, and when the wheels switch from one roller to another. It is shown that a number of motions existing in the inertia-free model (i.e. not taking into account the mass of the rollers) vanishes, as well as the linear first integral. A comparison is made between the main types of motion of a symmetric three-wheeled vehicle, obtained by integrating the equations of motion, with the inertia-free model. For the switching phase, an impact theory problem is posed and solved, impact forces and energy loss being obtained in assumption that the constraints being applied are ideal.
+
+The switch from one roller to the other is considered to happen instantaneously. Immediately before the impact instant, the system may be said to be subject only to holonomic constraints, allowing for generalized coordinates $\mathbf{q}$ (its kinetic energy being $T = \frac{1}{2}\dot{\mathbf{q}}^T\mathbf{M}\dot{\mathbf{q}}$), and afterwards, a set of non-holonomic constraints is applied, so that the system's generalized velocities can be expressed via a vector of quasi-velocities $\mathbf{\nu}$ linearly: $\dot{\mathbf{q}} = \mathbf{V}(\mathbf{q})\mathbf{\nu}$, where $\mathbf{V}$ is a matrix. The impact problem is then formulated in the classical mechanics fashion:
+\begin{equation}
+\mathbf{M} (\dot{\mathbf{q}}^+ - \dot{\mathbf{q}}^-) = \mathbf{Q},
+\label{eq:equation}
+\end{equation}
+where the generalized impact impulses $\mathbf{Q}$ are linearly expressed via the tangent reactions $\mathbf{F}$ applied at the points of contact $\mathbf{Q} = \mathbf{K}\mathbf{F}$; or, equivalently:
+\begin{equation}
+\mathbf{M}\mathbf{V}\dot{\mathbf{\nu}}^+ - \mathbf{K}\mathbf{F} = \mathbf{M}\dot{\mathbf{q}}^-,
+\label{eq:equation}
+\end{equation}
+where $\dot{\mathbf{\nu}}^+$ and $\mathbf{F}$ are the unknowns. The system admits a unique solution.
+
+Due to the fact that the impact we consider is absolutely non-elastic in the sense that it is equivalent to taking a projection of $\dot{\mathbf{q}}^-$ onto the plane defined by $\mathbf{V}$ in the space of virtual displacements, orthogonal in the kinetic metric (the post-impact quasi-velocities being therefore available via $\dot{\mathbf{\nu}}^+ = (\mathbf{V}^T\mathbf{M}\mathbf{V})^{-1}\mathbf{V}^T\mathbf{M}\dot{\mathbf{q}}^-$) -- and hence the normal part of the generalized velocities is lost -- we go on to prove that kinetic energy of the system decreases by the value of the kinetic energy of lost generalized velocities, in accordance with Carnot's theorem.
+
+\newpage
 
 % Figure
 \begin{figure}[h]
