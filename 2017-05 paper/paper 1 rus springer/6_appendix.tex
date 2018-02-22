@@ -1,5 +1,5 @@
 %\section{Явные виды выражений}
-{\bf 6. Приложение.}
+{\bf 7. Приложение.}
 \stepcounter{section}
 Матрица кинетической энергии:
 %$$
@@ -23,55 +23,55 @@ $$
       &   &               & J &        &   &                        &        &                        \\
       &   &               &   & \ddots &   &                        & \text{\huge 0}&                 \\
       &   &               &   &        & J &                        &        &           \\
-      &   & \text{\huge*} &   &        &   & B                      &        &                        \\
+      &   & \scalebox{1.5}{$\star$} &   &        &   & B                      &        &                        \\
       &   &               &   &        &   &                        & \ddots &                        \\
       &   &               &   &        &   &                        &        & B                      \\
-\end{bmatrix},
+\end{bmatrix}
 $$
-где в третьей строке сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам, упорядоченные по возрастанию индексов так, что ролики одного колеса соседствуют. Матрица $\M$ -- симметрическая, звездочкой обозначены элементы, получающиеся транспонированием верхнего треугольника матрицы.
+В ее третьей строке сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам; элементы упорядочены по возрастанию индексов, так что ролики одного колеса соседствуют. Матрица $\M$ -- симметрическая, звездой обозначены элементы, получающиеся транспонированием верхнего треугольника матрицы.
 
 Матрица связей:
 $$
 V = \begin{bmatrix}
-    \begin{matrix}
-        R\cos\theta                  & -R\sin\theta                  & 0                    \\[6pt]
-        R\sin\theta                  &  R\cos\theta                  & 0                    \\[6pt]
-        0                            & 0                             & \frac{1}{\Lambda}    \\[6pt]
-        \frac{R\sin\alpha_i}{l}      & -\frac{R\cos\alpha_i}{l}      & -\frac{R}{\Lambda l} \\[6pt]
-        \frac{R\cos\alpha_k}{\rho_k} &  \frac{R\sin\alpha_k}{\rho_k} & 0                    \\[6pt]
-    \end{matrix}   & \text{\huge 0}                \\[50pt]
-    \text{\huge 0} & \text{\huge E}_{N(n-1)} \quad \\[10pt]
-\end{bmatrix}.
+        \widetilde{V}  & O_1  \\[6pt]
+        O_2       & E         \\[6pt]
+    \end{bmatrix};
+\quad
+\widetilde{V} = \begin{bmatrix}
+        R\cos\theta                    & -R\sin\theta                    & 0                      \\[6pt]
+        R\sin\theta                    &  R\cos\theta                    & 0                      \\[6pt]
+        0                              & 0                               & \ddfrac{1}{\Lambda}    \\[6pt]
+        \ddfrac{R}{l}\sin\alpha_i      & -\ddfrac{R}{l}\cos\alpha_i      & -\ddfrac{R}{\Lambda l} \\[6pt]
+        \ddfrac{R}{\rho_k}\cos\alpha_k &  \ddfrac{R}{\rho_k}\sin\alpha_k & 0                      \\[6pt]
+    \end{bmatrix}
 $$
 
-Элементы матрицы кинетической энергии с учетом связей:
+Здесь $O_1$ и $O_2$ -- нулевые $(3+2n \times N(n-1))$- и $(N(n-1) \times 3)$-матрицы, $E$ -- единичная матрица размерности $N(n-1)$.
+
+Элементы матрицы кинетической энергии при учете связей:
 
 \begin{equation}\label{mstar}
     \begin{array}{rcl}
-        m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg),\vsp
-        m^*_{22} & = & MR^2 + \sum\limits_i \bigg(J\ddfrac{R^2}{l^2}\cos^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\sin^2\alpha_i\bigg),\vsp
-        m^*_{33} & = & \ddfrac{1}{\Lambda}(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}),\vsp
-        m^*_{12} & = & \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i,\vsp
-        m^*_{13} & = & \ddfrac{1}{\Lambda}\sum\limits_i %\bigg(-J\ddfrac{R^2}{l^2}\sin\alpha_i +
-        B\ddfrac{R\sin\chi_i}{\rho_i}\cos\alpha_i%\bigg)
-        ,\vsp
-        m^*_{23} & = & \ddfrac{1}{\Lambda}\sum\limits_i %\bigg(J\ddfrac{R^2}{l^2}\cos\alpha_i + 
-        B\ddfrac{R\sin\chi_i}{\rho_i}\sin\alpha_i%\bigg)
-        .\vsp
+        m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg)\quad(11 \leftrightarrow 22, \sin\alpha_i \leftrightarrow \cos\alpha_i)\vsp
+        m^*_{33} & = & \ddfrac{1}{\Lambda}\bigg(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}\bigg)\vsp
+        m^*_{12} & = & \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i\vsp
+        \ddfrac{m^*_{13}}{\cos\alpha_i} & = & \ddfrac{m^*_{23}}{\sin\alpha_i}\enspace=\enspace \ddfrac{1}{\Lambda}\sum\limits_i B\ddfrac{R}{\rho_i}\sin\chi_i
+        \vsp
     \end{array}
 \end{equation}
 
 Формальные импульсы $\vec{p} = \ddpd{L}{\dot{\vec{q}}}$:
 \begin{equation}\label{p}
     \begin{array}{rcl}
-        p_x & = & MR(\nu_1\cos\theta-\nu_2\sin\theta),\vsp
-        p_y & = & MR(\nu_1\sin\theta+\nu_2\cos\theta),\vsp
-        p_\theta & = & BR\sum\limits_i\ddfrac{\sin(\chi_i + \kappa_1)}{\rho_i}(\nu_1\cos\alpha_i + \nu_2\sin\alpha_i) + \ddfrac{I_S}{\Lambda}\nu_3 + B\sum\limits_s\sin(\chi_s)\nu_s,\vsp
-        p_{\chi_i} & = & J\ddfrac{R}{l}(\nu_1\sin\alpha_i - \nu_2\cos\alpha_i - \ddfrac{1}{\Lambda}\nu_3),\vsp
-        p_{\phi_{k1}} & = & \ddfrac{BR}{\rho_k}(\nu_1\cos\alpha_k + \nu_2\sin\alpha_k) + \ddfrac{B}{\Lambda}\nu_3\sin(\chi_k+\kappa_1),\vsp
-        p_{\phi_s} & = & \ddfrac{B}{\Lambda}\nu_3\sin\chi_s + B\nu_s.
+        p_x & = & MR\xi_-(\theta), \quad p_y \enspace = \enspace MR\eta_+(\theta)\vsp
+        p_\theta & = & BR\sum\limits_i\ddfrac{\sin\chi_i}{\rho_i}\xi_+(\alpha_i) + \ddfrac{I_S}{\Lambda}\nu_3 + B\sum\limits_s\sin(\chi_s)\nu_s\vsp
+        p_{\chi_i} & = & J\ddfrac{R}{l}(\eta_-(\alpha_i) - \ddfrac{1}{\Lambda}\nu_3)\vsp
+        p_{\phi_{k1}} & = & \ddfrac{BR}{\rho_k}\xi_+(\alpha_k)+\ddfrac{B}{\Lambda}\sin\chi_k\vsp
+        p_{\phi_s} & = & \ddfrac{B}{\Lambda}\nu_3\sin\chi_s + B\nu_s
     \end{array}
 \end{equation}
+где $\xi_\pm(\alpha) = \nu_1\cos\alpha \pm \nu_2\sin\theta$, $\eta_\pm(\alpha) = \nu_1\sin\alpha \pm \nu_2\cos\theta$
+\filbreak
 
 Линейные комбинации $P_\alpha$:
 \begin{equation}\label{bigP}
@@ -88,7 +88,7 @@ $$
 $$
 \sigma[f(\alpha,\chi)] = \sum\limits_{k=1}^{N} f(\alpha_k,\chi_k) \frac{\sin\chi_k}{\rho_k^3}
 $$
-Тогда скобки Пуассона в правой части имеют вид (звездочкой обозначена подстановка канонических формальных импульсов $p_i$):
+Тогда скобки Пуассона в правой части (\ref{Tatarinov}) имеют вид (звездочкой обозначена подстановка канонических формальных импульсов $p_i$):
 %; дополнительно введено обозначение $\tau_k = \ddfrac{\sin\chi_k}{\rho_k^2}$):
 \begin{eqnarray*}
 (\{P_1,P_2\})^* &=& (-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k})^* =
