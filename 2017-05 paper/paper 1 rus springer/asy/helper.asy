@@ -57,6 +57,6 @@ void drawdot(pair coords) {
         shift(coords)
          * scale(0.03)
          * unitcircle
-        , black
+        , white
     );
 }

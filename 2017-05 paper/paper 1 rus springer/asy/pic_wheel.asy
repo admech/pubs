@@ -9,17 +9,13 @@ unitsize(1.3cm);
     draw((-1.5,-1.4) -- (1.7,-1.4));
     
     pair contact_point = (0, -1.4);
-    label("$C_i$", contact_point + 0.2*(1, 1));
-    drawdot(contact_point);
 
 ////////////////////////////////////////////////
 // WHEEL HUB AND ROLLERS
 ////////////////////////////////////////////////
 
     path HUB = unitcircle;
-    draw(HUB, black);
-    label("$P_i$", 0.4*dr(pi/2 - pi/12));
-    drawdot((0,0));
+    draw(HUB, black + 1);
     
     path ROLLER_TEMPLATE = 
         (arc((0,0), 1.4, -135, -45)
@@ -31,24 +27,24 @@ unitsize(1.3cm);
     path ROLLER = 
         rotate(30) *
         ROLLER_TEMPLATE;
-    fill(ROLLER, lightgray + opacity(0.5));
+    fill(ROLLER, lightgray + opacity(0.5) + 1);
 
     real label_start_angle = pi/2 + pi/6 + pi/8;
     real label_radius = 1.7;
 
     label("1", -dr(label_start_angle - pi/32) * label_radius);
-    draw(ROLLER, black);
+    draw(ROLLER, black + 1);
     
     label("2", -dr(pi/2 + label_start_angle) * label_radius);
     path ROLLER_2 = rotate(90) * ROLLER;
-    draw(ROLLER_2, longdashed+gray);
+    draw(ROLLER_2, dashed+gray + 1);
     
     path ROLLER_3 = rotate(180) * ROLLER;
-    draw(ROLLER_3, longdashed+gray);
+    draw(ROLLER_3, dashed+gray + 1);
     
     label("n", -dr(3*pi/2 + label_start_angle - pi/8) * label_radius);
     path ROLLER_4 = rotate(270) * ROLLER;
-    draw(ROLLER_4, longdashed+gray);
+    draw(ROLLER_4, dashed+gray + 1);
 
 
 ////////////////////////////////////////////////
@@ -60,6 +56,7 @@ unitsize(1.3cm);
     
     label("$\vec{n}^z_i$", 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)));
     draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
+
 
 ////////////////////////////////////////////////
 // ANGLES
@@ -158,3 +155,13 @@ unitsize(1.3cm);
         draw(rho, dashed+heavygreen);
         addarrow(rho, heavygreen, Relative(0.3));
         addarrow(reverse(rho), heavygreen, Relative(0.3));
+
+////////////////////////////////////////////////
+// DOTS -- Should be done on top for PMM
+////////////////////////////////////////////////
+
+    label("$P_i$", 0.4*dr(pi/2 - pi/12));
+    drawdot((0,0));
+
+    label("$C_i$", contact_point + 0.2*(1, 1));
+    drawdot(contact_point);

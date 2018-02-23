@@ -71,13 +71,15 @@
 
 \makeatletter \@addtoreset{equation}{section} \makeatother
 \makeatletter
+
+% bibliography hacks
 \renewcommand{\@biblabel}[1]{#1. \hfill}
 \makeatother
-
+\addto\captionsrussian{\def\refname{Литература}}
+\renewcommand{\refname}{}
 
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
-\renewcommand{\refname}{}
 
 \begin{document}
 
@@ -90,6 +92,19 @@
 
 Движение симметричного экипажа на омни-колесах с массивными роликами
 
+\nocite{mecanum}
+\nocite{ZobovaTatarinovAspecty2006}
+\nocite{formalskii}
+\nocite{zobova2008svobodnye8020851}
+\nocite{ZobovaTatarinovPMM}
+\nocite{Martynenko2010}
+\nocite{borisov}
+\nocite{Williams2002}
+\nocite{Ashmore2002}
+\nocite{Tobolar}
+\nocite{KosenkoGerasimov}
+\nocite{Tatarinov}
+\nocite{Zobova2011}
 
 \vspace{1cm}
 \parbox{14cm}{
@@ -139,8 +154,9 @@
 \input{6_appendix}
 
 % \bibliographystyle{./springer/spmpsci}      % mathematics and physical sciences
-\bibliographystyle{plain}
+% \bibliographystyle{plain}
 % \bibliographystyle{./BibTeX-Styles/utf8gost705u}  %% стилевой файл для оформления по ГОСТу
+\bibliographystyle{./BibTeX-Styles/pmm}
 \bibliography{omni}   % name your BibTeX data base
 
 \input{7_graphs}

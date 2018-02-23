@@ -15,15 +15,10 @@ draw((-1.4 - delta,-1.5) -- (-1.4 - delta,1.7), arrow = Arrow(TeXHead));
 label("$Z$", (-1.6 - delta, -1.2));
 draw(shift(-1.4 - delta, -1.4) * scale(0.1) * unitcircle);
 
-label("$O$", (-1.2 - delta, -1.2));
-filldraw(shift(-1.4 - delta, -1.4) * DOT, black);
-
 // CART
 
 path PLATFORM = unitcircle;
-draw(PLATFORM, black);
-filldraw(DOT, black);
-label("$S(x, y)$", (-0.1, -0.2));
+draw(PLATFORM, black + 1);
 
 path WHEEL = shift(0, -1.2) * box((0.3,0.05), (-0.3,-0.05));
 real label_start_angle = pi/6 + pi/7;
@@ -32,17 +27,17 @@ real label_radius = 1.3;
 label("1", dr(label_start_angle) * label_radius);
 path WHEEL_1 = WHEEL;
 fill(WHEEL_1, mediumgray);
-draw(WHEEL_1, black);
+draw(WHEEL_1, black + 1);
 
 label("2", dr(2*pi/3 + label_start_angle) * label_radius);
 path WHEEL_2 = rotate(120) * WHEEL;
 fill(WHEEL_2, mediumgray);
-draw(WHEEL_2, black);
+draw(WHEEL_2, black + 1);
 
 label("N", dr(4*pi/3 + label_start_angle) * label_radius);
 path WHEEL_3 = rotate(240) * WHEEL;
 fill(WHEEL_3, mediumgray);
-draw(WHEEL_3, black);
+draw(WHEEL_3, black + 1);
 
 // LOCAL COORDINATES
 
@@ -99,4 +94,14 @@ draw(arc(
     chi_dist*dr(chi_angle) + 0.3*dr(chi_angle - pi/4),
     CW
 ), arrow=Arrow(TeXHead), red);
+
+////////////////////////////////////////////////
+// DOTS -- Should be done on top for PMM
+////////////////////////////////////////////////
+
+filldraw(DOT, white);
+label("$S(x, y)$", (-0.1, -0.2));
+
+label("$O$", (-1.2 - delta, -1.2));
+filldraw(shift(-1.4 - delta, -1.4) * DOT, white);
 
