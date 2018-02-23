@@ -23,7 +23,7 @@ $$ 2L^{*}  = \vec{\nu}^\mathrm{T} V^\mathrm{T}\M V\vec{\nu} = \vec{\nu}^\mathrm{
 $$
 \M^* = \begin{bmatrix}
         \left(\begin{matrix}&&\\&m^*_{ij}&\\&&\end{matrix}\right)_{3\times3} \quad & \left(\begin{matrix} 0&\ldots& 0 \\ 0&\ldots&0 \\ B\Lambda^{-1}\sin\chi_{12}&\ldots& B\Lambda^{-1}\sin\chi_{nN} \end{matrix}\right) \\[25pt]
-        \scalebox{1.5}{$\star$} & \begin{matrix} B & & \\ & \ddots & \\ & & B \end{matrix} \\
+        \scalebox{1.5}{$\star$} & \begin{matrix} B & &0 \\ & \ddots & \\ 0& & B \end{matrix} \\
     \end{bmatrix},
 $$
 
@@ -33,6 +33,7 @@ $$
 %\end{array} \right] \]
 Явные формулы для коэффициентов $m^*_{ij}$ главного минора $3\times3$ выписаны в приложении; отметим, что они зависят только от координат $\chi_i$, которые входят в дроби вида $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие разрывы второго рода при смене роликов (см. равенство (\ref{constraint_roller_contact})). Этот минор соответствует псевдоскоростям $\nu_1,\ \nu_2,\ \nu_3$. Остальные элементы матрицы $\M^*$
 соответствуют скоростям свободных роликoв $\nu_s$, для которых $\chi_{kl} = \chi_k+\kappa_l$ --- угол между вертикалью и осью ролика. Индекс $k = 1,\dots,N$ означает номер колеса, индекс $l = 2,\ldots, n$ -- номер cвободного ролика на колесе ($l = 1$ -- ролик, находящийся в контакте). 
+Звездой $\star$ обозначен минор $N(n-1)\times 3$, равный транспонированному минору $3\times N(n-1)$ над главной диагональю.
 
 Первое слагаемое в левой части равенства (\ref{Tatarinov}) получается дифференцированием лагранжиана и подстановкой связей:
 \begin{equation}\label{DLStarDnuDdt}
