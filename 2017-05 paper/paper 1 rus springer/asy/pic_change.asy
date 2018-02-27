@@ -12,7 +12,7 @@ void drawdot3d(triple coords) {
     draw(circle(coords, 0.063, persp), black);
 }
 
-draw(-X--2X ^^ -2Y--2Y ^^ -Z--1.6Z, heavygray);
+draw(-X--2X ^^ -2Y--2Y ^^ -Z--1.9Z, heavygray);
 
 label("$\chi_{-}$", 1.8(X+Z)-Y);
 draw(plane(3X,3Z,Y-1.5(X+Z)), blue);
@@ -20,9 +20,9 @@ draw(plane(3X,3Z,Y-1.5(X+Z)), blue);
 label("$\chi_{+}$", 1.8(-X+Z)+Y);
 draw(plane(3X,3Z,-Y-1.5(X+Z)), blue);
 
-label("$\chi_i$", 2.2Y);
-label("$q$", 2.4X);
-label("$\nu$", 2Z);
+label("$\chi_i$", 1.9Y - 0.8X + 0.1Z);
+label("$q$", 1.75X - 0.3Y + 0.2Z);
+label("$\nu$", 2Z + 0.35Y);
 
 drawdot3d(O);
 

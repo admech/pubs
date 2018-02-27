@@ -32,17 +32,17 @@ unitsize(1.3cm);
     real label_start_angle = pi/2 + pi/6 + pi/8;
     real label_radius = 1.7;
 
-    label("1", -dr(label_start_angle - pi/32) * label_radius);
+    label("$1$", -dr(label_start_angle - pi/32) * label_radius);
     draw(ROLLER, black + 1);
     
-    label("2", -dr(pi/2 + label_start_angle) * label_radius);
+    label("$2$", -dr(pi/2 + label_start_angle) * label_radius);
     path ROLLER_2 = rotate(90) * ROLLER;
     draw(ROLLER_2, dashed+gray + 1);
     
     path ROLLER_3 = rotate(180) * ROLLER;
     draw(ROLLER_3, dashed+gray + 1);
     
-    label("n", -dr(3*pi/2 + label_start_angle - pi/8) * label_radius);
+    label("$n$", -dr(3*pi/2 + label_start_angle - pi/8) * label_radius);
     path ROLLER_4 = rotate(270) * ROLLER;
     draw(ROLLER_4, dashed+gray + 1);
 
@@ -51,11 +51,11 @@ unitsize(1.3cm);
 // LOCAL COORDINATES
 ////////////////////////////////////////////////
 
-    label("$\vec{n}^\perp_i$", 2.3*(cos(pi/6),sin(pi/6)));
-    draw((0,0) -- 2*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
+    label("$\vec{\mathbf{n}}^\perp_i$", 2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) + (0.2, 0.1));
+    draw((0,0) -- 2.3*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
     
-    label("$\vec{n}^z_i$", 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)));
-    draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
+    label("$\vec{\mathbf{n}}^z_i$", 2.3*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.5));
+    draw((0,0) -- 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
 
 ////////////////////////////////////////////////

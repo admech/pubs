@@ -6,8 +6,8 @@ unitsize(1.3cm);
 
 real delta = 0.7;
 
-label("$X$", (2.1,-1.4));
-draw((-1.5 - delta,-1.4) -- (1.95,-1.4), arrow = Arrow(TeXHead));
+label("$X$", (1.7,-1.75));
+draw((-1.5 - delta,-1.4) -- (1.8,-1.4), arrow = Arrow(TeXHead));
 
 label("$Y$", (-1.6 - delta, 1.6));
 draw((-1.4 - delta,-1.5) -- (-1.4 - delta,1.7), arrow = Arrow(TeXHead));
@@ -24,27 +24,27 @@ path WHEEL = shift(0, -1.2) * box((0.3,0.05), (-0.3,-0.05));
 real label_start_angle = pi/6 + pi/7;
 real label_radius = 1.3;
 
-label("1", dr(label_start_angle) * label_radius);
+label("$1$", dr(label_start_angle) * label_radius);
 path WHEEL_1 = WHEEL;
 fill(WHEEL_1, mediumgray);
 draw(WHEEL_1, black + 1);
 
-label("2", dr(2*pi/3 + label_start_angle) * label_radius);
+label("$2$", dr(2*pi/3 + label_start_angle) * label_radius);
 path WHEEL_2 = rotate(120) * WHEEL;
 fill(WHEEL_2, mediumgray);
 draw(WHEEL_2, black + 1);
 
-label("N", dr(4*pi/3 + label_start_angle) * label_radius);
+label("$N$", dr(4*pi/3 + label_start_angle) * label_radius);
 path WHEEL_3 = rotate(240) * WHEEL;
 fill(WHEEL_3, mediumgray);
 draw(WHEEL_3, black + 1);
 
 // LOCAL COORDINATES
 
-label("$\xi$", 2.2*(cos(pi/6),sin(pi/6)));
+label("$\xi$", 2.2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) - (0.1, 0.15));
 draw((0,0) -- 2*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
 
-label("$\eta$", 1.7*(cos(pi/2+pi/6),sin(pi/2+pi/6)));
+label("$\eta$", 1.7*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.2));
 draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
 // ANGLES
@@ -65,14 +65,14 @@ addarrow(R_dim_line, black);
 addarrow(reverse(R_dim_line), black);
 
 // also n_i vector here
-label("$\vec{n}_i$", 
-    ((R_dim_line_end*1.5) + (-0.1, 0.3))
+label("$\vec{\mathbf{n}}_i$", 
+    ((R_dim_line_end*1.5) + (0, 0.35))
 );
 draw(
     R_dim_line_end
     --
-    (R_dim_line_end*1.5)
-    , arrow=Arrow(TeXHead)
+    (R_dim_line_end*1.7)
+    , arrow=Arrow(SimpleHead)
     , black
 );
 
@@ -102,6 +102,6 @@ draw(arc(
 filldraw(DOT, white);
 label("$S(x, y)$", (-0.1, -0.2));
 
-label("$O$", (-1.2 - delta, -1.2));
+label("$O$", (-1.2 - delta, -1.2) - (0.4, 0.4));
 filldraw(shift(-1.4 - delta, -1.4) * DOT, white);
 

@@ -34,11 +34,12 @@ fill(LAST_ROLLER, lightgray + opacity(0.5));
 
 // LOCAL COORDINATES
 
-label("$\vec{n}^\perp_i$", 2.3*(cos(pi/6),sin(pi/6)));
-draw((0,0) -- 2*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
+    label("$\vec{\mathbf{n}}^\perp_i$", 2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) + (0.2, 0.1));
+    draw((0,0) -- 2.3*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
+    
+    label("$\vec{\mathbf{n}}^z_i$", 2.3*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.5));
+    draw((0,0) -- 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
-label("$\vec{n}^z_i$", 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)));
-draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
 // ANGLES
 
