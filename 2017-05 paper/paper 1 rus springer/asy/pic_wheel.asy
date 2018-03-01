@@ -32,10 +32,10 @@ unitsize(1.3cm);
     real label_start_angle = pi/2 + pi/6 + pi/8;
     real label_radius = 1.7;
 
-    label("$1$", -dr(label_start_angle - pi/32) * label_radius);
+    label("$\textit{1}$", -dr(label_start_angle - pi/32) * label_radius);
     draw(ROLLER, black + 1);
     
-    label("$2$", -dr(pi/2 + label_start_angle) * label_radius);
+    label("$\textit{2}$", -dr(pi/2 + label_start_angle) * label_radius);
     path ROLLER_2 = rotate(90) * ROLLER;
     draw(ROLLER_2, dashed+gray + 1);
     
@@ -62,7 +62,7 @@ unitsize(1.3cm);
 // ANGLES
 ////////////////////////////////////////////////
 
-    label("$\kappa_j$", 0.8*(cos(-2*pi/8),sin(-2*pi/8)), blue);
+    label("$\kappa_j$", 0.82*(cos(-2*pi/8-0.05),sin(-2*pi/8-0.05)), blue);
     draw((0,0) -- -1.4*(cos(pi/2+pi/6),sin(pi/2+pi/6)), dashed+gray);
     draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), dashed+gray);
     draw(arc(

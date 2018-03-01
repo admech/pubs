@@ -24,7 +24,7 @@ draw(FIRST_ROLLER, black + 1);
 fill(FIRST_ROLLER, lightgray + opacity(0.5));
 
 for (int i = 1; i < 5; ++i) {
-    draw(rotate(30 + 60*i) * ROLLER_TEMPLATE, longdashed+gray + 1);
+    draw(rotate(30 + 60*i) * ROLLER_TEMPLATE, dashed+gray + 1);
 }
 
 path LAST_ROLLER = rotate(30+60*5) * ROLLER_TEMPLATE;

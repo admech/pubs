@@ -24,12 +24,12 @@ path WHEEL = shift(0, -1.2) * box((0.3,0.05), (-0.3,-0.05));
 real label_start_angle = pi/6 + pi/7;
 real label_radius = 1.3;
 
-label("$1$", dr(label_start_angle) * label_radius);
+label("$\textit{1}$", dr(label_start_angle) * label_radius);
 path WHEEL_1 = WHEEL;
 fill(WHEEL_1, mediumgray);
 draw(WHEEL_1, black + 1);
 
-label("$2$", dr(2*pi/3 + label_start_angle) * label_radius);
+label("$\textit{2}$", dr(2*pi/3 + label_start_angle) * label_radius);
 path WHEEL_2 = rotate(120) * WHEEL;
 fill(WHEEL_2, mediumgray);
 draw(WHEEL_2, black + 1);

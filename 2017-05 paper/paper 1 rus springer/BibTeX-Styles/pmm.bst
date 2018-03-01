@@ -761,7 +761,7 @@ FUNCTION {format.bvolume}
         { bbl.of space.word * series emphasize * }
       if$
       "volume and number" number either.or.check
-    }
+    }\textwidth=5cm
   if$
 }
 
@@ -1063,7 +1063,7 @@ FUNCTION {article}
   address output %%%%%%%% добавлено
   format.date output
   new.block
-  format.volume output
+  format.volume 
   format.number output
   new.block
   format.pages.page output
