@@ -26,7 +26,7 @@ draw(plane(3X,3Z,-Y-1.5(X+Z)), blue);
 
 label("$\chi_i$", 1.9Y - 0.8X + 0.0Z, p=fontsize(11pt));
 label("$\mathbf{q}$", 1.85X - 0.2Y + 0.15Z, p=fontsize(8.75pt));
-label("$\mathbf{\nu}$", 2Z + 0.23Y);
+label("\textbf{\textupsilon}", 2Z + 0.23Y, p=fontsize(10pt));
 
 drawdot3d(O);
 

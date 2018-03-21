@@ -3,6 +3,13 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 
+% Specially for PMM: to have straight (upright) greek letters for vectors
+%--------------------------------------
+% \usepackage{upgreek}
+% \usepackage[artemisia]{textgreek}
+\usepackage[euler]{textgreek} %use upsilon instead of nu
+%--------------------------------------
+
 % Russian-specific packages
 %--------------------------------------
 \usepackage[T2A]{fontenc}
@@ -107,6 +114,7 @@
 \newcommand\Rhs[0]{\mathcal{R}} % RHS
 \newcommand\Prhs[0]{\mathcal{P}} % The family of matrices for RHS
 \newcommand\prhs[0]{\mathbf{p}} % Poisson brackets
+\newcommand\vnu[0]{\text{\textbf{\textupsilon}}} % Upright greek vector nu for PMM
 %--------------------------------------
 
 % change line spacing mid doc (affects global line spacing)
@@ -148,3 +156,4 @@
       \endlist}
 \renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
 \makeatother
+

@@ -27,6 +27,7 @@
 // Specially for PMM:
 //
 settings.gray=true;
+usepackage("textgreek", "euler");
 //
 ////////////////////////////////////////////////////////
 

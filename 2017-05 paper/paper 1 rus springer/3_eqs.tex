@@ -17,7 +17,7 @@ $$\hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i}$$
 \end{equation}
 %\sout{Здесь полная масса системы -- $M = \mathring{M} + Nnm$, момент инерции всей системы относительно $SZ$ -- $I_S = \mathring{I_S} + Nn(\frac{A+B}{2} + mR^2 + \frac{mr^2}{2})$, момент инерции колеса (с роликами) относительно его оси $J = \mathring{J} + n(A + mr^2)$, где $\mathring{M}, \mathring{I_S}, \mathring{J}$ -- масса и моменты инерции системы и колес без учета роликов; $m$ -- масса ролика; $A$ -- момент инерции ролика относительно любой оси, перпендикулярной его оси собственного вращения и проходящей через его центр масс; $r$ -- радиус диска колеса (расстояние от центра колеса до центра ролика),}
 Здесь $M,\ I_S,\ J$ --- массово-инерционные характеристики экипажа (см. Приложение), $B$ --- момент инерции ролика относительно его оси вращения. Лагранжиан при учете связей определяется соотношением:
-$$ 2L^{*}  = \vec{\nu}^\mathrm{T} V^\mathrm{T}\M V\vec{\nu} = \vec{\nu}^\mathrm{T} \M^*(\chi_i)\vec{\nu} $$
+$$ 2L^{*}  = \vnu^\mathrm{T} V^\mathrm{T}\M V\vnu = \vnu^\mathrm{T} \M^*(\chi_i)\vnu $$
 Структура симметрической матрицы $\M^*$ следующая:
 $$
 \M^* = 
@@ -64,13 +64,13 @@ $$
 
 Первое слагаемое в левой части равенства (\ref{Tatarinov}) получается дифференцированием лагранжиана и подстановкой связей:
 \begin{equation}\label{DLStarDnuDdt}
-    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} = \frac{d}{dt}(\M^*(\chi)\vec{\nu}_\alpha) = 
-    \M^*(\chi_i)\dot{\vec{\nu}}_\alpha +
-    \left(\frac{d}{dt}(\M^*(\chi))\vec{\nu}\right)_\alpha =
-    \M^*(\chi_i)\dot{\vec{\nu}}_\alpha +
-    \left(\sum_{i=1}^{N}\M^*_i(V\vec{\nu})_{3+i}\vec{\nu}\right)_\alpha
+    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} = \frac{d}{dt}(\M^*(\chi)\vnu_\alpha) = 
+    \M^*(\chi_i)\dot{\vnu}_\alpha +
+    \left(\frac{d}{dt}(\M^*(\chi))\vnu\right)_\alpha =
+    \M^*(\chi_i)\dot{\vnu}_\alpha +
+    \left(\sum_{i=1}^{N}\M^*_i(V\vnu)_{3+i}\vnu\right)_\alpha
 \end{equation}
-где $\M^*_i = \ddfrac{\partial \M^*}{\partial \chi_i}.$ Обратим внимание, что слагаемые из второй группы, соответствующие свободным роликам --- $\bigg(\M^*_i(V\vec{\nu})_{3+i}\vec{\nu})\bigg)_\alpha, \enspace \alpha = 4,\dots,K$, --- имеют вид
+где $\M^*_i = \ddfrac{\partial \M^*}{\partial \chi_i}.$ Обратим внимание, что слагаемые из второй группы, соответствующие свободным роликам --- $\bigg(\M^*_i(V\vnu)_{3+i}\vnu)\bigg)_\alpha, \enspace \alpha = 4,\dots,K$, --- имеют вид
 \begin{equation}
     \nu_3 \ddfrac{B}{\Lambda} \left( -\ddfrac{\nu_3 R}{l \Lambda}-\ddfrac{ \nu_2 R}{l}\cos\alpha_i+\ddfrac{ \nu_1 R}{l}\sin\alpha_i\right)\cos\chi_{ij} = \nu_3\frac{B}{\Lambda}(\dot{\chi_i})^*\cos\chi_{ij},
 \end{equation}
@@ -88,17 +88,17 @@ $$
 
 Поскольку коэффициенты  лагранжиана $L^{*}$ зависят только от координаты $\chi_i$, его скобки Пуассона с $P_1$, $P_2$, $P_3$  --- квадратичные формы псевдоскоростей, пропорциональные моменту инерции ролика $B$ с коэффициентами, зависящими от $\chi_i$:
 $$
-\{P_1, L^*\} = -\frac{\partial P_1}{\partial p_{\chi_i}}\frac{\partial L^*}{\partial \chi_i} = -\frac{R}{2l}\vec{\nu}^\mathrm{T}\M^*_i\vec{\nu}\sin\alpha_i,
+\{P_1, L^*\} = -\frac{\partial P_1}{\partial p_{\chi_i}}\frac{\partial L^*}{\partial \chi_i} = -\frac{R}{2l}\vnu^\mathrm{T}\M^*_i\vnu\sin\alpha_i,
 $$
 $$
-\{P_2, L^*\} = \frac{R}{2l}\vec{\nu}^\mathrm{T}\M^*_i\vec{\nu}\cos\alpha_i,\  
-\{P_3, L^*\} = \frac{R}{2l\Lambda}\vec{\nu}^\mathrm{T}\M^*_i\vec{\nu},\quad \{P_s,L^*\} = 0, s>3
+\{P_2, L^*\} = \frac{R}{2l}\vnu^\mathrm{T}\M^*_i\vnu\cos\alpha_i,\  
+\{P_3, L^*\} = \frac{R}{2l\Lambda}\vnu^\mathrm{T}\M^*_i\vnu,\quad \{P_s,L^*\} = 0, s>3
 $$
 
 Остается рассмотреть правую часть (\ref{Tatarinov}): суммы $\{P_\alpha, \nu_\mu P_\mu\}$ отличны от нуля лишь в уравнениях для $\alpha = 1,2,3$ (см. Приложение).
 %, и после подстановки формальных импульсов $p_i$ их можно записать 
 
-%как $$\ddfrac{MR^2}{\Lambda}(\nu_2\nu_3, -\nu_1\nu_3, 0, 0, \ldots, 0)^T - BR^2 \vec{\nu}^T (\Prhs_\alpha)^T \vec{\nu},$$ где матрицы $\Prhs_\alpha$ квадратичных форм задаются следующим образом:
+%как $$\ddfrac{MR^2}{\Lambda}(\nu_2\nu_3, -\nu_1\nu_3, 0, 0, \ldots, 0)^T - BR^2 \vnu^T (\Prhs_\alpha)^T \vnu,$$ где матрицы $\Prhs_\alpha$ квадратичных форм задаются следующим образом:
 
 %$$
 %\tau_k = \ddfrac{\sin\chi_k}{\rho_k^2}, \quad s_k = ( %R\frac{\cos\alpha_k}{\rho_k}, R\frac{\sin\alpha_k}{\rho_k}, %\frac{1}{\Lambda}\sin\chi_k )\tau_k,
@@ -119,7 +119,7 @@ $$
 Собирая вместе выражения для слагаемых (\ref{Tatarinov}) и пользуясь обозначениями из Приложения, окончательно получим следующую структуру уравнений:
 % \def\superDuperSubscript{\the\fontdimen16\textfont2} -- could not use the variable below
 \begin{eqnarray*}
-\M^*\dot{\vec{\nu}} = 
+\M^*\dot{\vnu} = 
 MR^2\Lambda^{-1}\left(\begin{matrix}
     \nu_2\nu_3\\
     -\nu_1\nu_3\\
@@ -129,7 +129,7 @@ MR^2\Lambda^{-1}\left(\begin{matrix}
     \\
     0
 \end{matrix}\right)
-+\vec{\nu}^\mathrm{T}\left(
++\vnu^\mathrm{T}\left(
 \frac{R}{2l}
 \left(\begin{matrix}
     -\M^*_i \sin\alpha_i\\
@@ -152,7 +152,7 @@ MR^2\Lambda^{-1}\left(\begin{matrix}
     0
 \end{matrix}\right)
 \right)
-\vec{\nu}
+\vnu
 -B\left(\begin{matrix}
     \scalebox{1.5}{$\star$}\\
     \scalebox{1.5}{$\star$}\\
@@ -205,8 +205,8 @@ $$
 
 Структура уравнений позволяет выявить следующие свойства:
 \begin{enumerate}[wide]
-    \item Система допускает интеграл энергии $\frac{1}{2}\vec{\nu}^\mathrm{T}\M^*(\chi_i)\vec{\nu} = h = \mathrm{const}$ в силу общей теоремы об изменении полной механической энергии: так как система стеснена автономными идеальными связями, а силы консервативны, то полная энергия (в нашем случае она равна кинетической энергии) сохраняется.
-    % Доказательство этого факта можно провести двумя способами. Первый основан на общей теореме об изменении полной механической энергии: так как система стеснена автономными идеальными связями, а силы консервативны, то полная энергия (в нашем случае она равна кинетической энергии) сохраняется. Второй способ основан на стандартном приеме: умножение каждого из уравнений на $\nu_\alpha$ и их сложение. Действительно, левая часть вместе со второй группой слагаемых в правой части дадут полный дифференциал выражения $\vec{\nu}^\mathrm{T}\M^*(\chi_i)\vec{\nu}$, так как $\sum\limits_{\alpha}\{\nu_\alpha P_\alpha, L^*\} = \vec{\nu}^\mathrm{T} \frac{\partial\M^*}{\partial \chi_i}\dot{\chi_i}\vec{\nu}$. Слагаемые из правой части уравнений (\ref{Tatarinov}) при суммировании дадут тождественный ноль: $\sum\limits_{\alpha,\mu}\{\nu_\alpha P_\alpha, \nu_\mu P_\mu\} = 0$.
+    \item Система допускает интеграл энергии $\frac{1}{2}\vnu^\mathrm{T}\M^*(\chi_i)\vnu = h = \mathrm{const}$ в силу общей теоремы об изменении полной механической энергии: так как система стеснена автономными идеальными связями, а силы консервативны, то полная энергия (в нашем случае она равна кинетической энергии) сохраняется.
+    % Доказательство этого факта можно провести двумя способами. Первый основан на общей теореме об изменении полной механической энергии: так как система стеснена автономными идеальными связями, а силы консервативны, то полная энергия (в нашем случае она равна кинетической энергии) сохраняется. Второй способ основан на стандартном приеме: умножение каждого из уравнений на $\nu_\alpha$ и их сложение. Действительно, левая часть вместе со второй группой слагаемых в правой части дадут полный дифференциал выражения $\vnu^\mathrm{T}\M^*(\chi_i)\vnu$, так как $\sum\limits_{\alpha}\{\nu_\alpha P_\alpha, L^*\} = \vnu^\mathrm{T} \frac{\partial\M^*}{\partial \chi_i}\dot{\chi_i}\vnu$. Слагаемые из правой части уравнений (\ref{Tatarinov}) при суммировании дадут тождественный ноль: $\sum\limits_{\alpha,\mu}\{\nu_\alpha P_\alpha, \nu_\mu P_\mu\} = 0$.
     
     \item В случае, если платформа экипажа неподвижна, т.е. $\nu_1 = \nu_2 = \nu_3 = 0$, свободные ролики сохраняют свою начальную угловую скорость: $\nu_s = \mathrm{const}$, чего и следовало ожидать.
    
@@ -222,6 +222,6 @@ $$
     \nu_s + \ddfrac{1}{\Lambda}\sin\chi_{ij}\nu_3 = \const
     \end{equation}
     Скорость вращения платформы $\nu_3$ связана со скоростями собственного вращения свободных роликов. В частности, вращение экипажа вокруг вертикальной оси, проходящей через его центр ($\nu_1(0) = 0, \nu_2(0) = 0, \nu_3(0) \neq 0$), неравномерно, в отличие от выводов, основанных на безынерционной модели.
-    \item Одновременное изменение начальных значений всех псевдоскоростей $\vec{\nu} \rightarrow \lambda\vec{\nu}, \lambda \neq 0$ умножением на число, отличное от нуля, эквивалентно замене времени $t \rightarrow \lambda t$.
+    \item Одновременное изменение начальных значений всех псевдоскоростей $\vnu \rightarrow \lambda\vnu, \lambda \neq 0$ умножением на число, отличное от нуля, эквивалентно замене времени $t \rightarrow \lambda t$.
 \end{enumerate}
 
