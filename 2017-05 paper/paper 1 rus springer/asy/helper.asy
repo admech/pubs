@@ -60,3 +60,7 @@ void drawdot(pair coords) {
         , white
     );
 }
+
+pen fatdashed=linetype(new real[] {8,4});
+
+pen mydashdotted=linetype(new real[] {8,4,2,4});

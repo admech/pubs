@@ -41,10 +41,10 @@ draw(WHEEL_3, black + 1);
 
 // LOCAL COORDINATES
 
-label("$\xi$", 2.2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) - (0.1, 0.15));
+label("$\xi$", 2.2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) - (0.1, 0.25));
 draw((0,0) -- 2*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
 
-label("$\eta$", 1.7*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.2));
+label("$\eta$", 1.7*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) + (0.0, -0.3));
 draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
 // ANGLES
@@ -52,7 +52,7 @@ draw((0,0) -- 1.5*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 label("$\alpha_i$", 0.65*(cos(pi/4+pi/6),sin(pi/4+pi/6)), blue);
 pair R_dim_line_end = 1.2*dr(pi-pi/6);
 path R_dim_line = (0,0) -- R_dim_line_end;
-draw(R_dim_line, dashed+gray);
+draw(R_dim_line, mydashdotted+gray);
 draw(arc(
     (0,0),
     0.5*(cos(pi/6),sin(pi/6)),
@@ -65,7 +65,7 @@ addarrow(R_dim_line, black);
 addarrow(reverse(R_dim_line), black);
 
 // also n_i vector here
-label("$\vec{\mathbf{n}}_i$", 
+label("$\mathbf{n}_i$", 
     ((R_dim_line_end*1.5) + (0, 0.35))
 );
 draw(
@@ -78,7 +78,7 @@ draw(
 
 
 label("$\theta$", 0.75*(cos(-pi/12+pi/6),sin(-pi/12+pi/6)), heavygreen);
-draw((0,0) -- (1.2,0), dashed+gray);
+draw((0,0) -- (1.2,0), mydashdotted+gray);
 draw(arc(
     (0,0),
     0.6*(1,0),
