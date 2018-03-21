@@ -20,19 +20,47 @@ $$\hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i}$$
 $$ 2L^{*}  = \vec{\nu}^\mathrm{T} V^\mathrm{T}\M V\vec{\nu} = \vec{\nu}^\mathrm{T} \M^*(\chi_i)\vec{\nu} $$
 Структура симметрической матрицы $\M^*$ следующая:
 $$
-\M^* = \begin{bmatrix}
-        \left(\begin{matrix}&&\\&m^*_{ij}&\\&&\end{matrix}\right)_{3\times3} \quad & \left(\begin{matrix} 0&\ldots& 0 \\ 0&\ldots&0 \\ B\Lambda^{-1}\sin\chi_{12}&\ldots& B\Lambda^{-1}\sin\chi_{nN} \end{matrix}\right) \\[25pt]
-        \scalebox{1.5}{$\star$} & \begin{matrix} B & &0 \\ & \ddots & \\ 0& & B \end{matrix} \\
-    \end{bmatrix},
+\M^* = 
+    \begin{bmatrix}
+        \widetilde{\M}^*_{11} & \widetilde{\M}^*_{12} \\
+        \widetilde{\M}^{*T}_{12} & \widetilde{\M}^*_{22} \\[4pt]
+    \end{bmatrix}
+\vsp
 $$
+$$
+\widetilde{\M}^*_{11} = 
+    \left(
+        m^*_{ij}
+    \right)_{3\times3},
+\qquad
+\widetilde{\M}^*_{22} = 
+    BE_{N(n-1) \times N(n-1)}
+\vsp
+$$
+$$
+\widetilde{\M}^*_{12} = 
+    \begin{bmatrix}
+        0&\ldots& 0 \\
+        0&\ldots&0 \\
+        B\Lambda^{-1}\sin\chi_{12}&\ldots& B\Lambda^{-1}\sin\chi_{nN}\\[4pt]
+    \end{bmatrix}_{3\times N(n-1)}
+\vsp
+$$
+где $E_{N(n-1) \times N(n-1)}$ --- единичная матрица.
+
+% $$
+% \M^* = \begin{bmatrix}
+%         \left(\begin{matrix}&&\\&m^*_{ij}&\\&&\end{matrix}\right)_{3\times3} \quad & \left(\begin{matrix} 0&\ldots& 0 \\ 0&\ldots&0 \\ B\Lambda^{-1}\sin\chi_{12}&\ldots& B\Lambda^{-1}\sin\chi_{nN} \end{matrix}\right) \\[25pt]
+%         \scalebox{1.5}{$\star$} & \begin{matrix} B & &0 \\ & \ddots & \\ 0& & B \end{matrix} \\
+%     \end{bmatrix},
+% $$
 
 %\[ \M^* = \left[ \begin{array}{c|c}
 %m^* & c \\ \cline{1-2}
 %c^\mathrm{T} & b
 %\end{array} \right] \]
-Явные формулы для коэффициентов $m^*_{ij}$ главного минора $3\times3$ выписаны в Приложении; отметим, что они зависят только от координат $\chi_i$, которые входят в отношения $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие разрывы второго рода при смене роликов, т.е. при переходе с одного ролика на другой (см. равенство (\ref{constraint_roller_contact})). Этот минор соответствует псевдоскоростям $\nu_1,\ \nu_2,\ \nu_3$. Остальные элементы матрицы $\M^*$
-соответствуют псевдоскоростям свободных роликoв $\nu_s$, для которых $\chi_{kl} = \chi_k+\kappa_l$ --- угол между вертикалью и осью ролика. Индекс $k = 1,\dots,N$ означает номер колеса, индекс $l = 2,\ldots, n$ -- номер cвободного ролика на колесе ($l = 1$ -- ролик, находящийся в контакте). 
-Крупной звездой $\star$ обозначен минор $N(n-1)\times 3$, равный транспонированному минору $3\times N(n-1)$ над главной диагональю.
+Явные формулы для элементов матрицы $\widetilde{\M}^*_{11}$ выписаны в Приложении; отметим, что они зависят только от координат $\chi_i$, которые входят в отношения $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие разрывы второго рода при смене роликов, т.е. при переходе с одного ролика на другой (см. равенство (\ref{constraint_roller_contact})). Эта матрица соответствует псевдоскоростям $\nu_1,\ \nu_2,\ \nu_3$. Остальные элементы матрицы $\M^*$
+соответствуют псевдоскоростям свободных роликoв $\nu_s$, для которых $\chi_{kl} = \chi_k+\kappa_l$ --- угол между вертикалью и осью ролика. Индекс $k = 1,\dots,N$ означает номер колеса, индекс $l = 2,\ldots, n$ -- номер cвободного ролика на колесе ($l = 1$ --- ролик, находящийся в контакте).
 
 Первое слагаемое в левой части равенства (\ref{Tatarinov}) получается дифференцированием лагранжиана и подстановкой связей:
 \begin{equation}\label{DLStarDnuDdt}
