@@ -1,0 +1,188 @@
+\RequirePackage{fix-cm}
+
+\documentclass[12pt]{extarticle}
+
+% \smartqed  % flush right qed marks, e.g. at end of proof
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Specially for PMM: to have straight (upright) greek letters for vectors
+%--------------------------------------
+% \usepackage{upgreek}
+% \usepackage[artemisia]{textgreek}
+\usepackage[euler]{textgreek} %use upsilon instead of nu
+%--------------------------------------
+
+% Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%--------------------------------------
+
+% Asymptote for pictures
+%--------------------------------------
+\usepackage{asymptote} %% comes with options inline and attach
+%--------------------------------------
+
+% graphicx for graphs
+%--------------------------------------
+\usepackage{graphicx}
+%--------------------------------------
+
+% so that it was possible to fix a figure's placement with [H]: \begin{figure}[H]
+%--------------------------------------
+\usepackage{float}
+%--------------------------------------
+
+% to put Fig.N on the margins
+%-------------------------------------
+\usepackage{marginnote}
+\reversemarginpar
+%-------------------------------------
+
+
+%--------------------------------------
+% Specially for PMM: make all imported EPS grayscale:
+%--------------------------------------
+\usepackage[gray]{epspdfconversion}
+%--------------------------------------
+
+% \usepackage{subfig} % incompatible with subcaption package
+% \graphicspath{ % not used here
+    % {./pic/,./asy/}
+% }
+%--------------------------------------
+
+% subcaption for many figures under one big caption
+% each having its own small caption
+%--------------------------------------
+%\usepackage{caption}
+%\usepackage{subcaption}
+%--------------------------------------
+
+% so that refs were [1-10], not [1,2,3,4,5,...]
+%--------------------------------------
+\usepackage{cite}
+%--------------------------------------
+
+% to get \bigstar
+%--------------------------------------
+\usepackage{amssymb}
+%--------------------------------------
+
+% \ddfrac command to show big fractions, not cramped up
+% https://tex.stackexchange.com/questions/173899/
+%--------------------------------------
+\newcommand\ddfrac[2]{\displaystyle\frac{\displaystyle #1}{\displaystyle #2}}
+%--------------------------------------
+
+% \vsp command to make a spacey newline
+% useful for equations arrays
+%--------------------------------------
+\newcommand\vsp[1][10]{\\[#1pt]}
+%--------------------------------------
+
+% to customize itemize
+%--------------------------------------
+\usepackage{enumitem}
+%--------------------------------------
+
+% to set text width
+%--------------------------------------
+% \usepackage{geometry}
+\usepackage{changepage}
+%--------------------------------------
+
+
+
+% partial derivatives (can \usepackage{physics}, but only one command so far, so no)
+%--------------------------------------
+\newcommand\pd[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\ddpd[2]{\ddfrac{\partial #1}{\partial #2}}
+\newcommand\ddt[1]{\frac{d #1}{dt}}
+\newcommand\ddddt[1]{\ddfrac{d #1}{dt}}
+%--------------------------------------
+
+% unbreakable space parenthesized reference
+%--------------------------------------
+\newcommand\upr[1]{~(\ref{#1})}
+%--------------------------------------
+
+% Nice letters
+%--------------------------------------
+\newcommand\M[0]{\mathcal{M}} % Matrix of intertia
+\newcommand\const{\mathrm{const}} %константа
+\newcommand\AntiU[0]{\mathcal{U}} % Helper antisymmetric matrix for eqs' RHS
+\newcommand\Rhs[0]{\mathcal{R}} % RHS
+\newcommand\Prhs[0]{\mathcal{P}} % The family of matrices for RHS
+\newcommand\prhs[0]{\mathbf{p}} % Poisson brackets
+\newcommand\vnu[0]{\text{\textbf{\textupsilon}}} % Upright greek vector nu for PMM
+%--------------------------------------
+
+% change line spacing mid doc (affects global line spacing)
+%--------------------------------------
+% \usepackage{setspace}
+%--------------------------------------
+
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+%\renewcommand{\figurename}{Фиг.}
+\usepackage[labelsep=period]{caption}
+\addto\captionsrussian{\renewcommand{\figurename}{Фиг. }}
+
+\newtheorem{stmt}{Утверждение}
+\newtheorem{prblm}{Затруднение}
+
+% biblio hacks -- noindent bibitems
+\makeatletter
+\renewenvironment{thebibliography}[1]
+      {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+            {\settowidth\labelwidth{\@biblabel{#1}}%
+             \leftmargin\labelwidth
+             \advance\leftmargin-25pt% change 20 pt according to your needs
+             \advance\leftmargin\labelsep
+             \setlength\itemindent{25pt}% change using the inverse of the length used before
+             \@openbib@code
+             \usecounter{enumiv}%
+             \let\p@enumiv\@empty
+             \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+      {\def\@noitemerr
+        {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\makeatother
+
+
+\voffset=-15mm \textwidth=17cm \textheight=24cm
+\oddsidemargin=0cm \topmargin=+0cm \headsep=10pt \evensidemargin=0mm
+\renewcommand{\baselinestretch}{2}
+
+\makeatletter \@addtoreset{equation}{section} \makeatother
+\makeatletter
+
+% bibliography hacks
+\renewcommand{\@biblabel}[1]{#1. \hfill}
+\makeatother
+\addto\captionsrussian{\def\refname{Литература}}
+\renewcommand{\refname}{}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\linespread{1.2}
+
+\newcounter{Section}
+\setcounter{Section}{0}
+\newcommand{\sect}[1]{\stepcounter{Section}\textbf{\arabic{Section}. #1}}
+
+\def\IMPORTS{A FLAG VARIABLE TO LET USERS KNOW THAT imports WERE ALREADY INCLUDED}
+

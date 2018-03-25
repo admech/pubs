@@ -1,0 +1,179 @@
+%\section{Явные виды выражений}
+{\bf 7. Приложение.}
+\stepcounter{section}
+Матрица кинетической энергии:
+%$$
+%\M = \begin{bmatrix}
+%    M &   &               &   &        &   &                        &        &                        \\
+%      & M &               &   &        &   &                        &        &                        \\
+%      &   & I_S           &   & \cdots &   & B\sin(\chi_k+\kappa_1) & \cdots & B\sin(\chi_N+\kappa_n) \\
+%      &   &               & J &        &   &                        &        &                        \\
+%      &   &               &   & \ddots &   &                        &        &                        \\
+%      &   &               &   &        & J &                        &        &                        \\
+%      &   & \text{\huge*} &   &        &   & B                      &        &                        \\
+%      &   &               &   &        &   &                        & \ddots &                        \\
+%      &   &               &   &        &   &                        &        & B                      \\
+%\end{bmatrix},
+%$$
+$$
+\M = \begin{bmatrix}
+    \widetilde{\M}_{11}   & \widetilde{\M}_{12}   & \widetilde{\M}_{13} \\
+    \widetilde{\M}_{12}^T & \widetilde{\M}_{22}   & \widetilde{\M}_{23} \\
+    \widetilde{\M}_{13}^T & \widetilde{\M}_{23}^T & \widetilde{\M}_{33} \\
+\end{bmatrix}
+$$
+где
+$$
+\widetilde{\M}_{11} = \text{diag}(M, M, I_S),
+\quad
+\widetilde{\M}_{22} = JE_{N \times N},
+\quad
+\widetilde{\M}_{33} = BE_{Nn \times Nn}
+$$
+$$
+\widetilde{\M}_{13} = \begin{bmatrix}
+        0                      & \cdots & 0                      \\
+        0                      & \cdots & 0                      \\
+        B\sin\chi_{11}         & \cdots & B\sin\chi_{Nn}         \\
+    \end{bmatrix}
+\vsp
+$$
+$$
+\widetilde{\M}_{12} = O_{3 \times N},
+\quad
+\widetilde{\M}_{23} = O_{N \times Nn}
+$$
+% $$
+% \M = \begin{bmatrix}
+%     M & 0 & 0             & 0 & \cdots & 0 & 0                      & \cdots &0                       \\
+%       & M & 0             & 0 & \cdots & 0 & 0                      & \cdots & 0                      \\
+%       &   & I_S           & 0 & \cdots & 0 & B\sin\chi_{11}         & \cdots & B\sin\chi_{Nn}         \\
+%       &   &               & J &        &   &                        &        &                        \\
+%       &   &               &   & \ddots &   &                        & \text{\huge 0}&                 \\
+%       &   &               &   &        & J &                        &        &           \\
+%       &   & \scalebox{1.5}{$\star$} &   &        &   & B                      &        &                        \\
+%       &   &               &   &        &   &                        & \ddots &                        \\
+%       &   &               &   &        &   &                        &        & B                      \\
+% \end{bmatrix}
+% $$
+
+Здесь $O_*$ и $E_*$ --- нулевые и единичные матрицы указанных размерностей.
+
+В третьей строке $\widetilde{\M}_{13}$ сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам; элементы упорядочены по возрастанию индексов, так что ролики одного колеса соседствуют.
+
+Матрица связей:
+$$
+V = \begin{bmatrix}
+        \widetilde{V}  & O_1  \\[6pt]
+        O_2       & E         \\[6pt]
+    \end{bmatrix};
+\quad
+\widetilde{V} = \begin{bmatrix}
+        R\cos\theta                    & -R\sin\theta                    & 0                      \\[6pt]
+        R\sin\theta                    &  R\cos\theta                    & 0                      \\[6pt]
+        0                              & 0                               & \ddfrac{1}{\Lambda}    \\[6pt]
+        \ddfrac{R}{l}\sin\alpha_i      & -\ddfrac{R}{l}\cos\alpha_i      & -\ddfrac{R}{\Lambda l} \\[6pt]
+        \ddfrac{R}{\rho_k}\cos\alpha_k &  \ddfrac{R}{\rho_k}\sin\alpha_k & 0                      \\[6pt]
+    \end{bmatrix}
+$$
+
+Здесь $O_1$ и $O_2$ -- нулевые $(3+2n \times N(n-1))$- и $(N(n-1) \times 3)$-матрицы, $E$ -- единичная матрица размерности $N(n-1)$.
+
+Элементы матрицы кинетической энергии при учете связей:
+\begin{equation}\label{mstar}
+    \begin{array}{rcl}
+        m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg)\quad(11 \leftrightarrow 22, \sin\alpha_i \leftrightarrow \cos\alpha_i)\vsp
+        m^*_{33} & = & \ddfrac{1}{\Lambda}\bigg(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}\bigg),\quad
+        m^*_{12}  =  \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i\vsp
+        m^*_{13} & = & \ddfrac{1}{\Lambda}\sum\limits_i B\ddfrac{R}{\rho_i}\sin\chi_i\cos\alpha_i,
+        \quad
+        m^*_{23} \enspace = \enspace \ddfrac{1}{\Lambda}\sum\limits_i B\ddfrac{R}{\rho_i}\sin\chi_i\sin\alpha_i
+    \end{array}
+\end{equation}
+
+Обозначая $\xi_\pm(\alpha) = \nu_1\cos\alpha \pm \nu_2\sin\alpha$, $\eta_\pm(\alpha) = \nu_1\sin\alpha \pm \nu_2\cos\alpha$, для формальных импульсов $\vec{p} = \ddpd{L}{\dot{\vec{q}}}$ получим:
+\begin{equation}\label{p}
+    \begin{array}{c}
+        p_x  =  MR\xi_-(\theta), \ p_y = MR\eta_+(\theta),\ 
+        p_\theta  =  BR\sum\limits_i\ddfrac{\sin\chi_i}{\rho_i}\xi_+(\alpha_i) + \ddfrac{I_S}{\Lambda}\nu_3 + B\sum\limits_s\sin\chi_s\nu_s\vsp
+        p_{\chi_i}  =  J\ddfrac{R}{l}(\eta_-(\alpha_i) - \ddfrac{1}{\Lambda}\nu_3), \ p_{\phi_{k1}}  =  \ddfrac{BR}{\rho_k}\xi_+(\alpha_k)+\ddfrac{B}{\Lambda}\sin\chi_k,\ %\vsp
+        p_{\phi_s}  =  \ddfrac{B}{\Lambda}\nu_3\sin\chi_s + B\nu_s
+    \end{array}
+\end{equation}
+
+Импульсы $P_1, P_2, P_3$ имеют вид:
+\begin{equation}\label{bigP}
+    \begin{array}{rcl}
+        P_1 & = & R\bigg(p_x\cos\theta + p_y\sin\theta + \sum\limits_{i}\bigg(\ddfrac{p_{\chi_i}}{l}\sin\alpha_i +  \ddfrac{p_{\phi_{i1}}}{\rho_i}\cos\alpha_i\bigg)\bigg)\vsp
+        P_2 & = & R\bigg(-p_x\sin\theta + p_y\cos\theta + \sum\limits_{i}\bigg(-\ddfrac{p_{\chi_i}}{l}\cos\alpha_i +  \ddfrac{p_{\phi_{i1}}}{\rho_i}\sin\alpha_i\bigg)\bigg)\vsp
+        P_3 & = & \ddfrac{1}{\Lambda}\bigg(p_\theta + \sum\limits_{i}\ddfrac{R}{l}p_{\chi_i}\bigg),\ 
+        P_s \enspace = \enspace p_{\phi_s}
+    \end{array}
+\end{equation}
+%где $p_{\phi_{i1}}, p_\theta, \rho_i$ зависят от $\chi_i$ (см.\upr{p}), а потому и $P_1$ и $P_2$, отвечающие %проекциям скорости центра масс платформы на подвижные оси, а также $P_3$, соответствующий вращению платформы.
+
+Для упрощения записи правой части уравнений введем обозначение для операции дискретной свертки произвольной функции $f$:
+$$
+\sigma[f(\alpha,\chi)] = \sum\limits_{k=1}^{N} f(\alpha_k,\chi_k) \frac{\sin\chi_k}{\rho_k^3}
+$$
+Тогда скобки Пуассона в правой части (\ref{Tatarinov}) имеют вид (звездочкой обозначена подстановка канонических формальных импульсов $p_i$):
+%; дополнительно введено обозначение $\tau_k = \ddfrac{\sin\chi_k}{\rho_k^2}$):
+\begin{eqnarray*}
+(\{P_1,P_2\})^* &=& \left(-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k}\right)^* =
+-BR^2(R\nu_1 \sigma[\cos\alpha] + R\nu_2 \sigma[\sin\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\sin\chi]) = \\
+&=& -BR^2\prhs_{12}\vnu, \prhs_{12} =
+(\sigma[\cos\alpha], R\sigma[\sin\alpha], \Lambda^{-1}\sigma[\rho\sin\chi], 0,\dots,0)
+\\
+(\{P_1,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* = {MR^2}{\Lambda}^{-1}\nu_2 -\\
+&-& {BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi])=\\
+&=& {MR^2}{\Lambda}^{-1}\nu_2-{BR^2} \prhs_{13}\vnu;\\
+\prhs_{13} &=& \Lambda^{-1}
+(R\sigma[\cos^2\alpha], R\sigma[\sin\alpha\cos\alpha], \Lambda^{-1}\sigma[\rho\cos\alpha\sin\chi], 0,\dots,0)
+\\
+(\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  = -{MR^2}{\Lambda}^{-1}\nu_1 -\\
+&-& {BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha]+\Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] =
+\\
+&=&-{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}\prhs_{23}\vnu;\\
+\prhs_{23} &=& \Lambda^{-1}
+(R\sigma[\sin\alpha\cos\alpha], R\sigma[\sin^2\alpha], \Lambda^{-1}\sigma[\rho\sin\alpha\sin\chi], 0,\dots,0),
+\end{eqnarray*}
+%$$
+%S_1^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k + \frac{M}{BR},\
+%S_2^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k,
+%$$$$
+%S_3^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\sin\chi_k\tau_k,
+%$$
+%$$
+%\{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
+%$$
+%$$
+%(\{P_1,P_2\})^* = (-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k})^* =
+%-BR^2(R\nu_1 S_1^1 + R\nu_2 S_2^1 + \Lambda^{-1}\nu_3S_3^1)$$
+%$$
+%S_1^1 = \sum\limits_{k=1}^{N}\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+%S_2^1 = \sum\limits_{k=1}^{N}\frac{\sin\alpha_k}{\rho_k}\tau_k,\
+%S_3^1 = \sum\limits_{k=1}^{N}\sin\chi_k\tau_k,
+%$$
+%\begin{eqnarray*}
+%(\{P_1,P_3\})^* &=& \frac{R}{\Lambda}\left(-\sin\theta p_x + \cos\theta p_y - \sum\limits_{k=1}^{N} %R\cos\alpha_k\tau_kp_{\phi_k}\right)^* =\\
+%&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^2 + R\nu_2 S_2^2 + \Lambda^{-1}\nu_3S_3^2),
+%\end{eqnarray*}
+%$$
+%S_1^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k,\
+%S_2^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k - \frac{M}{BR},
+%$$$$
+%S_3^2 = \sum\limits_{k=1}^{N}\cos\alpha_k\sin\chi_k\tau_k,
+%$$
+%\begin{eqnarray*}
+%(\{P_2,P_3\})^* &=& \frac{R}{\Lambda}\left(-\cos\theta p_x - \sin\theta p_y - \sum\limits_{k=1}^{N} %R\sin\alpha_k\tau_kp_{\phi_k}\right)^*  =\\
+%&=& -\frac{BR^2}{\Lambda}(R\nu_1 S_1^3 + R\nu_2 S_2^3 + \Lambda^{-1}\nu_3S_3^3),
+%\end{eqnarray*}
+%$$
+%S_1^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\cos\alpha_k}{\rho_k}\tau_k + \frac{M}{BR},\
+%S_2^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\frac{\sin\alpha_k}{\rho_k}\tau_k,
+%$$$$
+%S_3^3 = \sum\limits_{k=1}^{N}\sin\alpha_k\sin\chi_k\tau_k,
+%$$
+%$$
+%\{P_\alpha, P_\beta\} =0,\ \alpha,\beta >3
+%$$
