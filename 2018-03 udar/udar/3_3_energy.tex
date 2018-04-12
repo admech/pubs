@@ -1,0 +1,29 @@
+
+\subsection{Изменение кинетической энергии}
+
+\begin{itemize}
+    \item проверка, что оба способа дают один результат
+    \item проверка, что результат соответствует теореме Карно (потеря энергии равна энергии потерянных скоростей)
+\end{itemize}
+
+Кинетическая энергия в системе без неголономных связей -- квадратичная форма.
+\begin{equation*}
+\ke = \ddfrac{1}{2}\dotp{\mke\dotq}{\dotq}
+\end{equation*}
+
+Связи
+\begin{equation*}
+\dqposle = \cstr\nuposle
+\end{equation*}
+
+В силу идеальности неголономных связей, потеря энергии при ударе равна кинетической энергии потерянных скоростей, в соответствии с теоремой Карно.
+Воспользуемся следующими фактами: $\dqposle = \dqdo + \deltadq$, $\dqposle \in \subspace$, $\deltadq \perp_\mke \subspace$, $\mke = \mke^T$, работа ударных испульсов на перемещениях, допускаемых вновь налагаемыми связями, равна нулю $\dotp{\mke\dqposle}{\deltadq} = \dotp{\mke\deltadq}{\dqposle} = \dotp{\mathbf{P}}{\dqposle} = 0$
+\begin{eqnarray*}
+2\Delta\ke & = & 2\left(\ke^+ - \ke^-\right) = \dotp{\mke\dqposle}{\dqposle} - \dotp{\mke\dqdo}{\dqdo} = \dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqdo}{\deltadq} \\
+ & = & -\dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqposle}{\deltadq} = -\dotp{\mke\deltadq}{\deltadq}
+\end{eqnarray*}
+
+таким образом,
+\begin{equation*}
+\Delta\ke = -\ddfrac{1}{2}\dotp{\mke\deltadq}{\deltadq} < 0
+\end{equation*}
