@@ -17,14 +17,14 @@
 Найдем вектор $\deltadq$, ортогональный $\subspace$ в метрике, задаваемой матрицей кинетической энергии $\mke$, такой что $\dqposle = \dqdo - \deltadq = \mathbf{V}\nuposle \in \subspace$
 
 \begin{equation*}
--\deltadq = \dqdo - \cstr\nu \newline
+\eqDelta
 \end{equation*}
 \begin{equation*}
-0 = \dotp{\deltadq}{\mke\cstr} = \dotp{\cstr\nuposle - \dqdo}{\mke\cstr} = \dotp{\mke\cstr\nuposle - \mke\dqdo}{\cstr} = \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo 
+\logicDeltaOrth
 \end{equation*}
 
 откуда
 \begin{equation*}
-\nuposle = \inv{\cstr^T\mke\cstr}\cstr^T\mke\dqdo
+\eqnuposleproj
 \end{equation*}
 где матрица $\cstr^T\mke\cstr$ обратима, поскольку имеет максимальный ранг.

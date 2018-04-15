@@ -1,4 +1,10 @@
 
+% \newcommand{\imm}[1]{ \ifmmode #1 \fi }
+
+% ------------------------------------------------------------------
+% SYMBOLS
+% ------------------------------------------------------------------
+
 \newcommand{\q}{\mathbf{q}}
 \newcommand{\qdo}{\q^-}
 \newcommand{\qposle}{\q^-}
@@ -20,3 +26,91 @@
 \newcommand{\inv}[1]{\left( #1 \right)^{-1}}
 
 \newcommand{\ke}{\mathbf{T}}
+
+\newcommand{\mvk}{\left(\mathbf{M}\mathbf{V} \enspace -\mathbf{K}\right)}
+
+% ------------------------------------------------------------------
+% EQUATIONS
+% ------------------------------------------------------------------
+
+% Impact -- classical
+
+\newcommand
+{ \eqDeltaqQ }
+{ \mathbf{M} (\dot{\mathbf{q}}^+ - \dot{\mathbf{q}}^-) = \mathbf{Q} }
+
+\newcommand
+{ \eqQKF }
+{ \mathbf{Q} = \mathbf{K}\mathbf{F} }
+
+\newcommand
+{ \eqqnu }
+{ \dqdo = \mathbf{V}\nuposle }
+
+\newcommand
+{ \eqMVnuKF }
+{ \mathbf{M}\mathbf{V}\nuposle - \mathbf{K}\mathbf{F} = \mathbf{M}\dqdo }
+
+\newcommand{\nuFT}{\left(\nuposle \enspace \mathbf{F}\right)^T}
+
+\newcommand
+{ \eqMVnuKFmat }
+{ \mvk \nuFT = \mathbf{M}\dqdo }
+
+\newcommand
+{ \eqMVnuKFmatres }
+{ \nuFT = \mvk^{-1} \mke\dqdo }
+
+% Impact -- analytical
+
+\newcommand
+{ \eqDelta }
+{ -\deltadq = \dqdo - \cstr\nuposle }
+
+\newcommand
+{ \logicDeltaOrth }
+{ 0 = \dotp{\deltadq}{\mke\cstr} = \dotp{\cstr\nuposle - \dqdo}{\mke\cstr} = \dotp{\mke\cstr\nuposle - \mke\dqdo}{\cstr} = \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo }
+
+\newcommand
+{ \eqnuposleproj }
+{ \nuposle = \inv{\cstr^T\mke\cstr}\cstr^T\mke\dqdo }
+
+% Energy
+
+\newcommand
+{ \eqTquad }
+{ \ke = \ddfrac{1}{2}\dotp{\mke\dotq}{\dotq} }
+
+\newcommand
+{ \eqDqVnu }
+{ \dqposle = \cstr\nuposle }
+
+\newcommand
+{ \edQposleDelta }
+{ \dqposle = \dqdo + \deltadq }
+
+\newcommand
+{ \eqDqposleInSubspace }
+{ \dqposle \in \subspace }
+
+\newcommand
+{ \eqDeltaOrth }
+{ \deltadq \perp_\mke \subspace }
+
+\newcommand
+{ \edMkeSim }
+{ \mke = \mke^T }
+
+\newcommand
+{\logicWorkZero}
+{\dotp{\mke\dqposle}{\deltadq} = \dotp{\mke\deltadq}{\dqposle} = \dotp{\mathbf{P}}{\dqposle} = 0}
+
+\newcommand
+{\logicDeltaT}
+{ 2\Delta\ke & = & 2\left(\ke^+ - \ke^-\right) = \dotp{\mke\dqposle}{\dqposle} - \dotp{\mke\dqdo}{\dqdo} = \dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqdo}{\deltadq} \\
+ & = & -\dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqposle}{\deltadq} = -\dotp{\mke\deltadq}{\deltadq} }
+
+\newcommand
+{\eqDeltaT}
+{ \Delta\ke = -\ddfrac{1}{2}\dotp{\mke\deltadq}{\deltadq} < 0 }
+

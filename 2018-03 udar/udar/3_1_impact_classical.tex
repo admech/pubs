@@ -10,32 +10,34 @@
 
 Уравнение изменения импульса в момент удара
 \begin{equation*}
-\mathbf{M} (\dot{\mathbf{q}}^+ - \dot{\mathbf{q}}^-) = \mathbf{Q}
+\eqDeltaqQ
 \end{equation*}
 
 Ударные импульсы выражаются через реакции, действующие в точках касания
 \begin{equation*}
-\mathbf{Q} = \mathbf{K}\mathbf{F}
+\eqQKF
 \end{equation*}
 
 Непосредственно перед ударом неголономные связи, запрещающие проскальзывание в точках касания роликов, все еще находящихся в контакте в этот момент, снимаются.
 В момент сразу после удара аналогичные связи налагаются на вновь входящие в контакт ролики.
 \begin{equation*}
-\dot{\mathbf{\nu}}^- = \mathbf{V}\mathbf{\nu}^+
+\eqqnu
 \end{equation*}
 
 Тогда уравнение изменения импульса можно записать в виде
 \begin{equation*}
-\mathbf{M}\mathbf{V}\mathbf{\nu}^+ - \mathbf{K}\mathbf{F} = \mathbf{M}\dot{\mathbf{q}}^-
+\eqMVnuKF
 \end{equation*}
 
 Либо в матричной форме
 \begin{equation*}
-\left(\mathbf{M}\mathbf{V} \enspace \mathbf{K}\right) \left(\mathbf{\nu}^+ \enspace \mathbf{F}\right)^T = \mathbf{M}\dot{\mathbf{q}}^-
+\eqMVnuKFmat
 \end{equation*}
 
 Решение тогда получается следующим образом
 \begin{equation*}
-\left(\nuposle \enspace \mathbf{F}\right)^T = \inv{\mke\cstr \enspace \mathbf{K}} \mke\dqdo
+\eqMVnuKFmatres
 \end{equation*}
-где матрица $\left(\mathbf{M}\mathbf{V} \enspace \mathbf{K}\right)$ обратима в силу геометрии системы (ИЛИ ПОЧЕМУ!? вроде можно показать, что имеет максимальный ранг)
+где матрица $\mvk$ обратима в силу геометрии системы (ИЛИ ПОЧЕМУ!? вроде можно показать, что имеет максимальный ранг)
+
+
