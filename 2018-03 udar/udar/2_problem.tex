@@ -1,6 +1,28 @@
 
 \section{Постановка задачи}
-// Копия из odno-koleso-udar
+
+\begin{figure}[h]
+    \minipage{0.3\textwidth}
+        \centering
+        \asyinclude{./asy/pic_wheel.asy}
+        \caption{Колесо}
+        \label{fig:wheel}
+    \endminipage
+    \minipage{0.4\textwidth}
+        \centering
+        \asyinclude{./asy/pic_cart.asy}
+        \caption{Экипаж}
+        \label{fig:vehicle}
+    \endminipage
+    \minipage{0.3\textwidth}
+        \centering
+        \asyinclude{./asy/pic_overlap.asy}
+        \caption{Перекрытие}
+        \label{fig:overlap}
+    \endminipage
+\end{figure}
+
+( Копия из odno-koleso-udar ) \newline
 Рассмотрим движение одного свободного омниколеса по абсолютно шероховатой плоскости (всего экипажа нет). На колесо действует сила тяжести, а также реакция связи, приложенная в наинизшей точке колеса.
 
 Примем следующие предположения:
@@ -14,6 +36,4 @@
 \item За время $\Delta t$ угловая скорость вторго ролика и скорость собственного вращения колеса меняются так, что проскальзывание в точке контакта исчезает (то есть в момент окончания удара становятся выполнеными дифференциальные уравнения связи. В течение удара $[0,\Delta t)$ они нарушены).
 \end{itemize}
 
-
-Матрицы
 

@@ -105,3 +105,4 @@ label("$S(x, y)$", (-0.1, -0.2));
 label("$O$", (-1.2 - delta, -1.2) - (0.4, 0.4));
 filldraw(shift(-1.4 - delta, -1.4) * DOT, white);
 
+

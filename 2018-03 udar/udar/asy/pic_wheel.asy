@@ -164,4 +164,5 @@ unitsize(1.3cm);
     drawdot((0,0));
 
     label("$C_i$", contact_point + 0.2*(1, 1));
-    drawdot(contact_point);asy
+    drawdot(contact_point);
+

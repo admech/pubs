@@ -41,3 +41,4 @@ draw(-Y+X+Z -- Y+X+Z, gray + mydashdotted);
 drawdot3d(Y+X+Z);
 
 
+
