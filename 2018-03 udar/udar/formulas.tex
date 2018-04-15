@@ -27,7 +27,11 @@
 
 \newcommand{\ke}{\mathbf{T}}
 
-\newcommand{\mvk}{\left(\mathbf{M}\mathbf{V} \enspace -\mathbf{K}\right)}
+\newcommand{\mK}{\mathbf{K}}
+\newcommand{\mvk}{\left(\mathbf{M}\mathbf{V} \enspace -\mK\right)}
+
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\F}{\mathbf{F}}
 
 % ------------------------------------------------------------------
 % EQUATIONS
@@ -114,3 +118,29 @@
 {\eqDeltaT}
 { \Delta\ke = -\ddfrac{1}{2}\dotp{\mke\deltadq}{\deltadq} < 0 }
 
+% ------------------------------------------------------------------
+% EXPLICIT EXPRESSIONS
+% ------------------------------------------------------------------
+
+\newcommand
+{\K}
+{
+\begin{pmatrix}
+1 & 0 & 1 & 0 & 1 & 0\cr
+0 & 1 & 0 & 1 & 0 & 1\cr
+-\mathrm{sin}\left( \theta+{\alpha_1}\right)  R & \mathrm{cos}\left( \theta+{\alpha_1}\right)  R & -\mathrm{sin}\left( \theta+{\alpha_2}\right)  R & \mathrm{cos}\left( \theta+{\alpha_2}\right)  R & -\mathrm{sin}\left(\theta+{\alpha_3}\right)  R & \mathrm{cos}\left(\theta+{\alpha_3}\right)  R \cr
+-l \mathrm{sin}\left(\theta+{\alpha_1}\right)  & l \mathrm{cos}\left(\theta+{\alpha_1}\right)  & 0 & 0 & 0 & 0\cr
+0 & 0 & -l \mathrm{sin}\left(\theta+{\alpha_2}\right)  & l \mathrm{cos}\left(\theta+{\alpha_2}\right)  & 0 & 0\cr 0 & 0 & 0 & 0 & -l \mathrm{sin}\left(\theta+{\alpha_3}\right)  & l \mathrm{cos}\left(\theta+{\alpha_3}\right) \cr
+-\rho_1  \mathrm{cos}\left(\theta+{\alpha_1}\right)  & -\rho_1  \mathrm{sin}\left(\theta+{\alpha_1}\right)  & 0 & 0 & 0 & 0\cr
+0 & 0 & -\rho_2  \mathrm{cos}\left(\theta+{\alpha_2}\right)  & -\rho_2  \mathrm{sin}\left(\theta+{\alpha_2}\right)  & 0 & 0\cr
+0 & 0 & 0 & 0 & -\rho_3  \mathrm{cos}\left(\theta+{\alpha_3}\right)  & -\rho_3  \mathrm{sin}\left(\theta+{\alpha_3}\right)
+\end{pmatrix}
+}
+
+\newcommand {\eqQiOne} { \Q^i_1 & = & \F^i_x }
+\newcommand {\eqQiTwo} { \Q^i_2 & = & \F^i_y }
+\newcommand {\eqQiTheta} { \Q^i_\theta & = & -\F^i_x\sin(\theta + \alpha_i) + \F^i_y\cos(\theta + \alpha_i) }
+\newcommand {\eqQChii} { \Q_{\chi_i} & = & l \Q^i_\theta }
+\newcommand {\eqQPhii} { \Q_{\phi_i} & = & -\rho_i \left( \F^i_x\cos(\theta + \alpha_i) + \F^i_y\sin(\theta + \alpha_i) \right) }
+\newcommand {\eqQs} { \Q_s & = & 0 }
+\newcommand {\eqQ} { \Q = \left( \enspace \sum_{i=1}^N \Q^i_1, \enspace \sum_{i=1}^N \Q^i_2, \enspace \sum_{i=1}^N \Q^i_\theta, \enspace \Q_{\chi_i}|_{i=1}^N, \enspace \Q_{\phi_i}|_{i=1}^N, \enspace \Q_s \enspace \right)^T }

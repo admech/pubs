@@ -46,7 +46,7 @@
 %--------------------------------------
 % Specially for PMM: make all imported EPS grayscale:
 %--------------------------------------
-\usepackage[gray]{epspdfconversion}
+% \usepackage[gray]{epspdfconversion}
 %--------------------------------------
 
 % \usepackage{subfig} % incompatible with subcaption package
@@ -59,7 +59,7 @@
 % each having its own small caption
 %--------------------------------------
 %\usepackage{caption}
-%\usepackage{subcaption}
+\usepackage{subcaption}
 %--------------------------------------
 
 % so that refs were [1-10], not [1,2,3,4,5,...]
@@ -185,5 +185,9 @@
 \newcommand{\sect}[1]{\stepcounter{Section}\textbf{\arabic{Section}. #1}}
 
 \input{formulas}
+
+% \newcommand{\subf}[2]{\minipage{#1} #2 \endminipage}
+\newcommand{\subf}[2]{\begin{subfigure}[H]{#1} #2 \end{subfigure}}
+
 
 \def\IMPORTS{A FLAG VARIABLE TO LET USERS KNOW THAT imports WERE ALREADY INCLUDED}
