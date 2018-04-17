@@ -34,19 +34,54 @@ path WHEEL_2 = rotate(120) * WHEEL;
 fill(WHEEL_2, mediumgray);
 draw(WHEEL_2, black + 1);
 
-label("$N$", dr(4*pi/3 + label_start_angle) * label_radius);
+label("$N$", dr(4*pi/3 + label_start_angle - pi/4 - pi/25) * label_radius);
 path WHEEL_3 = rotate(240) * WHEEL;
 fill(WHEEL_3, mediumgray);
 draw(WHEEL_3, black + 1);
 
 // REACTIONS
 
+// wheel 1
+
+pair wheel1center = 1.2*dr(pi/6);
+pair f1x_end = wheel1center + (1, 0) * 0.7;
+pair f1y_end = wheel1center + (0, 1) * 0.7;
+
+label("$\mathbf{F}^1_x$", 
+    (f1x_end + (0.25, 0))
+);
+draw(
+    wheel1center -- f1x_end
+    , arrow=Arrow(SimpleHead)
+    , black
+);
+
+label("$\mathbf{F}^1_y$", 
+    (f1y_end + (0.3, 0))
+);
+draw(
+    wheel1center -- f1y_end
+    , arrow=Arrow(SimpleHead)
+    , black
+);
+
+// wheel 2
+
 pair wheel2center = 1.2*dr(pi-pi/6);
-pair f2y_end = wheel2center + dr(pi/2 + pi/3)*0.7;
-pair f2x_end = wheel2center + dr(pi/2 - pi/6)*0.7;
+pair f2x_end = wheel2center + (1, 0) * 0.7;
+pair f2y_end = wheel2center + (0, 1) * 0.7;
+
+label("$\mathbf{F}^2_x$", 
+    (f2x_end + (0.25, 0))
+);
+draw(
+    wheel2center -- f2x_end
+    , arrow=Arrow(SimpleHead)
+    , black
+);
 
 label("$\mathbf{F}^2_y$", 
-    ((wheel2center*1.5) + (0, 0.35))
+    (f2y_end + (0.3, 0))
 );
 draw(
     wheel2center -- f2y_end
@@ -54,11 +89,26 @@ draw(
     , black
 );
 
-label("$\mathbf{F}^2_x$", 
-    ((wheel2center*1.5) + (0.5, 0.35))
+// wheel 3
+
+pair wheel3center = 1.2*dr(-pi/2);
+pair f3x_end = wheel3center + (1, 0) * 0.7;
+pair f3y_end = wheel3center + (0, 1) * 0.7;
+
+label("$\mathbf{F}^N_x$", 
+    (f3x_end + (0.25, 0.05))
 );
 draw(
-    wheel2center -- f2x_end
+    wheel3center -- f3x_end
+    , arrow=Arrow(SimpleHead)
+    , black
+);
+
+label("$\mathbf{F}^N_y$", 
+    (f3y_end + (0.3, -0.15))
+);
+draw(
+    wheel3center -- f3y_end
     , arrow=Arrow(SimpleHead)
     , black
 );

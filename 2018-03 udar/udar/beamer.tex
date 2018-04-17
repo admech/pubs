@@ -76,9 +76,9 @@
 % ----------
 % ----------
 
-\title{Движение симметричного экипажа \\с массивными роликами на омни-колесах}
+\title{ Динамика смены ролика \\ в контакте омни-колеса и плоскости }
 
-\author{К.В. Герасимов, А.А. Зобова}
+\author{ К.В. Герасимов, А.А. Зобова }
 
 \institute[мех-мат МГУ]
 {
@@ -87,7 +87,7 @@
   МГУ им. М.В. Ломоносова
 }
 
-\date{Научный семинар имени В.В.Румянцева, Октябрь 2017}
+\date{Ломоносовские чтения, Апрель 2018}
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
@@ -398,7 +398,7 @@ B\left(\begin{matrix}
             $$ \eqMVnuKF $$
             $$ \eqMVnuKFmatres $$
             \begin{eqnarray*}
-                \dim \mke \cstr & = & \dim \q \times \dim \nu \\
+                \dim \mke \cstr & = & \dim \q \times \dim \nuvec \\
                 \dim \mK & = & \dim \q \times \dim \F \\
                 \dim \q & = & 3 + N(n + 1) \\
                 \dim \nuvec & = & 3 + N(n - 1) \\
@@ -452,8 +452,11 @@ B\left(\begin{matrix}
             \begin{figure}
                 % \centering
                 \hspace{-65pt}
-                \asyinclude{asy/pic_project.asy}
-                \caption{$\qposle$ -- проекция $\qdo$ на $\subspace$, \\ ортогональная в метрике $\mke$}
+                \asyinclude{asy/pic_project}
+                \caption{
+                    $\qposle$ -- проекция $\qdo$ на $\subspace$,\newline
+                    ортогональная в метрике $\mke$
+                }
             \end{figure}
         \end{column}
     \end{columns}
@@ -467,7 +470,7 @@ B\left(\begin{matrix}
             $$ \eqQKF, \quad \eqqnu $$
             $$ \eqMVnuKF $$
             \begin{eqnarray*}
-                \dim \mke \cstr & = & \dim \q \times \dim \nu \\
+                \dim \mke \cstr & = & \dim \q \times \dim \nuvec \\
                 \dim \mK & = & \dim \q \times \dim \F \\
                 \dim \q & = & 3 + N(n + 1) \\
                 \dim \nuvec & = & 3 + N(n - 1) \\
@@ -532,17 +535,17 @@ B\left(\begin{matrix}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/kin_en.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Кинетическая энергия}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/nu3.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Угловая скорость экипажа}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/rol_vel.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Угловые скорости роликов}
         \end{columns}
     \end{figure}
@@ -553,28 +556,108 @@ B\left(\begin{matrix}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/chi.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Углы поворота колес}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/theta.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Угол поворота экипажа}
             \column{0.33\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{pic/self_rot_25/rol_ang.eps}
-                \vspace{-20pt}
+                \vspace{-15pt}
                 \caption{Углы поворота роликов}
         \end{columns}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Движение по прямой ($\nu_1(0) = 1, \nu_{2,3} = 0$).}
-    
+    \begin{figure}[H]
+        \centering
+        \begin{columns}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/kin_en.eps}
+                \vspace{-15pt}
+                \caption{Кинетическая энергия}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/v.eps}
+                \vspace{-15pt}
+                \caption{Скорость центра масс}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/nus2.eps}
+                \vspace{-15pt}
+                \caption{$\dot{\mathbf{\phi}}$ на заднем колесе}
+        \end{columns}
+    \end{figure}
+    \vspace{-25pt}
+    \begin{figure}[H]
+        \centering
+        \begin{columns}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/traj.eps}
+                \vspace{-15pt}
+                \caption{Траектория}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/nu3.eps}
+                \vspace{-15pt}
+                \caption{Угловая скорость экипажа}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/straight_100/nus1.eps}
+                \vspace{-15pt}
+                \caption{$\dot{\mathbf{\phi}}$ на переднем колесе}
+        \end{columns}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Движение с закруткой ($\nu_1(0) = 1, \nu_2(0) = 0, \nu_3(0) = 1$).}
-    
+    \begin{figure}[H]
+        \centering
+        \begin{columns}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/kin_en.eps}
+                \vspace{-15pt}
+                \caption{Кинетическая энергия}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/v.eps}
+                \vspace{-15pt}
+                \caption{Скорость центра масс}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/nu3.eps}
+                \vspace{-15pt}
+                \caption{Угловая скорость экипажа}
+        \end{columns}
+    \end{figure}
+    \vspace{-25pt}
+    \begin{figure}[H]
+        \centering
+        \begin{columns}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/traj.eps}
+                \vspace{-15pt}
+                \caption{Траектория}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/nus1.eps}
+                \vspace{-15pt}
+                \caption{$\dot{\mathbf{\phi}}$ на первом колесе}
+            \column{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{pic/wrench_1000/phi1.eps}
+                \vspace{-15pt}
+                \caption{углы$\mathbf{\phi}$ на первом колесе}
+        \end{columns}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Результаты}
