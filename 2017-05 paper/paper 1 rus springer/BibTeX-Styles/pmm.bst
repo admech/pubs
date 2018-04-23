@@ -524,7 +524,7 @@ FUNCTION {format.names}
       nameptr #1 >
         {
           nameptr #4 =
-          numnames #3 > and
+          numnames #4 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
@@ -569,7 +569,7 @@ FUNCTION {format.names.rev}
         nameptr #1 >
         {
           nameptr #4 =
-          numnames #3 > and
+          numnames #4 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
@@ -957,7 +957,7 @@ FUNCTION {author.before}
 {
   author empty$
     'skip$
-    {author num.names$ #4 <
+    {author num.names$ #5 <
       {format.authors output
        new.sentence}
       'skip$
@@ -982,7 +982,7 @@ FUNCTION {author.after}
 {
   author empty$
     'skip$
-    {author num.names$ #3 >
+    {author num.names$ #4 >
       {format.authors.after output
        new.semicolumn }
       'skip$
