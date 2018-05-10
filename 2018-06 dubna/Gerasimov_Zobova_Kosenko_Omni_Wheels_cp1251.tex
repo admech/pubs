@@ -1,0 +1,185 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%   В ЭТОМ ФАЙЛЕ ДВА ВАРИАНТА АННОТАЦИЙ   %%%%%%%%
+
+% В работе есть две основные темы, и уложить обе в формат одного короткого доклада трудно.
+% Можно сделать один доклад длиной не более двух коротких, и первый вариант аннотаций -- на этот случай.
+% Либо два независимых доклада -- по одному на каждую тему. Для этого ниже ещё две аннотации.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[A4, 12pt, twoside]{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb,amscd}
+ \usepackage{amssymb}
+ \usepackage[cp1251]{inputenc}
+ % \usepackage[utf8]{inputenc}
+ \usepackage[T2A]{fontenc}
+ \usepackage[all]{xy}
+ \usepackage{latexsym}
+ \usepackage{srcltx}
+ \usepackage{amsmath}
+ \usepackage{amsfonts}
+ \usepackage{amscd}
+ \usepackage{amssymb}
+ \usepackage{amsthm}
+ \usepackage{euscript}
+ \usepackage{url}
+ \usepackage{amssymb, amsthm}
+ \usepackage{mathrsfs}
+ \usepackage{hyperref}\usepackage{setspace}
+ \usepackage[russian,english]{babel}
+ \usepackage{mathrsfs}
+
+
+ \newcommand{\refen}{\vspace{10mm} \noindent{\Large{\bf References}}}
+
+
+ \sloppy
+ \paperwidth=210mm
+ \paperheight=297mm
+ \textheight=250mm
+ \textwidth=165mm
+ \oddsidemargin=-0.4mm
+ \evensidemargin=-5.4mm
+ \topmargin=-5.4mm
+ \footskip=12.5mm
+ \headsep=0mm
+ \headheight=0mm
+
+ \pagenumbering{gobble}
+
+ \begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%   ОДИН БОЛЬШОЙ ДОКЛАД   %%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{center}
+%   \textbf{Modeling dynamics of a vehicle with omni-wheels \\[.3cm]}
+%       I.I.~Kosenko (MSU, Moscow) \\
+%       A.A.~Zobova (MSU, Moscow) \\
+%       \textbf{K.V.~Gerasimov} (MSU, Moscow) \\
+%       \emph{E-mail address}: \texttt{kosenkoii@yandex.ru, azobova@mech.math.msu.su, kiriger@gmail.com}\\[.3cm]
+% \end{center}
+% \normalsize
+
+% We study the movement of a vehicle with omni-wheels along a horizontal plane. Its design allows the vehicle to move in any direction, without turning, due to the rollers located on the rim of the wheel, freely rotating around the axes tangent to the rim. The number of bodies in the system complicates analytical solution.
+
+% Two variants of point contact are considered: 1) the support plane is perfectly rough, or 2) Coulomb dry friction applies.
+
+% In the nonholonomic case, we use equations of motion for systems with differential constraints in the form of Ya.V.~Tatarinov
+% $$
+% \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\},
+% $$
+% and at the instants of wheels transitioning between rollers, we solve an impact theory problem. The equations of motion and those of impact theory are derived and solved in {\bf Maxima} computer algebra system.
+
+% In the case with friction, we use an object-oriented approach to modeling, done in the {\bf Modelica} language. We present a step-by-step implementation of a dynamic model of this system of bodies.
+
+% \begin{center}
+%   \textbf{Моделирование динамики экипажа с омни-колесами\\[.3cm]}
+%       И.И.~Косенко (МГУ, Москва)       \\
+%       А.A.~Зобова (МГУ, Москва)       \\
+%       \textbf{К.В.~Герасимов} (МГУ, Москва)       \\
+%       \emph{E-mail address}: \texttt{kosenkoii@yandex.ru, azobova@mech.math.msu.su, kiriger@gmail.com}\\[.3cm]
+% \end{center}
+% \normalsize
+
+% Изучается движение экипажа с омни-колесами по горизонтальной плоскости. Конструкция позволяет экипажу двигаться в любом направлении, не поворачиваясь, за счет роликов, расположенных на ободе колеса, свободно вращающихся вокруг осей касательных к ободу. Аналитическое решение затруднено количеством твердых тел.
+
+% Рассматривается два варианта точечного контакта: 1) опорная плоскость абсолютно шероховата, либо 2) действует сухое трение Кулона.
+
+% В неголономном случае составляются уравнения движения для систем с дифференциальными связями в форме Я.В.~Татаринова
+% $$
+% \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\},
+% $$
+% а в моменты перехода колес между роликами решается задача теории удара. Вывод и решение уравнений выполняется в системе компьютерной алгебры {\bf Maxima}.
+
+% В случае с трением применяется подход объектно-ориентированного моделирования на языке {\bf Modelica}. Представлена пошаговая реализация разработки динамической модели системы тел, составляющих экипаж.
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%   ОТДЕЛЬНЫЙ ДОКЛАД ПО MAXIMA   %%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \textbf{Modeling dynamics of a vehicle with omni-wheels without slip \\[.3cm]}
+      I.I.~Kosenko (MSU, Moscow) \\
+      A.A.~Zobova (MSU, Moscow) \\
+      \textbf{K.V.~Gerasimov} (MSU, Moscow) \\
+      \emph{E-mail address}: \texttt{azobova@mech.math.msu.su, kiriger@gmail.com}\\[.3cm]
+\end{center}
+\normalsize
+
+We study the movement of a vehicle with omni-wheels along a horizontal plane. Its design allows the vehicle to move in any direction, without turning, due to the rollers located on the rim of the wheel, freely rotating around the axes tangent to the rim. The number of bodies in the system complicates analytical solution.
+
+The support plane is considered as perfectly rough. We use equations of motion for systems with differential constraints in the form of Ya.V.~Tatarinov
+$$
+\frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\},
+$$
+and at the instants of wheels transitioning between rollers, we solve an impact theory problem.
+
+The equations of motion and those of impact theory are derived and solved in {\bf Maxima} computer algebra system.
+
+\begin{center}
+  \textbf{Моделирование движения экипажа с омни-колесами без проскальзывания \\[.3cm]}
+      А.A.~Зобова (МГУ, Москва)       \\
+      \textbf{К.В.~Герасимов} (МГУ, Москва)       \\
+      \emph{E-mail address}: \texttt{kosenkoii@yandex.ru, azobova@mech.math.msu.su, kiriger@gmail.com}\\[.3cm]
+\end{center}
+\normalsize
+
+Изучается движение экипажа с омни-колесами по горизонтальной плоскости. Конструкция позволяет экипажу двигаться в любом направлении, не поворачиваясь, за счет роликов, расположенных на ободе колеса, свободно вращающихся вокруг осей касательных к ободу. Аналитическое решение затруднено количеством твердых тел.
+
+Опорная плоскость считается абсолютно шероховатой. Составляются уравнения движения для систем с дифференциальными связями в форме Я.В.~Татаринова
+$$
+\frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\},
+$$
+а в моменты перехода колес между роликами решается задача теории удара.
+
+Вывод и решение уравнений движения и теории удара выполняется в системе компьютерной алгебры {\bf Maxima}.
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%   ОТДЕЛЬНЫЙ ДОКЛАД ПО MODELICA   %%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \textbf{Object-oriented modeling \\ of dynamics of a vehicle with omni-wheels with dry friction \\[.3cm]}
+      I.I.~Kosenko (MSU, Moscow) \\
+      A.A.~Zobova (MSU, Moscow) \\
+      \textbf{K.V.~Gerasimov} (MSU, Moscow) \\
+      \emph{E-mail address}: \texttt{kosenkoii@yandex.ru, azobova@mech.math.msu.su, kiriger@gmail.com}\\[.3cm]
+\end{center}
+\normalsize
+
+We study the movement of a vehicle with omni-wheels along a horizontal plane. Its design allows the vehicle to move in any direction, without turning, due to the rollers located on the rim of the wheel, freely rotating around the axes tangent to the rim. The number of bodies in the system complicates analytical solution.
+
+Point contact with Coulomb friction is considered.
+
+To obtain numerical solutions we use an object-oriented approach to modeling with the {\bf Modelica} language. We present a step-by-step implementation of a dynamic model of this system of bodies.
+
+\begin{center}
+  \textbf{Объектно-ориентированное моделирование \\ движения экипажа с омни-колесами с сухим трением\\[.3cm]}
+      И.И.~Косенко (МГУ, Москва)       \\
+      \textbf{К.В.~Герасимов} (МГУ, Москва)       \\
+      \emph{E-mail address}: \texttt{kosenkoii@yandex.ru, kiriger@gmail.com}\\[.3cm]
+\end{center}
+\normalsize
+
+Изучается движение экипажа с омни-колесами по горизонтальной плоскости. Конструкция позволяет экипажу двигаться в любом направлении, не поворачиваясь, за счет роликов, расположенных на ободе колеса, свободно вращающихся вокруг осей касательных к ободу. Аналитическое решение затруднено количеством твердых тел.
+
+Контакт считается точечным, действует сухое трение Кулона.
+
+Для получения численных решений применяется подход объектно-ориентированного моделирования на языке {\bf Modelica}. Представлена пошаговая реализация разработки динамической модели системы тел, составляющих экипаж.
+
+
+\end{document}
