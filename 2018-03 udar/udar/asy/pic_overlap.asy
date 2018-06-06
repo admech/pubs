@@ -43,10 +43,10 @@ for (int i = 1; i < 5; ++i) {
 
 // ANGLES
 
-draw((0,0) -- 1.4*(cos(-pi/3),sin(-pi/3)), mydashdotted+gray);
-draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
+// draw((0,0) -- 1.4*(cos(-pi/3),sin(-pi/3)), mydashdotted+gray);
+// draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
 
-draw((0,0) -- (1.6,0), mydashdotted+gray);
+// draw((0,0) -- (1.6,0), mydashdotted+gray);
 
 ////////////////////////////////////////////////
 // DOTS -- Should be done on top for PMM

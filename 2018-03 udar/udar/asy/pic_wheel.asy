@@ -62,14 +62,14 @@ unitsize(1.3cm);
 // ANGLES
 ////////////////////////////////////////////////
 
-    label("$\kappa_j$", 0.82*(cos(-2*pi/8-0.05),sin(-2*pi/8-0.05)), blue);
-    draw((0,0) -- -1.4*(cos(pi/2+pi/6),sin(pi/2+pi/6)), mydashdotted+gray);
-    draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
-    draw(arc(
-        (0,0),
-        -1.15*(cos(pi/2+pi/6),sin(pi/2+pi/6)),
-        1.15*(cos(pi/6),sin(pi/6))
-    ), arrow=Arrow(TeXHead), blue);
+    // label("$\kappa_j$", 0.82*(cos(-2*pi/8-0.05),sin(-2*pi/8-0.05)), blue);
+    // draw((0,0) -- -1.4*(cos(pi/2+pi/6),sin(pi/2+pi/6)), mydashdotted+gray);
+    // draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
+    // draw(arc(
+    //     (0,0),
+    //     -1.15*(cos(pi/2+pi/6),sin(pi/2+pi/6)),
+    //     1.15*(cos(pi/6),sin(pi/6))
+    // ), arrow=Arrow(TeXHead), blue);
 
     // direction of positive roller rotation
     label(
