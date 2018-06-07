@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage[cp1251]{inputenc}
+% \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx,graphics}
+
+\renewcommand{\baselinestretch}{1.5}
+\textwidth=158mm \textheight=232mm \voffset=-24mm
+\pagestyle{empty}
+
+\begin{document}
+\centerline{\large\bf On the dynamics of an omni-wheeled vehicle with massive rollers}
+
+\centerline{{\bf Kirill Gerasimov} (Russia, Moscow)}
+\centerline{Chair of Theoretical Mechanics and Mechatronics, Lomonosov MSU}
+\centerline{\it kiriger@gmail.com}
+
+\centerline{{\bf Alexandra Zobova} (Russia, Moscow)}
+\centerline{Chair of Theoretical Mechanics and Mechatronics, Lomonosov MSU}
+\centerline{\it azobova@mech.math.msu.su}
+
+\centerline{{\bf Ivan Kosenko} (Russia, Moscow)}
+\centerline{Chair of Theoretical Mechanics and Mechatronics, Lomonosov MSU}
+\centerline{\it kosenkoii@yandex.ru}
+
+\medskip
+
+We study the movement of a vehicle with omni-wheels along a horizontal plane. Its design allows the vehicle to move in any direction, without turning, due to the rollers located on the rim of the wheel, freely rotating around the axes tangent to the rim. The rollers are massive rigid bodies. The configuration space of a vehichle with $N$ wheels and $n$ rollers on each is $\mathbb{R}^2 \times S^1 \times \mathbb{T}^{N(n+1)}$.
+
+Two variants of point contact are considered: 1) the support plane is perfectly rough, or 2) Coulomb dry friction applies.
+
+In the first case, we use equations of motion for systems with differential constraints in the form of Ya.V.~Tatarinov:
+$$
+\frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha} + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\}.
+$$
+At the instants of wheels transitioning between rollers, we solve an impact theory problem.
+
+In the second case, the equations of motion of the system are derived implicitly (in the formalism of the language {\tt Modelica}) using a representation of the rotational motion of a rigid body in the quaternion algebra.
+
+\begin{center}
+{\bf References}
+\end{center}
+{[1]} Zobova~A.\,A. Application of laconic forms of the equations of motion in the dynamics of nonholonomic mobile robots. // Nonlin. Dyn. 2011. Vol. 7. No. 4. P. 771--783.\\
+{[2]} Kosenko~I.\,I. Integration of the equations of a rotational motion of a rigid body in quaternion algebra. The Euler case. // J. Appl. Math. Mech. 1998. Vol. 62, No. 2. P. 206--214.\\
+
+\end{document}
+
