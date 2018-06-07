@@ -16,9 +16,40 @@ $$\hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i}$$
     2L = 2T = M\vec{v}_S^2 + I_S\dot{\theta}^2 + J\sum_i\dot{\chi}_i^2 + B\sum_{i,j}(\dot{\phi}_{ij}^2 + 2\dot{\theta}\sin(\kappa_j + \chi_i)\dot{\phi}_{ij})=\dot{\vec{q}}^\mathrm{T}\M\dot{\vec{q}}
 \end{equation}
 %\sout{Здесь полная масса системы -- $M = \mathring{M} + Nnm$, момент инерции всей системы относительно $SZ$ -- $I_S = \mathring{I_S} + Nn(\frac{A+B}{2} + mR^2 + \frac{mr^2}{2})$, момент инерции колеса (с роликами) относительно его оси $J = \mathring{J} + n(A + mr^2)$, где $\mathring{M}, \mathring{I_S}, \mathring{J}$ -- масса и моменты инерции системы и колес без учета роликов; $m$ -- масса ролика; $A$ -- момент инерции ролика относительно любой оси, перпендикулярной его оси собственного вращения и проходящей через его центр масс; $r$ -- радиус диска колеса (расстояние от центра колеса до центра ролика),}
-Здесь $M,\ I_S,\ J$ --- массово-инерционные характеристики экипажа (см. Приложение), $B$ --- момент инерции ролика относительно его оси вращения. Лагранжиан при учете связей определяется соотношением:
+Здесь $M,\ I_S,\ J$ --- массово-инерционные характеристики экипажа (его общая масса, момент инерции относительно оси $SZ$ и инерции тела одного колеса относительно его оси вращения соответственно), $B$ --- момент инерции ролика относительно его оси вращения. Лагранжиан при учете связей определяется соотношением:
 $$ 2L^{*}  = \vnu^\mathrm{T} V^\mathrm{T}\M V\vnu = \vnu^\mathrm{T} \M^*(\chi_i)\vnu $$
-Структура симметрической матрицы $\M^*$ следующая:
+
+Матрица кинетической энергии имеет следующий вид:
+$$
+\M = \begin{bmatrix}
+    \widetilde{\M}_{11}   & \widetilde{\M}_{12}   & \widetilde{\M}_{13} \\
+    \widetilde{\M}_{12}^T & \widetilde{\M}_{22}   & \widetilde{\M}_{23} \\
+    \widetilde{\M}_{13}^T & \widetilde{\M}_{23}^T & \widetilde{\M}_{33} \\
+\end{bmatrix}
+$$
+где
+$$
+\widetilde{\M}_{11} = \text{diag}(M, M, I_S),
+\quad
+\widetilde{\M}_{22} = JE_{N \times N},
+\quad
+\widetilde{\M}_{33} = BE_{Nn \times Nn}
+$$
+$$
+\widetilde{\M}_{12} = O_{3 \times N},
+\quad
+\widetilde{\M}_{13} = \begin{bmatrix}
+        0                      & \cdots & 0                      \\
+        0                      & \cdots & 0                      \\
+        B\sin\chi_{11}         & \cdots & B\sin\chi_{Nn}         \\
+    \end{bmatrix},
+\quad
+\widetilde{\M}_{23} = O_{N \times Nn}
+\vsp
+$$
+Здесь $O_{(\boldsymbol{\cdot})}$ и $E_{(\boldsymbol{\cdot})}$ --- нулевые и единичные матрицы, в индексах которых указаны их размерности. В третьей строке $\widetilde{\M}_{13}$ сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам; элементы упорядочены по возрастанию индексов, так что ролики одного колеса соседствуют.
+
+Соответственно, структура симметрической матрицы $\M^*$ кинетической энергии с учетом связей следующая:
 $$
 \M^* = 
     \begin{bmatrix}
@@ -48,20 +79,17 @@ $$
 $$
 Здесь $E_{N(n-1) \times N(n-1)}$ --- единичная матрица, $\chi_{kl} = \chi_k+\kappa_l$ --- угол между вертикалью и осью ролика, где индекс $k = 1,\dots,N$ означает номер колеса, $l = 2,\ldots, n$ -- номер cвободного ролика на колесе ($l = 1$ --- ролик, находящийся в контакте).
 
-% $$
-% \M^* = \begin{bmatrix}
-%         \left(\begin{matrix}&&\\&m^*_{ij}&\\&&\end{matrix}\right)_{3\times3} \quad & \left(\begin{matrix} 0&\ldots& 0 \\ 0&\ldots&0 \\ B\Lambda^{-1}\sin\chi_{12}&\ldots& B\Lambda^{-1}\sin\chi_{nN} \end{matrix}\right) \\[25pt]
-%         \scalebox{1.5}{$\star$} & \begin{matrix} B & &0 \\ & \ddots & \\ 0& & B \end{matrix} \\
-%     \end{bmatrix},
-% $$
-
-%\[ \M^* = \left[ \begin{array}{c|c}
-%m^* & c \\ \cline{1-2}
-%c^\mathrm{T} & b
-%\end{array} \right] \]
-Явные формулы для элементов матрицы $\widetilde{\M}^*_{11}$ выписаны в Приложении; отметим, что они зависят только от координат $\chi_i$, которые входят в отношения $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие разрывы второго рода при смене роликов, т.е. при переходе с одного ролика на другой (см. равенство (\ref{constraint_roller_contact})).
-% Эта матрица соответствует псевдоскоростям $\nu_1,\ \nu_2,\ \nu_3$.
-% Остальные элементы матрицы $\M^*$ соответствуют псевдоскоростям свободных роликoв $\nu_s$, для которых $\chi_{kl} = \chi_k+\kappa_l$ --- угол между вертикалью и осью ролика.
+Элементы матрицы $\widetilde{\M}^*_{11}$ зависят только от координат $\chi_i$, которые входят в отношения $B/\rho_i^2$ и $B\sin\chi_i/\rho_i$, имеющие разрывы второго рода при смене роликов, т.е. при переходе с одного ролика на другой (см. равенство (\ref{constraint_roller_contact})). Явный вид элементов $\widetilde{\M}^*_{11}$ таков:
+\begin{equation}\label{mstar}
+    \begin{array}{rcl}
+        m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg)\quad(11 \leftrightarrow 22, \sin\alpha_i \leftrightarrow \cos\alpha_i)\vsp
+        m^*_{33} & = & \ddfrac{1}{\Lambda}\bigg(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}\bigg),\quad
+        m^*_{12}  =  \sum\limits_i \bigg(-J\ddfrac{R^2}{l^2} + B\ddfrac{R^2}{\rho_i^2}\bigg)\sin\alpha_i\cos\alpha_i\vsp
+        m^*_{13} & = & \ddfrac{1}{\Lambda}\sum\limits_i B\ddfrac{R}{\rho_i}\sin\chi_i\cos\alpha_i,
+        \quad
+        m^*_{23} \enspace = \enspace \ddfrac{1}{\Lambda}\sum\limits_i B\ddfrac{R}{\rho_i}\sin\chi_i\sin\alpha_i
+    \end{array}
+\end{equation}
 
 Первое слагаемое в левой части равенства (\ref{Tatarinov}) получается дифференцированием лагранжиана и подстановкой связей:
 \begin{equation}\label{DLStarDnuDdt}
@@ -93,74 +121,90 @@ $$
 \{P_3, L^*\} = \frac{R}{2l\Lambda}\vnu^\mathrm{T}\M^*_i\vnu,\quad \{P_s,L^*\} = 0, s>3
 $$
 
-Остается рассмотреть правую часть равенства (\ref{Tatarinov}): она отлична от нуля лишь при $\alpha = 1,\ 2,\ 3$ (см. Приложение).
-%, и после подстановки формальных импульсов $p_i$ их можно записать 
+Остается рассмотреть правую часть равенства (\ref{Tatarinov}): она отлична от нуля лишь при $\alpha = 1,\ 2,\ 3$.
 
-%как $$\ddfrac{MR^2}{\Lambda}(\nu_2\nu_3, -\nu_1\nu_3, 0, 0, \ldots, 0)^T - BR^2 \vnu^T (\Prhs_\alpha)^T \vnu,$$ где матрицы $\Prhs_\alpha$ квадратичных форм задаются следующим образом:
+Обозначая
+$$\xi_\pm(\alpha) = \nu_1\cos\alpha \pm \nu_2\sin\alpha, \quad \eta_\pm(\alpha) = \nu_1\sin\alpha \pm \nu_2\cos\alpha$$
+для импульсов $\vec{p} = \ddpd{L}{\dot{\vec{q}}}$ получим
+\begin{equation}\label{p}
+    \begin{array}{c}
+        p_x  =  MR\xi_-(\theta), \ p_y = MR\eta_+(\theta),\\
+        p_\theta  =  BR\sum\limits_i\ddfrac{\sin\chi_i}{\rho_i}\xi_+(\alpha_i) + \ddfrac{I_S}{\Lambda}\nu_3 + B\sum\limits_s\sin\chi_s\nu_s\vsp \\
+        p_{\chi_i}  =  J\ddfrac{R}{l}(\eta_-(\alpha_i) - \ddfrac{1}{\Lambda}\nu_3), \ p_{\phi_{k1}}  =  \ddfrac{BR}{\rho_k}\xi_+(\alpha_k)+\ddfrac{B}{\Lambda}\sin\chi_k,\\
+        p_{\phi_s}  =  \ddfrac{B}{\Lambda}\nu_3\sin\chi_s + B\nu_s
+    \end{array}
+\end{equation}
 
-%$$
-%\tau_k = \ddfrac{\sin\chi_k}{\rho_k^2}, \quad s_k = ( %R\frac{\cos\alpha_k}{\rho_k}, R\frac{\sin\alpha_k}{\rho_k}, %\frac{1}{\Lambda}\sin\chi_k )\tau_k,
-%$$
-%$$
-%u_k = ( 1, \frac{1}{\Lambda}\cos\alpha_k, \frac{1}{\Lambda}\sin\alpha_k ), %\quad \AntiU_k = \left(\begin{matrix}
-%    0      & u_k^1  & u_k^2\\
-%    -u_k^1 & 0      & u_k^3\\
-%    -u_k^2 & -u_k^3 & 0    \\
-%\end{matrix}
-%\right),
-%$$
-%$$
-%(\Prhs_\alpha)_{ij} = \sum_k (\AntiU_k)_{\alpha j}s^i_k, i,j \leq 3; \quad %(\Prhs_\alpha)_{ij} = 0, i,j > 3; \quad \Prhs_\alpha = 0, \alpha > 3. \\
-%$$
-%Более подробные выражения для $p_i$ и $\{P_i, P_j\}$ см. в приложении.
-
-Окончательно, пользуясь обозначениями из Приложения, получаем, что уравнения\upr{Tatarinov} имеют следующую структуру:
-% \def\superDuperSubscript{\the\fontdimen16\textfont2} -- could not use the variable below
+Для упрощения записи правой части системы\upr{Tatarinov} введем обозначение для операции дискретной свертки произвольной функции $f$:
+$$
+\sigma[f(\alpha,\chi)] = \sum\limits_{k=1}^{N} f(\alpha_k,\chi_k) \frac{\sin\chi_k}{\rho_k^3}
+$$
+Тогда скобки Пуассона в правой части системы\upr{Tatarinov} имеют вид (звездочкой обозначена подстановка импульсов $p_i$)
 \begin{eqnarray*}
-\M^*\dot{\vnu} = 
-MR^2\Lambda^{-1}\left(\begin{matrix}
-    \nu_2\nu_3\\
-    -\nu_1\nu_3\\
-    0\\
-    0\\
-    \vdots
-    \\
-    0
-\end{matrix}\right)
-+\vnu^\mathrm{T}\left(
-\frac{R}{2l}
-\left(\begin{matrix}
-    -\M^*_i \sin\alpha_i\\
-    \M^*_i \cos\alpha_i\\
-    \M^*_i \Lambda^{-1}\\
-    0\\
-    \vdots
-    \\
-    0
-    \end{matrix}
-\right)
--BR^2
-\left(\begin{matrix}
-    \Prhs_1\\
-    \Prhs_2\\
-    \Prhs_3\\
-    0\\
-    \vdots
-    \\
-    0
-\end{matrix}\right)
-\right)
-\vnu
--B\left(\begin{matrix}
-    \scalebox{1.5}{$\star$}\\
-    \scalebox{1.5}{$\star$}\\
-    \scalebox{1.5}{$\star$}\\
-    \fontdimen16\textfont2=5pt
-    \ddfrac{\nu_3}{\Lambda}\dot{\chi}_1^*\cos\chi_{12}\\
-    \vdots
-    \\
-    \ddfrac{\nu_3}{\Lambda}\dot{\chi}_N^*\cos\chi_{Nn}
-\end{matrix}\right)
+    (\{P_1,P_2\})^* &=& \left(-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k}\right)^* \\
+                    &=& -BR^2(R\nu_1 \sigma[\cos\alpha] + R\nu_2 \sigma[\sin\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\sin\chi]) = \\
+                    &=& -BR^2\prhs_{12}\vnu\\
+    \prhs_{12}      &=& (\sigma[\cos\alpha], R\sigma[\sin\alpha], \Lambda^{-1}\sigma[\rho\sin\chi], 0,\dots,0) \\
+    (\{P_1,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-p_x\sin\theta + p_y\cos\theta - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* \\
+                    &=& {MR^2}{\Lambda}^{-1}\nu_2 - \\
+                    &-& {BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] + 
+                        \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi]) = \\
+                    &=& {MR^2}{\Lambda}^{-1}\nu_2-{BR^2} \prhs_{13}\vnu \\
+    \prhs_{13}      &=& \Lambda^{-1} (R\sigma[\cos^2\alpha], R\sigma[\sin\alpha\cos\alpha], \Lambda^{-1}\sigma[\rho\cos\alpha\sin\chi], 0,\dots,0) \\
+    (\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-p_x\cos\theta - p_y\sin\theta - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^* =    
+                        -{MR^2}{\Lambda}^{-1}\nu_1 - \\
+                    &-& {BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha]
+                        + \Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] = \\
+                    &=& -{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}\prhs_{23}\vnu\\
+    \prhs_{23}      &=& \Lambda^{-1}(R\sigma[\sin\alpha\cos\alpha], R\sigma[\sin^2\alpha], \Lambda^{-1}\sigma[\rho\sin\alpha\sin\chi], 0,\dots,0)
+\end{eqnarray*}
+
+Окончательно, объединяя выражения для всех слагаемых\upr{Tatarinov}, получаем, что уравнения движения имеют следующую структуру:
+
+\begin{eqnarray*}
+    \hspace{-25pt}
+    \M^*\dot{\vnu} = 
+    MR^2\Lambda^{-1}\begin{bmatrix}
+        \nu_2\nu_3\\
+        -\nu_1\nu_3\\
+        0\\
+        0\\
+        \vdots
+        \\
+        0
+    \end{bmatrix}
+    +\vnu^\mathrm{T}
+    \frac{R}{2l}
+    \begin{bmatrix}
+        -\M^*_i \sin\alpha_i\\
+        \M^*_i \cos\alpha_i\\
+        \M^*_i \Lambda^{-1}\\
+        0\\
+        \vdots
+        \\
+        0
+    \end{bmatrix}
+    -BR^2
+    \begin{bmatrix}
+        \Prhs_1\\
+        \Prhs_2\\
+        \Prhs_3\\
+        0\\
+        \vdots
+        \\
+        0
+    \end{bmatrix}
+    \vnu
+    -B\begin{bmatrix}
+        \scalebox{1.5}{$\star$}\\
+        \scalebox{1.5}{$\star$}\\
+        \scalebox{1.5}{$\star$}\\
+        \fontdimen16\textfont2=5pt
+        \ddfrac{\nu_3}{\Lambda}\dot{\chi}_1^*\cos\chi_{12}\\
+        \vdots
+        \\
+        \ddfrac{\nu_3}{\Lambda}\dot{\chi}_N^*\cos\chi_{Nn}
+    \end{bmatrix}
 \end{eqnarray*}
 \begin{equation}\label{eq:full_system}
 \end{equation}
