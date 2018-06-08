@@ -32,7 +32,8 @@
 % \newcommand{\mke}{M}
 % \newcommand{\mK}{K}
 
-\newcommand{\mvk}{\left(\mke\cstr \enspace -\mK\right)}
+\newcommand{\mvk}{\left(\mke\cstr; \enspace -\mK\right)}
+\newcommand{\mvJt}{\left(\mke\cstr; \enspace -\J^T\right)}
 
 \newcommand{\dotp}[2]{\left( #1, \enspace #2 \right)}
 \newcommand{\mdotp}[2]{(#1)^T #2}
@@ -53,11 +54,15 @@
 
 \newcommand
 { \eqDeltaqQ }
-{ \mathbf{M} (\dot{\mathbf{q}}^+ - \dot{\mathbf{q}}^-) = \mathbf{Q} }
+{ \mke (\dqposle - \dqdo) = \Q }
 
 \newcommand
 { \eqQKF }
-{ \mathbf{Q} = \mathbf{K}\mathbf{F} }
+{ \Q = \mK\F }
+
+\newcommand
+{ \eqQJtF }
+{ \Q = \J^T\F }
 
 \newcommand
 { \eqQKFmat }
@@ -66,21 +71,33 @@
 
 \newcommand
 { \eqqnu }
-{ \dqposle = \mathbf{V}\nuposle }
+{ \dqposle = \cstr\nuposle }
 
 \newcommand
 { \eqMVnuKF }
-{ \mathbf{M}\mathbf{V}\nuposle - \mathbf{K}\mathbf{F} = \mathbf{M}\dqdo }
+{ \mke\cstr\nuposle - \mK\F = \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtF }
+{ \mke\cstr\nuposle - \J^T\F = \mke\dqdo }
 
 \newcommand{\nuFT}{\left(\nuposle ; \mathbf{F}\right)^T}
 
 \newcommand
 { \eqMVnuKFmat }
-{ \mvk \nuFT = \mathbf{M}\dqdo }
+{ \mvk \nuFT = \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtFmat }
+{ \mvJt \nuFT = \mke\dqdo }
 
 \newcommand
 { \eqMVnuKFmatres }
 { \nuFT = \mvk^{-1} \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtFmatres }
+{ \nuFT = \mvJt^{-1} \mke\dqdo }
 
 % Impact -- analytical
 
@@ -95,6 +112,10 @@
 \newcommand
 { \eqnuposleproj }
 { \nuposle = \inv{\cstr^T\mke\cstr}\cstr^T\mke\dqdo }
+
+\newcommand
+{ \eqFproj }
+{ \F = -\inv{\J\mke^{-1}\J^T}\J\dqdo }
 
 % Energy
 
