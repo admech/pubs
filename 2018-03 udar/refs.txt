@@ -1,0 +1,27 @@
+Campion G., Bastin G., D'Andrea-Novel B. Structural properties and classification of kinematic and dynamic models of wheeled mobile robots // IEEE Transactions on Robotics and Automation. 1996. V. 12, № 1. P. 47–62. URL: https://doi.org/10.1109/70.481750.
+Chung W., Iagnemma K. Wheeled Robots // Springer Handbook of Robotics. Springer International Publishing, 2016. P. 575–594. URL: https://doi.org/10.1007/978-3-319-32552-124.
+Kanjanawanishkul K. Omnidirectional wheeled mobile robots: wheel types and practical applications // International Journal of Advanced Mechatronic Systems. 2015. V. 6, № 6. P. 289. URL: https://doi.org/10.1504/ijamechs.2015.074788.
+Зобова А. А., Татаринов Я. В. Динамика экипажа с роликонесущими колесами // ПММ. 2009. Т. 73, № 1. С. 13–22.
+Мартыненко Ю. Г., Формальский А. М. О движении мобильного робота с роликонесущимиколесами // Изв. РАН. Теория сист. управл. 2007. № 6. С. 142–149.
+Борисов А. В., Килин А. А., Мамаев И. С. Тележка с омниколесами на плоскости и сфере // Нелин. дин. 2011. Т. 7., № 4 (Мобильные роботы). С. 785–801.
+Зобова А. А., Татаринов Я. В. Свободные и управляемые движения некоторой модели экипажа с роликонесущими колесами // Вестник Моск. ун-та. Сер. 1: Матем. Механ. 2008. № 6. С. 62–65.
+Мартыненко Ю. Г. Устойчивость стационарных движений мобильного робота с роликонесущими колесами и смещенным центром маcc // ПММ. 2010. Т. 74, № 4. С. 610–619.
+Косенко И. И., Герасимов К. В. Физически-ориентированное моделирование динамики омнитележки // Нелин. дин. 2016. Т. 12, № 2. С. 251–262.
+Williams R.L., Carter B.E., Gallina P. et. al. Dynamic model with slip for wheeled omnidirectional robots // IEEE Transactions on Robotics and Automation. 2002. V. 18, № 3. P. 285–293.
+Ashmore M., Barnes N. Omni-drive robot motion on curved paths: the fastest path between two points is not a straight-line // Lecture Notes in Computer Science. Springer Berlin Heidelberg, 2002. С. 225–236.
+Герасимов К. В., Зобова А. А. Движение симметричного экипажа на омни-колесах с массивными роликами // ПММ. 2018. Т. 82, № 4. принята к печати.
+Bramanta A., Virgono A., Saputra R. Control system implementation and analysis for omniwheel vehicle // 2017 International Conference on Control, Electronics, Renewable Energy and Communications (ICCREC). IEEE, 2017. sep. URL: https://doi.org/10.1109/iccerec.2017.8226711.
+Field J., Salman M. Kinematic motion studies of an OmniDirectional mobile robot // 2017 IEEE International Symposium on Robotics and Intelligent Sensors (IRIS). IEEE, 2017. oct. URL: https://doi.org/10.1109/iris.2017.8250141.
+Huang J., Hung T.V., Tseng M. Smooth Switching Robust Adaptive Control for Omnidirectional Mobile Robots // IEEE Transactions on Control Systems Technology. 2015. sep. V. 23, № 5. P. 1986–1993. URL: https://doi.org/10.1109/tcst.2015.2388734.
+Kalmar-Nagy T. Real-time trajectory generation for omni-directional vehicles by constrained dynamic inversion // Mechatronics. 2016. may. V. 35. P. 44–53. URL: https://doi.org/10.1016/j.mechatronics.2015.12.004.
+Geza S., Bence K., Ferenc T. et. al. Feasible utilization of the inherent characteristics of holonomic mobile robots // Robotics and Autonomous Systems. 2017. aug. Т. 94. С. 12–24. URL: https://doi.org/10.1016/j.robot.2017.04.002.
+Ivanov A. On the control of a robot ball using two omniwheels // Regular and Chaotic Dynamics. 2015. V. 20, № 4. P. 441–448. URL: https://doi.org/10.1134/s1560354715040036.
+Karavaev Yu., Kilin A. The dynamics and control of a spherical robot with an internal omniwheel platform // Regular and Chaotic Dynamics. 2015. V. 20, № 2. P. 134–152. URL: https://doi.org/10.1134/s1560354715020033.
+Weiss A., Langlois R., Hayes M. Dynamics and vibration analysis of the interface between a non-rigid sphere and omnidirectional wheel actuators // Robotica. 2014. V. 33, № 09. P. 1850–1868. URL: https://doi.org/10.1017/s0263574714001088.
+Zhan Q., Cai Y., Yan C. Design, analysis and experiments of an omni-directional spherical robot // 2011 IEEE International Conference on Robotics and Automation. IEEE, 2011. URL: https://doi.org/10.1109/icra.2011.5980491.
+Нгуен Н.М. Разработка математической модели погрузочно-разгрузочного устройства с всенаправленными колесами // Труды МАИ. 2012. № 58.
+Taha B.M., Norsehah A.K., Norazlin I. et. al. Development of mobile robot drive system using mecanum wheels // 2016 International Conference on Advances in Electrical, Electronic and Systems Engineering (ICAEES). IEEE, 2016. URL: https://doi.org/10.1109/icaees.2016.7888113.
+Татаринов Я. В. Уравнения классической механики в новой форме // Вестник Моск. ун-та. Сер. 1: Матем. Механ. 2003. № 3. С. 67–76.
+Зобова А. А. Применение лаконичных форм уравнений движения в динамике неголономных мобильных роботов // Нелин. дин. 2011. Т. 7. № 4. P. 771–783. 2011.
+Вильке В.Г. Теоретическая механика. СПб.: Лань, 2003.
+С. В. Болотин, А. В. Карапетян, Е. И. Кугушев [и др.] Теоретическая механика. М.: Академия, 2010. 432 с.
