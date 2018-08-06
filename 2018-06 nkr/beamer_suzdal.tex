@@ -76,22 +76,18 @@
 % ----------
 % ----------
 
-\title{ Динамика омни-колесного экипажа \\ с учетом инерции роликов и трения }
+\title{ О динамике экипажа с омни-колесами \\ с массивными роликами }
 
-\author{ К.В. Герасимов }
+\author{ К.В. Герасимов, \enspace А.А. Зобова, \enspace И.И. Косенко }
 
 \institute[мех-мат МГУ]
 {
-  под руководством\\
-  д.ф.-м.н. проф. И.И. Косенко\\
-  к.ф.-м.н. доц. А.А. Зобовой\\
-  ---\\
   Кафедра теоретической механики и мехатроники\\
   Механико-математический факультет\\
   МГУ им. М.В. Ломоносова
 }
 
-\date{Июнь 2018}
+\date{Июль 2018}
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
@@ -481,9 +477,10 @@ B\left(\begin{matrix}
     Пусть:
     \begin{itemize}
         \item $\Delta t << 1$, $\quad \Delta \q \sim \nu\Delta t << 1$, $\quad \Delta \nu < \infty$,
-        \item в точках контакта: $\quad \mathbf{R} = \mathbf{N} + \mathbf{F}$, $\quad \mathbf{M} = 0 $,
-        \item трения в осях нет,
-        \item к моменту окончания удара $t^*+\Delta t$ уравнения связей выполнены (\enspace $\dqposle = \cstr(\q)\nuposle \ $), т.е. за время $\Delta t$ проскальзывание вошедшего в контакт ролика закончилось
+        \item в точках контакта: $\quad \mathbf{R} = \mathbf{N} + \mathbf{F}$,
+        \item к моменту окончания удара $t^*+\Delta t$ уравнения связей выполнены (\enspace $\dqposle = \cstr(\q)\nuposle \ $)
+        \item верно основное уравнение удара \enspace $\eqDeltaqQ$
+        \item связи идеальны \enspace $\Q^T\delta\qposle = 0$
     \end{itemize}
 \end{frame}
 
