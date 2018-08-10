@@ -1,0 +1,64 @@
+% \ddfrac command to show big fractions, not cramped up
+% https://tex.stackexchange.com/questions/173899/
+%--------------------------------------
+\newcommand\ddfrac[2]{\displaystyle\frac{\displaystyle #1}{\displaystyle #2}}
+%--------------------------------------
+
+% \vsp command to make a spacey newline
+% useful for equations arrays
+%--------------------------------------
+\newcommand\vsp[1][10]{\\[#1pt]}
+%--------------------------------------
+
+% partial derivatives (can \usepackage{physics}, but only one command so far, so no)
+%--------------------------------------
+\newcommand\pd[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\ddpd[2]{\ddfrac{\partial #1}{\partial #2}}
+\newcommand\ddt[1]{\frac{d #1}{dt}}
+\newcommand\ddddt[1]{\ddfrac{d #1}{dt}}
+%--------------------------------------
+
+% unbreakable space parenthesized reference
+%--------------------------------------
+\newcommand\upr[1]{~(\ref{#1})}
+%--------------------------------------
+
+% Nice letters
+%--------------------------------------
+\newcommand\M[0]{\mathcal{M}} % Matrix of intertia
+\newcommand\const{\mathrm{const}} %константа
+\newcommand\AntiU[0]{\mathcal{U}} % Helper antisymmetric matrix for eqs' RHS
+\newcommand\Rhs[0]{\mathcal{R}} % RHS
+\newcommand\Prhs[0]{\mathcal{P}} % The family of matrices for RHS
+\newcommand\prhs[0]{\mathbf{p}} % Poisson brackets
+\newcommand\vnu[0]{\text{\textbf{\textupsilon}}} % Upright greek vector nu for PMM
+%--------------------------------------
+
+% change line spacing mid doc (affects global line spacing)
+%--------------------------------------
+% \usepackage{setspace}
+%--------------------------------------
+
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+
+\newtheorem{stmt}{Утверждение}
+\newtheorem{prblm}{Затруднение}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\linespread{1.2}
+
+\newcounter{Section}
+\setcounter{Section}{0}
+\newcommand{\sect}[1]{\stepcounter{Section}\textbf{\arabic{Section}. #1}}
+
+\input{content/common/formulas}
+
+% \newcommand{\subf}[2]{\minipage{#1} #2 \endminipage}
+\newcommand{\subf}[2]{\begin{subfigure}[H]{#1} #2 \end{subfigure}}
+
+\newcommand{\rk}{\mathrm{rk}}
+
+\hyphenation{диф-фе-рен-ци-аль-но}
