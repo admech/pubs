@@ -6,7 +6,7 @@
 settings.outformat="png";
 settings.render=16;
 
-include "helper.asy";
+include "./content/pic/asy/helper.asy";
 
 size(2.5cm, 0);
 unitsize(0.8cm);
