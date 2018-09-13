@@ -76,22 +76,22 @@
 % ----------
 % ----------
 
-\title{ Динамика омни-колесного экипажа \\ с учетом инерции роликов и трения }
+\title{ Динамика роликонесущего экипажа \\ с учетом инерции роликов и трения }
 
 \author{ К.В. Герасимов }
 
 \institute[мех-мат МГУ]
 {
-  под руководством\\
-  д.ф.-м.н. проф. И.И. Косенко\\
-  к.ф.-м.н. доц. А.А. Зобовой\\
-  ---\\
+  Научные руководители:\\
+  \ д.ф.-м.н. И.И. Косенко\\
+  \ к.ф.-м.н. А.А. Зобова\\
+  \ \\
   Кафедра теоретической механики и мехатроники\\
   Механико-математический факультет\\
   МГУ им. М.В. Ломоносова
 }
 
-\date{Июнь 2018}
+\date{Сентябрь 2018}
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
@@ -480,10 +480,11 @@ B\left(\begin{matrix}
     Происходит мгновенное снятие связи с одного ролика и наложение связи на другой.\\
     Пусть:
     \begin{itemize}
-        \item $\Delta t << 1$, $\quad \Delta \q \sim \nu\Delta t << 1$, $\quad \Delta \nu < \infty$,
-        \item в точках контакта: $\quad \mathbf{R} = \mathbf{N} + \mathbf{F}$, $\quad \mathbf{M} = 0 $,
-        \item трения в осях нет,
-        \item к моменту окончания удара $t^*+\Delta t$ уравнения связей выполнены (\enspace $\dqposle = \cstr(\q)\nuposle \ $), т.е. за время $\Delta t$ проскальзывание вошедшего в контакт ролика закончилось
+        \item $\Delta t << 1$, $\quad \Delta \q \sim \dotq\Delta t << 1$, $\quad \Delta \dotq < \infty$,
+        \item в точках контакта: $\quad \mathbf{R} = \mathbf{N} + \mathbf{F}$,
+        \item к моменту окончания удара $t^*+\Delta t$ уравнения связей выполнены (\enspace $\dqposle = \cstr(\q)\nuposle \ $)
+        \item верно основное уравнение удара \enspace $\eqDeltaqQ$
+        \item связи идеальны \enspace $\Q^T\delta\qposle = 0$
     \end{itemize}
 \end{frame}
 
@@ -755,7 +756,7 @@ B\left(\begin{matrix}
 \begin{frame}{Отслеживание контакта}
     \minipage{0.5\textwidth}
         \begin{figure}[htb]
-            \centering\includegraphics[width=\textwidth]{content/parts/3_friction/nd/RollerSection.eps}
+            \centering\includegraphics[width=\textwidth]{content/parts/3_friction/nd/RollerSection_d_ib.png}
             \caption{Схема отслеживания контакта: вид сбоку отдельного ролика.}
             \label{ContactScheme}
         \end{figure}
@@ -767,6 +768,60 @@ B\left(\begin{matrix}
         $$ {\bf r}_{P_A}=\left( x_{P_B},0,z_{P_B}\right) ^T $$
         $$ \left| T_B{\bf i}_B\cdot {\bf n}_A\right|\le\sin\alpha $$
         $$ y_B<R, \quad y_{P_B}=0, \quad F_n=0 $$
+    \endminipage
+\end{frame}
+
+\begin{frame}{Отслеживание контакта -- \textit{mecanum}}
+    \minipage{0.45\textwidth}
+        \begin{figure}[htb]
+            \centering\includegraphics[width=\textwidth]{content/pic/asy/pic_mecanum.png}
+            \label{ContactScheme}
+        \end{figure}
+    \endminipage
+    \quad
+    \minipage{0.5\textwidth}
+        Неявный алгоритм
+        $$
+        \mu =\left[R{\bf j}_1\cdot{\bf k}_2-R_1{\vecrho }\cdot {\bf k}_2\right] /
+        {\bf k}_1\cdot{\bf k}_2,
+        $$
+        $$
+        \vecrho\cdot {\bf i}_2=0,\quad\vecrho\cdot {\bf k}_1=0,
+        $$
+        $$
+        \dfrac{d}{dt}\vecrho\cdot {\bf i}_2+\vecrho\cdot\dfrac{d}{dt}{\bf i}_2=0,
+        $$
+        $$
+        \dfrac{d}{dt}\vecrho\cdot {\bf k}_1+\vecrho\cdot\dfrac{d}{dt}{\bf k}_1=0,
+        $$
+    \endminipage
+\end{frame}
+
+\begin{frame}{Отслеживание контакта -- \textit{mecanum}}
+    \minipage{0.45\textwidth}
+        \begin{figure}[htb]
+            \centering\includegraphics[width=\textwidth]{content/pic/asy/pic_mecanum.png}
+            \label{ContactScheme}
+        \end{figure}
+    \endminipage
+    \quad
+    \minipage{0.5\textwidth}
+        Явный алгоритм
+        $$
+        {\bf r}_{P_B}={\bf r}_{O_B}+R_1\vecrho -R{\bf j}_1+\mu {\bf k}_1,
+        $$
+        $$
+        {\bf r}_{P_B}={\bf r}_{O_B}+\overrightarrow{O_BD}+\overrightarrow{DP_B}
+        $$
+        $$
+        \overrightarrow{O_BD}=-m{\bf i}_2,\quad\overrightarrow{DP_B}=-h{\bf j}_1,
+        $$
+        $$m=R_1\sin\chi / \cos\chi/\cos\psi $$
+        $$h=R-R_1/\cos\chi$$
+        $$
+        \cos\chi=\vecrho\cdot{\bf n}_A, \quad \sin\chi=
+        \left({\bf n}_A\times\vecrho\right)\cdot {\bf k}_1.
+        $$
     \endminipage
 \end{frame}
 
@@ -785,13 +840,13 @@ B\left(\begin{matrix}
         \begin{columns}
             \column{0.45\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{content/parts/3_friction/diploma/img/art/bor_wheel_scheme.png}
-                \caption{Модель колеса}
+                \includegraphics[width=\textwidth]{content/pic/asy/wheel_bor.png}
+                \caption{Безынерционная модель колеса}
                 \label{fig:bor_wheel_scheme}
             \column{0.45\textwidth}
                 \centering
-                \includegraphics[width=\textwidth]{content/parts/3_friction/diploma/img/art/bor_vehicle.png}
-                \caption{Модель экипажа}
+                \includegraphics[width=\textwidth]{content/pic/asy/cart_bor.png}
+                \caption{Безынерционная модель экипажа}
                 \label{fig:bor_vehicle}
         \end{columns}
     \end{figure}
