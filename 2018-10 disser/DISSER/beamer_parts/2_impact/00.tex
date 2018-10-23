@@ -1,0 +1,60 @@
+\subsection{Основное уравнение теории удара}
+
+\begin{frame}{Основное уравнение теории удара}{Линейная система алгебраических уравнений на реакции и скорости после удара}
+    \begin{columns}
+        \hspace{15pt}
+        \begin{column}{0.35\textwidth}
+            \vspace{-10pt}
+            $$ \eqDeltaqQ $$
+            $$ \J\dqposle = 0, \quad \Q^T\delta\qposle = 0 $$
+            $$ \eqQJtF, \enspace \eqqnu, \enspace \J\cstr = 0 $$
+            $$ \eqMVnuJtF $$
+            $$ \eqMVnuJtFmatres $$
+            \begin{eqnarray*}
+                \dim \mke \cstr & = & \dim \q \times \dim \nuvec \\
+                \dim \J^T & = & \dim \q \times \dim \F \\
+                \dim \q & = & 3 + N(n + 1) \\
+                \dim \nuvec & = & 3 + N(n - 1) \\
+                \dim \F & = & 2N
+            \end{eqnarray*}
+        \end{column}
+        \hspace{55pt}
+        \begin{column}{0.65\textwidth}
+            \begin{figure}
+                % \centering
+                \hspace{-55pt}
+                \asyinclude{content/pic/asy/pic_react.asy}
+                \caption{Касательные реакции в точках контакта}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Основное уравнение теории удара}{Ударные обобщенные импульсы и реакции}
+    \vspace{-5pt}
+    $$ \eqQ $$
+    \vspace{-15pt}
+    \begin{eqnarray*}
+    \eqQiOne \\
+    \eqQiTwo \\
+    \eqQiTheta \\
+    \eqQChii \\
+    \eqQPhii \\
+    \eqQs
+    \end{eqnarray*}
+\end{frame}
+
+\begin{frame}{Нахождение обобщенных скоростей и ударных реакций}
+    
+    Основное уравнение удара  \quad \quad \quad \quad $ \eqDeltaqQ $ \\
+    Дифференциальные связи  \quad \quad \quad \quad $ \J\dqposle = 0 $ \\
+    Условие идеальности связей \quad \quad \quad $ \Q^T\delta\qposle = 0 $ \\
+
+    Система разрешима относительно $\nuFT$
+    $$ \eqMVnuJtF $$
+    Скорости находятся независимо от сил ($\cstr^T\cdot$)    
+    $$ \eqnuposleproj $$
+    Скорости находятся независимо от сил ($\J\mke^{-1}\cdot$)    
+    $$ \eqFproj $$
+    
+\end{frame}
