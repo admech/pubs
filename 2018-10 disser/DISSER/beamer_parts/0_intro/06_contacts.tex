@@ -4,12 +4,12 @@
             Главы 1 и 2. Абсолютно шероховатая плоскость
             \begin{itemize}
                 \item {
-                    Скорость точек контакта равна нулю:
-                    $$\vec{v}_{C_i} = 0, i = 1\dots N$$
+                    Скорости точек контакта равны нулю:
+                    $$ \vec{v}_{C_i} = 0, \quad i = 1 \dots N $$
                 }
                 \item {
-                    Количество степеней свободы:
-                    $$3 + N(n-1)$$
+                    Количество степеней свободы
+                    $$ 3 + N(n-1) $$
                 }
             \end{itemize}
         }
@@ -18,9 +18,25 @@
             \begin{itemize}
                 \item {
                     Вязкое трение
+                    $$
+                        \vec{F} = -\gamma\vec{v}_{C_i}
+                    $$
                 }
                 \item {
                     Регуляризованное сухое трение
+                    $$
+                        \vec{F} = -\mu N \vec{v}_{C_i}
+                            \left\{
+                                \begin{array}{ll}
+                                    \ddfrac{1}{\delta}, \enspace |\vec{v}_{C_i}| < \delta \ll 1 \vspace{7pt}\\
+                                    \ddfrac{1}{|\vec{v}_{C_i}|}\enspace \text{иначе}
+                                \end{array}
+                            \right.
+                    $$
+                }
+                \item {
+                    Количество степеней свободы: \enspace 
+                    $ 3 + N(n + 1) $
                 }
             \end{itemize}
         }

@@ -1,12 +1,12 @@
-
 settings.outformat="png";
 settings.render=16;
 
-include "helper.asy";
+include "./content/pic/asy/helper.asy";
 
-// size(2.5cm, 0);
-size(3.5cm, 0); // maybe better if insert large figure
+size(2.5cm, 0);
+// size(3.5cm, 0); // maybe better if insert large figure
 unitsize(0.8cm);
+real font_size = 6.2pt;
 
 import graph3;
 import three;
@@ -62,7 +62,7 @@ void name(
   triple position,
   pen p = red
 ) {
-  p = p + linewidth(0.3pt) + fontsize(1.2pt);
+  p = p + linewidth(0.3pt) + fontsize(font_size);
   triple cd = cameradirection(position);
   triple flat = position + (10 - dot(position, cd)) * cd;
   label(text, position = position, p = p);
@@ -78,7 +78,7 @@ void vector(
   bool na = false,
   bool one = false
 ) {
-  p = p + linewidth(lw) + fontsize(1.2pt);
+  p = p + linewidth(lw) + fontsize(font_size);
   if (one) {
     direction = direction / length(direction);
   }
@@ -104,7 +104,7 @@ void base(
   triple origin,
   triple i = O, triple j = O, triple k = O,
   string subscript = "",
-  pen p = red + linewidth(0.4pt) + fontsize(1.2pt),
+  pen p = red + linewidth(0.4pt) + fontsize(font_size),
   bool skipK = false
 ) {
   drawdot3d(origin, p);
@@ -180,6 +180,9 @@ triple wheel_center = cart_center + wheel_center_rel;
 
 // === POINTS AND AXES ===============================
 
+
+name("$O$", position = O - 0.35X - 0.35Y, black);
+drawdot3d(O, black);
 name("$x$", position = 7.5X - 0.5Y, black);
 vector(O, 8X, black);
 name("$y$", position = 5.5Y - 0.5X, black);
@@ -190,21 +193,21 @@ draw(
   darkgray + opacity(0.2) + linewidth(0.3pt)
 );
 
-name("$O$", position = cart_center - 0.5X, black);
+name("$S$", position = cart_center - 0.5X, black);
 drawdot3d(cart_center, black);
-name("$S$", position = mass_center - 0.5X, black);
+name("$M$", position = mass_center - 0.5X, black);
 drawdot3d(mass_center, black);
 vector(cart_center, mass_center_rel, black);
 
-name("$\mathbf{r}_q$", position = wheel_center - 0.65X - 0.25Y, black);
+name("$\mathbf{r}_i$", position = wheel_center - 0.65X - 0.25Y, black);
 vector(cart_center, wheel_center_rel, black);
 
-name("$\mathbf{i}_q$", position = wheel_center + roller_axis + 0.35X, black);
+name("$\mathbf{e}_i$", position = wheel_center + roller_axis + 0.35X, black);
 vector(wheel_center, roller_axis, black);
 
-name("$\mathbf{e}_2$", position = cart_center - 0.5X + Y - 0.2X - 0.5Y, black);
+name("$\mathbf{e}_{\eta}$", position = cart_center - 0.5X + Y - 0.2X - 0.5Y, black);
 vector(cart_center, -0.5X + Y, black, one = true);
-name("$\mathbf{e}_1$", position = cart_center + X + 0.5Y - 0.4Y, black);
+name("$\mathbf{e}_{\xi}$", position = cart_center + X + 0.5Y - 0.4Y, black);
 vector(cart_center, X + 0.5Y, black, one = true);
 
 triple diag = 0.5X + 0.1Y;

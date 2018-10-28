@@ -1,9 +1,27 @@
-\begin{frame}{Значения параметров}{И ЗДЕСЬ ЖЕ ПОКАЗАТЬ ВАРИАНТЫ НАЧАЛЬНЫХ УСЛОВИЙ -- РИСУНКИ}
+\begin{frame}{Глава 2. Параметры численных экспериментов}
     \begin{itemize}
-        \item радиус колеса $r = 0.05$,
-        \item масса колеса $ M_{\text{к}} = 0.15$, 
-        \item масса ролика $m_{\text{рол}} = 0.05$, 
-        \item радиус платформы $R = 0.15$, 
-        \item масса платформы $M_{\text{пл}} = 1$.
+        \item отношение радиуса колеса к радиусу платформы $\ddfrac{r}{R} = \ddfrac{1}{3}$,
+        \item отношение массы колеса к массе платформы $\ddfrac{M_{\text{к}}}{M_{\text{пл}}} = 0.15$, 
+        \item отношение массы ролика к массе платформы $\ddfrac{m_{\text{рол}}}{M_{\text{пл}}} = 0.05$, 
+        \item $\vec{\omega}_0 = 1$, $\vec{v}_0 = 1$
     \end{itemize}
+    \begin{figure}
+        \minipage{0.3\textwidth}
+            \centering
+            \asyinclude{content/pic/asy/pic_nu_self_rot.asy}
+            \caption{Движение $1$}
+        \endminipage
+        \quad
+        \minipage{0.3\textwidth}
+            \centering
+            \asyinclude{content/pic/asy/pic_nu_straight.asy}
+            \caption{Движение $2$}
+        \endminipage
+        \quad
+        \minipage{0.3\textwidth}
+            \centering
+            \asyinclude{content/pic/asy/pic_nu_wrench.asy}
+            \caption{Движение $3$}
+        \endminipage
+    \end{figure}
 \end{frame}

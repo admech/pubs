@@ -1,16 +1,19 @@
-\begin{frame}{Независимое нахождение обобщенных скоростей}
+\begin{frame}{Глава 2. Нахождение обобщенных скоростей после удара}{В том числе, после кратного удара}
     \begin{columns}
         \hspace{15pt}
         \begin{column}{0.35\textwidth}
-            $$ \dqposle = \dqdo -\ \deltadq = \mathbf{V}\nuposle \in \subspace $$
-            \begin{eqnarray*}
-                0 & = & \dotp{\deltadq}{\mke\cstr} \\
-                  & = & \dotp{\cstr\nuposle - \dqdo}{\mke\cstr} \\
-                  & = & \dotp{\mke\cstr\nuposle - \mke\dqdo}{\cstr} \\
-                  & = & \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo
-            \end{eqnarray*}
-            \vspace{0.35pt}
             $$ \eqnuposleproj $$
+            
+            Действительно, т.к.
+            $$ \mke\deltadq = \Q, \enspace \Q^T\delta\qposle = 0,$$
+            $$ \dqposle = \dqdo -\ \deltadq = \mathbf{V}\nuposle \in \subspace,$$
+            то
+            \begin{eqnarray*}
+                0 & = & \dotp{\mke\deltadq}{\cstr} \\
+                  & = & \dotp{\mke\left(\cstr\nuposle - \dqdo\right)}{\cstr} \\
+                  & = & \dotp{\mke\cstr\nuposle - \mke\dqdo}{\cstr} \\
+                  & = & \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo, \enspace \text{ч.т.д.}
+            \end{eqnarray*}
         \end{column}
         \hspace{55pt}
         \begin{column}{0.65\textwidth}

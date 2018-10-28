@@ -1,11 +1,13 @@
 settings.outformat="png";
-settings.render=16;
+settings.render=8; // 16;
 
 include "./content/pic/asy/helper.asy";
 
 // size(2.5cm, 0);
 size(3.5cm, 0); // maybe better if insert large figure
 unitsize(0.8cm);
+real font_size = 5.2pt;
+defaultpen(fontsize(font_size));
 
 import graph3;
 import three;
@@ -61,7 +63,7 @@ void name(
   triple position,
   pen p = red
 ) {
-  p = p + linewidth(0.3pt) + fontsize(1.2pt);
+  p = p + linewidth(0.3pt) + fontsize(font_size);
   triple cd = cameradirection(position);
   triple flat = position + (10 - dot(position, cd)) * cd;
   label(text, position = position, p = p);
@@ -76,7 +78,7 @@ void vector(
   real s = 2.5pt,
   bool na = false
 ) {
-  p = p + linewidth(lw) + fontsize(1.2pt);
+  p = p + linewidth(lw) + fontsize(font_size);
   if (!na) {
     draw(
       origin -- origin + direction, p,
@@ -99,7 +101,7 @@ void base(
   triple origin,
   triple i = O, triple j = O, triple k = O,
   string subscript = "",
-  pen p = red + linewidth(0.4pt) + fontsize(1.2pt),
+  pen p = red + linewidth(0.4pt) + fontsize(font_size),
   bool skipK = false
 ) {
   drawdot3d(origin, p);
@@ -140,7 +142,7 @@ real alpha = 2*pi / n_rollers / 2;
 real delta = pi/2 - psi;
 
 // wheel radius, as per Gferrer (R in our papers)
-real r = 4;
+real r = 2.7;
 real R = r;
 
 // distance between wheel axis and roller axis, as per Gferrer (R1 in ours)
@@ -178,16 +180,16 @@ vector(5Y + 3X, -8Y, gray, na = true);
 draw(circle(wheel_center, R, X), darkgray + opacity(0.2));
 vector(O, 4.6Y, gray, na = true);
 
-name("$\mathbf{i}$", position = contact_point + roller_axis * 3 + 0.6Y, black);
+name("$\mathbf{e}$", position = contact_point + roller_axis * 3 + 0.6Y, black);
 vector(O, 3 * roller_axis, black);
 
 triple vp = cross(Z, roller_axis);
-name("$\mathbf{v}_P$", position = contact_point + vp * 1.5 + 0.6Y, black);
+name("$\mathbf{v}_C$", position = contact_point + vp * 1.5 + 0.6Y, black);
 vector(O, 1.5 * vp, black);
 
-name("$O$", position = wheel_center + 0.6Y, black);
+name("$P$", position = wheel_center + 0.6Y, black);
 drawdot3d(wheel_center);
-name("$P$", position = contact_point - 0.6X, black);
+name("$C$", position = contact_point - 0.6X, black);
 drawdot3d(contact_point);
 
 // draw(roller_center -- roller_center - roller_axis * 3);
@@ -209,10 +211,10 @@ triple k1 = X;
 // implicit
 triple rho = (wheel_center - roller_center) / length(wheel_center - roller_center);
 
-vector(wheel_center, -R * rho, black, na = true);
-vector(wheel_center, -R * Z, black, na = true);
+// vector(wheel_center, -R * rho, black, na = true);
+// vector(wheel_center, -R * Z, black, na = true);
 
-name("$R$", position = wheel_center - R * Z * 0.4 - 0.5Y, black);
+// name("$R$", position = wheel_center - R * Z * 0.4 - 0.5Y, black);
 
 triple tmp_psi_dir = (-sin(psi), cos(psi), 0) * 2;
 vector(contact_point, R1 * tmp_psi_dir * 0.8, gray, na = true);
@@ -220,8 +222,8 @@ draw(arc(contact_point, contact_point + tmp_psi_dir * R1 * 0.75, contact_point +
 triple tmp_half_psi_dir = (-sin(psi/2), cos(psi/2), 0) * 2;
 name("$\psi$", position = contact_point + R1 * tmp_half_psi_dir * 0.9 - 0.4Y - 0.25X, blue);
 
-draw(arc(wheel_center, wheel_center - Z, wheel_center + radius_vector, X), blue);
-name("$\chi$", position = wheel_center - 0.6Z - 0.3Y, blue);
+// draw(arc(wheel_center, wheel_center - Z, wheel_center + radius_vector, X), blue);
+// name("$\chi$", position = wheel_center - 0.6Z - 0.3Y, blue);
 
 
 // === END OF OTHER VECTORS ==========================

@@ -259,12 +259,13 @@ base(
   origin = wheel_center,
   i = -radius_vector,
   k = k1,
-  p = orange + linewidth(0.4pt) + fontsize(1.2pt)
+  p = orange + linewidth(0.4pt) + fontsize(1.2pt),
+  skipK = true
 );
 name("$\mathbf{i}$", position = wheel_center - radius_vector * 1.3, orange);
 name("$\mathbf{j}$", position = wheel_center + cross(radius_vector, k1) * 1.3, orange);
-name("$\mathbf{k}$", position = wheel_center + k1 * 1.3, orange);
-name("$\mathbf{\rho}$", position = wheel_center + k1 * 1.3 - 0.5Z + 0.2Y, blue);
+name("$\mathbf{k}_1$", position = wheel_center + k1 * 1.3, red);
+name("$\mathbf{s}$", position = wheel_center + k1 * 1.3 - 0.5Z + 0.2Y, blue);
 
 // roller coords axes
 
@@ -311,12 +312,12 @@ vector(roller_center, R1 * rho * 0.91, heavygreen, lw = 1pt);
 vector(roller_center + R1 * rho, -R * Z * 0.95, heavygreen, lw = 1pt);
 vector(roller_center + R1 * rho - R * Z, mu * X * 0.9, heavygreen, lw = 1pt);
 
-name("$\mu$", position = roller_center + R1 * rho - R * Z + mu * X * 0.5 + 0.05X - 0.5Y, heavygreen);
-name("$R$", position = wheel_center - R * Z * 0.5 - 0.5Y, heavygreen);
+name("$\lambda$", position = roller_center + R1 * rho - R * Z + mu * X * 0.5 + 0.05X - 0.5Y, heavygreen);
+name("$l$", position = wheel_center - R * Z * 0.5 - 0.5Y, heavygreen);
 
 triple tmp_dir = (0, cos(pi/6), sin(pi/6));
 draw(wheel_center -- (wheel_center + R1 * tmp_dir), gray);
-name("$R_1$", position = wheel_center + R1 * tmp_dir * 0.5 + 0.5Z - 0.15X, gray);
+name("$r$", position = wheel_center + R1 * tmp_dir * 0.5 + 0.5Z - 0.15X, gray);
 triple tmp_chi_dir = (0, cos(chi), sin(chi));
 draw(roller_center -- (roller_center + R1 * tmp_chi_dir * 0.8), gray);
 
@@ -334,7 +335,7 @@ vector(roller_center + CD, DG * 0.8, royalblue, lw = 1pt);
 
 drawdot3d(roller_center + CD, black);
 name("$D$", position = roller_center + CD - 0.35X + 0.25Z, royalblue);
-name("$P_B$", position = roller_center + CD + DG - 0.5Z + 0.2X, red);
+name("$C$", position = roller_center + CD + DG - 0.5Z + 0.2X, red);
 
 name("$m$", position = roller_center + CD * 0.5 - 0.4X - 0.05Y, royalblue);
 name("$h$", position = roller_center + CD + DG * 0.5 + 0.35Y, royalblue);
@@ -345,8 +346,8 @@ name("$h$", position = roller_center + CD + DG * 0.5 + 0.35Y, royalblue);
 // === OTHER LABELS ==================================
 
 
-name("$O_A$", position = wheel_center - Y * 0.5 - X * 0.5, black);
-name("$O_B$", position = roller_center + Y * 0.5 + X * 0.5, black);
+name("$P$", position = wheel_center - Y * 0.5 - X * 0.5, black);
+name("$K$", position = roller_center + Y * 0.5 + X * 0.15, black);
 
 
 // === END OF OTHER LABELS ===========================

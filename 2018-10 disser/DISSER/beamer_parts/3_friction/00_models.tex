@@ -1,25 +1,31 @@
-\begin{frame}{Модели контакта}
+\begin{frame}{Глава 3. Экипаж на плоскости с трением}
     \begin{itemize}
         \item {
-            Трение
+            Построим семейство моделей с разными законами контактного взаимодействия.
             \begin{itemize}
                 \item {
-                    Вязкое
+                    Вязкое трение
+                    $$
+                        \vec{F}_{\text{тр}} = -\gamma\vec{v}_{C_i}
+                    $$
                 }
                 \item {
-                    Регуляризованное сухое
+                    Регуляризованное сухое трение
+                    $$
+                        \vec{F}_{\text{тр}} = -\mu N \vec{v}_{C_i}
+                            \left\{
+                                \begin{array}{ll}
+                                    \ddfrac{1}{\delta}, \enspace |\vec{v}_{C_i}| < \delta \ll 1 \vspace{7pt}\\
+                                    \ddfrac{1}{|\vec{v}_{C_i}|}\enspace \text{иначе}
+                                \end{array}
+                            \right.
+                    $$
                 }
             \end{itemize}
         }
         \item {
-            \begin{itemize}
-                \item {
-                    Модульная структура
-                }
-                \item {
-                    Нужен формализм
-                }
-            \end{itemize}
+            Количество степеней свободы: \enspace 
+            $$ 3 + N(n + 1) $$
         }
     \end{itemize}
 \end{frame}
