@@ -98,47 +98,61 @@
 % BIBLIO HACKS FOR PMM
 % -------------------------------------
 
-    % biblio hacks -- noindent bibitems
-    \makeatletter
-    \renewenvironment{thebibliography}[1]
-          {\section*{\refname}%
-          \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-          \list{\@biblabel{\@arabic\c@enumiv}}%
-                {\settowidth\labelwidth{\@biblabel{#1}}%
-                 \leftmargin\labelwidth
-                 \advance\leftmargin-25pt% change 20 pt according to your needs
-                 \advance\leftmargin\labelsep
-                 \setlength\itemindent{25pt}% change using the inverse of the length used before
-                 \@openbib@code
-                 \usecounter{enumiv}%
-                 \let\p@enumiv\@empty
-                 \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-          \sloppy
-          \clubpenalty4000
-          \@clubpenalty \clubpenalty
-          \widowpenalty4000%
-          \sfcode`\.\@m}
-          {\def\@noitemerr
-            {\@latex@warning{Empty `thebibliography' environment}}%
-          \endlist}
-    \renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
-    \makeatother
+    % % biblio hacks -- noindent bibitems
+    % \makeatletter
+    % \renewenvironment{thebibliography}[1]
+    %       {\section*{\refname}%
+    %       \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+    %       \list{\@biblabel{\@arabic\c@enumiv}}%
+    %             {\settowidth\labelwidth{\@biblabel{#1}}%
+    %              \leftmargin\labelwidth
+    %              \advance\leftmargin-25pt% change 20 pt according to your needs
+    %              \advance\leftmargin\labelsep
+    %              \setlength\itemindent{25pt}% change using the inverse of the length used before
+    %              \@openbib@code
+    %              \usecounter{enumiv}%
+    %              \let\p@enumiv\@empty
+    %              \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    %       \sloppy
+    %       \clubpenalty4000
+    %       \@clubpenalty \clubpenalty
+    %       \widowpenalty4000%
+    %       \sfcode`\.\@m}
+    %       {\def\@noitemerr
+    %         {\@latex@warning{Empty `thebibliography' environment}}%
+    %       \endlist}
+    % \renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+    % \makeatother
     
     
-    \voffset=-15mm \textwidth=17cm \textheight=24cm
-    \oddsidemargin=0cm \topmargin=+0cm \headsep=10pt \evensidemargin=0mm
-    \renewcommand{\baselinestretch}{2}
+    % \voffset=-15mm \textwidth=17cm \textheight=24cm
+    % \oddsidemargin=0cm \topmargin=+0cm \headsep=10pt \evensidemargin=0mm
+    % \renewcommand{\baselinestretch}{2}
     
-    \makeatletter \@addtoreset{equation}{section} \makeatother
-    \makeatletter
+    % \makeatletter \@addtoreset{equation}{section} \makeatother
+    % \makeatletter
     
-    % bibliography hacks
-    \renewcommand{\@biblabel}[1]{#1. \hfill}
-    \makeatother
-    \addto\captionsrussian{\def\refname{Литература}}
-    % \renewcommand{\refname}{}
+    % % bibliography hacks
+    % \renewcommand{\@biblabel}[1]{#1. \hfill}
+    % \makeatother
+    % \addto\captionsrussian{\def\refname{Литература}}
+    % % \renewcommand{\refname}{}
 
 % -------------------------------------
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% NOT CLEAR HOW TO MAKE EQ NUMBERS LIKE (chapter.equation)
+% \usepackage{chngcntr}
+% % \counterwithin{equation}{chapter}
+% % \numberwithin{equation}{chapter}
+% \newcounter{eqchapter}
+% \renewcommand{\theequation}{\theeqchapter.\arabic{equation}}
 
 \input{content/common/commands}
 
