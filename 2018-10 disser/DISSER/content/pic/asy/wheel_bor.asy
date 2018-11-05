@@ -1,5 +1,5 @@
 settings.outformat="png";
-settings.render=8; // 16;
+settings.render=16;
 
 include "./content/pic/asy/helper.asy";
 
@@ -217,10 +217,10 @@ triple rho = (wheel_center - roller_center) / length(wheel_center - roller_cente
 // name("$R$", position = wheel_center - R * Z * 0.4 - 0.5Y, black);
 
 triple tmp_psi_dir = (-sin(psi), cos(psi), 0) * 2;
-vector(contact_point, R1 * tmp_psi_dir * 0.8, gray, na = true);
+vector(contact_point, R1 * tmp_psi_dir * 0.9, gray, na = true);
 draw(arc(contact_point, contact_point + tmp_psi_dir * R1 * 0.75, contact_point + Y, -Z), blue);
 triple tmp_half_psi_dir = (-sin(psi/2), cos(psi/2), 0) * 2;
-name("$\psi$", position = contact_point + R1 * tmp_half_psi_dir * 0.9 - 0.4Y - 0.25X, blue);
+name("$\psi$", position = contact_point + R1 * tmp_half_psi_dir * 1.1 - 0.4Y - 0.25X, blue);
 
 // draw(arc(wheel_center, wheel_center - Z, wheel_center + radius_vector, X), blue);
 // name("$\chi$", position = wheel_center - 0.6Z - 0.3Y, blue);

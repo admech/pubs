@@ -8,7 +8,7 @@ settings.render=16;
 
 include "./content/pic/asy/helper.asy";
 
-size(2.5cm, 0);
+size(4cm, 0);
 unitsize(0.8cm);
 
 import graph3;
@@ -264,7 +264,7 @@ base(
 );
 name("$\mathbf{i}$", position = wheel_center - radius_vector * 1.3, orange);
 name("$\mathbf{j}$", position = wheel_center + cross(radius_vector, k1) * 1.3, orange);
-name("$\mathbf{k}_1$", position = wheel_center + k1 * 1.3, red);
+name("$\mathbf{k} = \mathbf{k}_1$", position = wheel_center + k1 * 1.3 + Y * 1 + 0.4 * (-1, -1, 0), red);
 name("$\mathbf{s}$", position = wheel_center + k1 * 1.3 - 0.5Z + 0.2Y, blue);
 
 // roller coords axes
@@ -297,7 +297,7 @@ name("$\mathbf{k}_2$", position = roller_center + k2 * 1.5 + Y * 0.8 - X * 0.05)
 // === OTHER VECTORS =================================
 
 vector(towardcamera(3.3Y, 0.5), Z, black);
-name("$\mathbf{n}_A$", position = 3.3Y + Z * 1.0 + 0.5Y, black);
+name("$\bm{\gamma}$", position = 3.3Y + Z * 1.0 + 0.5Y, black);
 
 // name("$x$", position = 3X + Y * 1.0, heavygray);
 // name("$y$", position = 3.3Y + Z * 1.0, heavygray);
@@ -337,7 +337,7 @@ drawdot3d(roller_center + CD, black);
 name("$D$", position = roller_center + CD - 0.35X + 0.25Z, royalblue);
 name("$C$", position = roller_center + CD + DG - 0.5Z + 0.2X, red);
 
-name("$m$", position = roller_center + CD * 0.5 - 0.4X - 0.05Y, royalblue);
+name("$a$", position = roller_center + CD * 0.5 - 0.4X - 0.05Y, royalblue);
 name("$h$", position = roller_center + CD + DG * 0.5 + 0.35Y, royalblue);
 
 // === END OF OTHER VECTORS ==========================

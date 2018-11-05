@@ -9,7 +9,7 @@
 \item центр платформы экипажа имеет начальную поступательную скорость в направлении одного из колес, и угловая скорость платформы равна нулю (ожидаемый результат - центр масс экипажа движется вдоль оси $Ox$, экипаж не вращается),
 \item платформа экипажа имеет ненулевую угловую скорость вокруг вертикальной оси, проходящей через центр масс экипажа, скорость центра масс равна нулю (ожидаемый результат - экипаж вращается вокруг своей вертикальной оси симметрии, и центр масс покоится).
 \end{enumerate}
-Отношение $\massrel$ массы ролика к общей массе колеса в обоих случаях принимало значения от $10^{-6}$ до $10^{-1}$ с шагом $1$ по показателю степени.
+За единицу безразмерной массы принята масса диска колеса. Безразмерная масса платформы при этом равна $3.3$. Отношение $\massrel$ массы ролика к общей массе колеса в обоих случаях принимало значения от $10^{-6}$ до $10^{-1}$ с шагом $1$ по показателю степени.
 
 % \begin{figure}[!ht]
 %     \centering
@@ -46,7 +46,7 @@
 
 Для сравнения модели экипажа на плоскости с сухим трением и безынерционной модели с неголономными связями, в таблице\upr{tab:verif} приведены величины отличий угла курса $\theta$ экипажа и координат центра масс $x, y$ к моменту безразмерного времени $t = 10$. Отличия уменьшаются с уменьшением порядка величины отношения массы одного ролика $m_{\text{рол}}$ к суммарной массе колеса $m_{\text{к}}$.
 
-\begin{table}[]\label{tab:verif}
+\begin{table}[ht]
     \centering
     \begin{tabular}{l|l|l}
      & Движение $1$ & Движение $2$ \\ \hline
@@ -61,6 +61,7 @@
     $10^{-6}$ & $\approx 10^{-4}$ & 
     \end{tabular}
     \caption{Сравнение моделей экипажа на плоскости с сухим трением и безынерционной модели с неголономными связями. Порядок различий в значениях угла курса платформы $\theta$ и координат центра масс $x, y$ экипажа при движениях $1$ и $2$ и уменьшении $\massrel$}
+    \label{tab:verif}
 \end{table}
 
 На рис.~\ref{fig:exp_examples} приведены примеры траекторий центра масс $y(x)$ и зависимостей $\theta(t)$ угла поворота $\theta$ платформы вокруг вертикальной оси, проходящей через её центр, для случаев 1) и 2). Кривые $y(x)$, изображающие траектории центра масс, соответствуют, в сущности, точке -- началу системы отсчета $OXYZ$ -- в случае $v_0 = 0, \omega_0 = 1$, и отрезку прямой, совпадающей с осью $x$, в случае $v_0 = 1, \omega_0 = 0$, т.к. масштаб отображения таков, чтобы были видны отклонения от точных значений, возникающие в силу вычислительной погрешности, но сами эти отклонения имеют порядок малости, позволяющий считать их несущественными. Аналогичное утверждение верно и для зависимости угла поворота платформы $\theta$ от времени в случае поступательного движения -- полученная зависимость близка к постоянной.
@@ -73,69 +74,69 @@
 \newpage
 
 % EXAMPLES
-\begin{figure}[h]
-\centering
-\begin{subfigure}{.47\textwidth}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{content/parts/3_friction/diploma/img/res/example_v_0_0_omega_1_frac_1e-1_n_4_time_10s.png}
-    \caption{$\massrel = 0,1, v_0 = 0, \omega_0 = 1$}
-    \label{fig:exp_example_omega}
-\end{subfigure}%
-\hspace{5pt}
-\begin{subfigure}{.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{content/parts/3_friction/diploma/img/res/example_v_1_0_omega_0_frac_1e-1_n_4_time_10s.png}
-    \caption{$\massrel = 0,1, v_0 = 1, \omega_0 = 0$}
-    \label{fig:exp_example_v}
-\end{subfigure}
-\caption{Примеры траекторий центра масс экипажа, зависимости угла курса $\theta$ от времени и смены номеров роликов в контакте для двух типов начальных условий. На нижнем графике - номер ролика в контакте, см. рис.~\ref{OmniWheel}}
-\label{fig:exp_examples}
+    \begin{subfigure}{.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/pic/new/dry/example_v_0_0_omega_1_frac_1e-1_n_4_time_10s.png}
+        \caption{$\massrel = 0,1, v_0 = 0, \omega_0 = 1$}
+        \label{fig:exp_example_omega}
+    \end{subfigure}%
+    \hspace{5pt}
+    \begin{subfigure}{.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/pic/new/dry/example_v_1_0_omega_0_frac_1e-1_n_4_time_10s.png}
+        \caption{$\massrel = 0,1, v_0 = 1, \omega_0 = 0$}
+        \label{fig:exp_example_v}
+    \end{subfigure}
+    \caption{Примеры траекторий центра масс экипажа, зависимости угла курса $\theta$ от времени и смены номеров роликов в контакте для двух типов начальных условий. На нижнем графике - номер ролика в контакте, см. также рис.~\ref{fig:wheel}}
+    \label{fig:exp_examples}
 \end{figure}
 \newpage
 
-\begin{figure}[h]
-\begin{center}\begin{equation*}\begin{array}{cc}
-\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-1_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-2_n_4_time_10s.png}\\
-\massrel = 10^{-1}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-2}, v_0 = 0, \omega_0 = 1\\
-\end{array}\end{equation*}\end{center}
-\caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-1}, 10^{-2}$. Траектории центра масс $y(x)$, зависимости $\theta(t)$ угла курса от времени и абсолютны величины скоростей скольжения в точках контакта.}
-\label{fig:exp_examples_1_12}
+\begin{figure}[ht]
+    \begin{center}\begin{equation*}\begin{array}{cc}
+    \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-1_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-2_n_4_time_10s.png}\\
+    \massrel = 10^{-1}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-2}, v_0 = 0, \omega_0 = 1\\
+    \end{array}\end{equation*}\end{center}
+    \caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-1}, 10^{-2}$. Траектории центра масс $y(x)$, зависимости $\theta(t)$ угла курса от времени и абсолютны величины скоростей скольжения в точках контакта.}
+    \label{fig:exp_examples_1_12}
 \end{figure}
 \newpage
 
-\begin{figure}[h]
-\begin{center}\begin{equation*}\begin{array}{cc}
-\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-3_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-4_n_4_time_10s.png}\\
-\massrel = 10^{-3}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-4}, v_0 = 0, \omega_0 = 1\\
-\end{array}\end{equation*}\end{center}
-\caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-3}, 10^{-4}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
-\label{fig:exp_examples_1_34}
+\begin{figure}[ht]
+    \begin{center}\begin{equation*}\begin{array}{cc}
+    \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-3_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-4_n_4_time_10s.png}\\
+    \massrel = 10^{-3}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-4}, v_0 = 0, \omega_0 = 1\\
+    \end{array}\end{equation*}\end{center}
+    \caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-3}, 10^{-4}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
+    \label{fig:exp_examples_1_34}
 \end{figure}
 \newpage
 
-\begin{figure}[h]
-\begin{center}\begin{equation*}\begin{array}{cc}
-\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-5_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_0_0_omega_1_frac_1e-6_n_4_time_10s.png}\\
-\massrel = 10^{-5}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-6}, v_0 = 0, \omega_0 = 1\\
-\end{array}\end{equation*}\end{center}
-\caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-5}, 10^{-6}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
-\label{fig:exp_examples_1_56}
+\begin{figure}[ht]
+    \begin{center}\begin{equation*}\begin{array}{cc}
+    \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-5_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_0_0_omega_1_frac_1e-6_n_4_time_10s.png}\\
+    \massrel = 10^{-5}, v_0 = 0, \omega_0 = 1 & \massrel = 10^{-6}, v_0 = 0, \omega_0 = 1\\
+    \end{array}\end{equation*}\end{center}
+    \caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-5}, 10^{-6}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
+    \label{fig:exp_examples_1_56}
 \end{figure}
 \newpage
 
-\begin{figure}[h]
-\begin{center}\begin{equation*}\begin{array}{cc}
-\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_1_0_omega_0_frac_1e-1_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_1_0_omega_0_frac_1e-2_n_4_time_10s.png}\\
-\massrel = 10^{-1}, v_0 = 1, \omega_0 = 0 & \massrel = 10^{-2}, v_0 = 1, \omega_0 = 0\\
-\end{array}\end{equation*}\end{center}
-\caption{Движение 2 экипажа на плоскости с сухим трением, $\massrel = 10^{-1}, 10^{-2}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
-\label{fig:exp_examples_2_12}
+\begin{figure}[ht]
+    \begin{center}\begin{equation*}\begin{array}{cc}
+    \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_1_0_omega_0_frac_1e-1_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_1_0_omega_0_frac_1e-2_n_4_time_10s.png}\\
+    \massrel = 10^{-1}, v_0 = 1, \omega_0 = 0 & \massrel = 10^{-2}, v_0 = 1, \omega_0 = 0\\
+    \end{array}\end{equation*}\end{center}
+    \caption{Движение 2 экипажа на плоскости с сухим трением, $\massrel = 10^{-1}, 10^{-2}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
+    \label{fig:exp_examples_2_12}
 \end{figure}
 \newpage
 
-\begin{figure}[h]
+\begin{figure}[htb]
 \begin{center}\begin{equation*}\begin{array}{cc}
-\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_1_0_omega_0_frac_1e-3_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/parts/3_friction/diploma/img/res/comparison_v_1_0_omega_0_frac_1e-4_n_4_time_10s.png}\\
+\includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_1_0_omega_0_frac_1e-3_n_4_time_10s.png} & \includegraphics[width=7cm, viewport=0 0 395 745,clip]{content/pic/new/dry/comparison_v_1_0_omega_0_frac_1e-4_n_4_time_10s.png}\\
 \massrel = 10^{-3}, v_0 = 1, \omega_0 = 0 & \massrel = 10^{-4}, v_0 = 1, \omega_0 = 0\\
 \end{array}\end{equation*}\end{center}
 \caption{Движение 1 экипажа на плоскости с сухим трением, $\massrel = 10^{-3}, 10^{-4}$. Типы графиков те же, что на рис.~\ref{fig:exp_examples_1_12}.}
@@ -148,29 +149,73 @@
 На рис.~\ref{fig1} представлены зависимости расстояний $h$ между горизонтальной плоскостью и роликами одного и того же колеса, находящимися в разных фазах (перед контактом, в контакте, после контакта). Номер кривой соответствует номеру ролика на колесе. В увеличенном масштабе показан момент смены ролика в контакте с опорной плоскостью. Видно, что характер смены гладкий безударный.
 
 \begin{figure}[htb]
-\centerline{\includegraphics[width=15cm]{content/parts/3_friction/nd/Figure11.eps}}
-\caption{Процесс смены роликов в контакте в численной модели.}
-\label{fig1}
+    \centerline{\includegraphics[width=15cm]{content/parts/3_friction/nd/Figure11.eps}}
+    \caption{Процесс смены роликов в контакте в численной модели.}
+    \label{fig1}
 \end{figure}
 
-Одновременно можно наблюдать, что неудерживающая связь (рис.~\ref{fig2}), реализуется достаточно точно, несмотря на постепенное увеличение вычислительной ошибки. Расстояние между контактирующими телами медленно увеличивается для каждого последующего ролика в контакте. В то же время, абсолютная величина ошибки остается пренебрежимо малой -- около $10^{-7}$ от единицы безразмерной длины. 
+Одновременно можно наблюдать, что неудерживающая связь (рис.~\ref{fig:precis}), реализуется достаточно точно, несмотря на постепенное увеличение вычислительной ошибки. Расстояние между контактирующими телами медленно увеличивается для каждого последующего ролика в контакте. В то же время, абсолютная величина ошибки остается пренебрежимо малой -- около $10^{-7}$ от единицы безразмерной длины. 
 
 \begin{figure}[htb]
-\centerline{\includegraphics[width=15cm]{content/parts/3_friction/nd/Figure21.eps}}
-\caption{Точность сохранения неудерживающей связи.}
-\label{fig2}
+    \centerline{\includegraphics[width=15cm]{content/parts/3_friction/nd/Figure21.eps}}
+    \caption{Точность сохранения неудерживающей связи.}
+    \label{fig:precis}
 \end{figure}
 
 \subsection{Качественное сравнение модели с вязким трением и безынерционной модели}
 
 Для модели с вязким трением были проведены расчеты, аналогичные движению 3 из главы 2. Конфигурация экипажа также симметрична, ролики усечены, на каждом колесе пять роликов.
 
-Обнаружены динамические эффекты, аналогичные полученным в главе 2: характерный спиральный вид траектории центра масс на опорной плоскости возникает и в данной модели; видно раскручивание роликов; возрастание угловой скорости платформы экипажа, одновременное с убыванием поступательной скорости её центра; последующее медленное убывание угловой скорости; убывание кинетической энергии экипажа.
+Обнаружены динамические эффекты, аналогичные полученным в главе 2: характерный спиральный вид траектории центра масс на опорной плоскости возникает и в данной модели; видно раскручивание роликов; возрастание угловой скорости платформы экипажа, одновременное с убыванием поступательной скорости её центра; последующее медленное убывание угловой скорости; убывание кинетической энергии экипажа, см. рис.~\ref{fig:viscous}.
 
 В данном расчете коэффициент вязкого трения принимался достаточно большим: $10^{5}$. Такое значение позволило моделировать ударный характер переходных процессов при смене ролика в контакте. На гладких участках движения сходство с движением неголономной модели соответствует результату \cite{karapetyan1981negolonom}.
 
 \begin{figure}[htb]
-\centerline{\includegraphics[width=\linewidth]{content/pic/new/visc_3_100.png}}
-\caption{Характер движения системы с вязким трением при комбинации начальных условий движений 1 и 2. По оси абсцисс всюду, кроме правого верхнего графика отложено время}
-\label{fig2}
+    \centering
+    \minipage{0.45\textwidth}
+        \begin{subfigure}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{content/pic/new/viscous/visc_3_100_vnu3.png}
+            \vspace{-25pt}
+            \caption{Абсолютная величина $v$ скорости центра масс экипажа и угловая скорость платформы $\nu_3$}
+            \label{fig:visc_vnu3}
+        \end{subfigure}
+        \begin{subfigure}[t]{\textwidth}
+            \vspace{15pt}
+            \centering
+            \includegraphics[width=\linewidth]{content/pic/new/viscous/visc_3_100_T.png}
+            \vspace{-25pt}
+            \caption{Кинетическая энергия экипажа}
+            \label{fig:visc_T}
+        \end{subfigure}
+        \begin{subfigure}[t]{\textwidth}
+            \vspace{15pt}
+            \centering
+            \includegraphics[width=\linewidth]{content/pic/new/viscous/visc_3_100_v_late.png}
+            \vspace{-25pt}
+            \caption{Абсолютная величина $v$ скорости центра масс экипажа на интервале $t > 85$}
+            \label{fig:visc_v_late}
+        \end{subfigure}
+    \endminipage
+    \quad
+    \minipage{0.45\textwidth}
+        \begin{subfigure}[t]{\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{content/pic/new/viscous/visc_3_100_traj.png}
+            \vspace{-25pt}
+            \caption{Траектория центра масс экипажа на плоскости $OXY$}
+            \label{fig:visc_traj}
+        \end{subfigure}
+        \begin{subfigure}[t]{\textwidth}
+            \vspace{20pt}
+            \centering
+            \includegraphics[width=\linewidth]{content/pic/new/viscous/visc_3_100_dphi.png}
+            \vspace{-25pt}
+            \caption{Угловые скорости роликов на колесе номер 1. Слева -- на интервале $t < 85$, справа -- на следующем интервале.}
+            \label{fig:visc_dphi}
+        \end{subfigure}
+    \endminipage
+
+    \caption{Характер движения системы с вязким трением при комбинации начальных условий движений 1 и 2. По оси абсцисс всюду, кроме графика \ref{fig:visc_traj}, отложено безразмерное время $t$.}
+    \label{fig:viscous}
 \end{figure}

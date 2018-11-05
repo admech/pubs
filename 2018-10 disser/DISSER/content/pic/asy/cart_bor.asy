@@ -3,8 +3,8 @@ settings.render=16;
 
 include "./content/pic/asy/helper.asy";
 
-size(2.5cm, 0);
-// size(3.5cm, 0); // maybe better if insert large figure
+// size(2.5cm, 0);
+size(3.8cm, 0); // maybe better if insert large figure
 unitsize(0.8cm);
 real font_size = 6.2pt;
 
