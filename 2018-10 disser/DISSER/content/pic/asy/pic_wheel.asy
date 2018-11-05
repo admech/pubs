@@ -34,8 +34,7 @@ unitsize(1.3cm);
 
     label("$\textit{1}$", -dr(label_start_angle - pi/32) * label_radius);
     draw(ROLLER, black + 1);
-    drawdot((0,0));
-    
+
     label("$\textit{2}$", -dr(pi/2 + label_start_angle) * label_radius);
     path ROLLER_2 = rotate(90) * ROLLER;
     draw(ROLLER_2, fatdashed+gray + 1);
