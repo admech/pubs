@@ -14,20 +14,22 @@
 
 Для каждого колеса введем также тройку единичных взаимно-ортогональных векторов (ортов), жестко связанных с дисками колес: орт оси $i$-го колеса $\vec{n}_i = \vec{SP}_i/|\vec{SP}_i|$ и орты $\vec{n}_i^\perp$ и $\vec{n}_i^z$, лежащие в плоскости диска колеса. Положения центров $K_j$ роликов относительно дисков колес определим углами $\kappa_j$ между их радиусами-векторами $\overrightarrow{P_iK_j}$ относительно центра колеса $P_i$ и направлением, противоположным вектору $\vec{n}_i^z$. Определим угол поворота колеса $\chi_i$ вокруг его собственной оси $SP_i$ как угол между опорной плоскостью и вектором $\vec{n}_i^\perp$, отсчитываемый против часовой стрелки, если смотреть с конца вектора $\vec{n}_i$, так, что вектор $\vec{n}_i^\perp$ горизонтален при $\chi_i = 0$.
 
-\begin{figure}[h]
-    \minipage{0.5\textwidth}
-        \centering
-        \asyinclude{./content/pic/asy/pic_wheel.asy}
-        \caption{Колесо}
-        \label{fig:wheel}
-    \endminipage
-    \minipage{0.5\textwidth}
-        \centering
-        \asyinclude{./content/pic/asy/pic_cart.asy}
-        \caption{Экипаж}
-        \label{fig:vehicle}
-    \endminipage
-\end{figure}
+\begin{center}
+    \begin{figure}[h]
+        \minipage{0.45\textwidth}
+            \centering
+            \asyinclude{./content/pic/asy/pic_wheel.asy}
+            \caption{Омни-колесо. Индексы $i$, означающие номер колеса, опущены.}
+            \label{fig:wheel}
+        \endminipage
+        \minipage{0.45\textwidth}
+            \centering
+            \asyinclude{./content/pic/asy/pic_cart.asy}
+            \caption{Экипаж симметричной конфигурации}
+            \label{fig:vehicle}
+        \endminipage
+    \end{figure}
+\end{center}
 
 Положение экипажа будем задавать следующими обобщенными координатами:
 $x, y$ --- координаты точки $S$ на плоскости $OXY$, $\theta$ -- угол между осями $OX$ и $S\xi$ (будем называть $\theta$ углом курса),

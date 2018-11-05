@@ -49,7 +49,13 @@
 % \usepackage[gray]{epspdfconversion}
 %--------------------------------------
 
+% Subfigures that can be called in Russian
+%--------------------------------------
 % \usepackage{subfig} % incompatible with subcaption package
+% \renewcommand{\thesubfigure}{\asbuk{subfigure}}
+% \renewcommand{\thesubtable}{\asbuk{subtable}}
+%--------------------------------------
+
 % \graphicspath{ % not used here
     % {./pic/,./asy/}
 % }
@@ -58,7 +64,7 @@
 % subcaption for many figures under one big caption
 % each having its own small caption
 %--------------------------------------
-%\usepackage{caption}
+% \usepackage{caption}
 \usepackage{subcaption}
 %--------------------------------------
 
@@ -87,7 +93,7 @@
 %--------------------------------------
 \usepackage[labelsep=period]{caption}
 %\renewcommand{\figurename}{Фиг.}
-\addto\captionsrussian{\renewcommand{\figurename}{Фиг. }}
+% \addto\captionsrussian{\renewcommand{\figurename}{Фиг. }}
 %--------------------------------------
 
 % For strikethrough text

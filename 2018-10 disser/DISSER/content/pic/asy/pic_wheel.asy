@@ -23,7 +23,7 @@ unitsize(1.3cm);
         arc((0,-2), 1.4, 45, 135)
         -- cycle)
     ;
-    
+
     path ROLLER = 
         rotate(30) *
         ROLLER_TEMPLATE;
@@ -51,10 +51,10 @@ unitsize(1.3cm);
 // LOCAL COORDINATES
 ////////////////////////////////////////////////
 
-    label("$\mathbf{n}^\perp_i$", 2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) + (0.28, 0.05));
+    label("$\mathbf{n}^\perp$", 2*(cos(pi/6 + 0.2),sin(pi/6 + 0.2)) + (0.28, 0.05));
     draw((0,0) -- 2.3*(cos(pi/6),sin(pi/6)), arrow = Arrow(SimpleHead));
     
-    label("$\mathbf{n}^z_i$", 2.3*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.5));
+    label("$\mathbf{n}^z$", 2.3*(cos(pi/2+pi/6 - 0.2),sin(pi/2+pi/6 - 0.2)) - (-0.1, 0.5));
     draw((0,0) -- 1.8*(cos(pi/2+pi/6),sin(pi/2+pi/6)), arrow = Arrow(SimpleHead));
 
 
@@ -62,18 +62,18 @@ unitsize(1.3cm);
 // ANGLES
 ////////////////////////////////////////////////
 
-    // label("$\kappa_j$", 0.82*(cos(-2*pi/8-0.05),sin(-2*pi/8-0.05)), blue);
-    // draw((0,0) -- -1.4*(cos(pi/2+pi/6),sin(pi/2+pi/6)), mydashdotted+gray);
-    // draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
-    // draw(arc(
-    //     (0,0),
-    //     -1.15*(cos(pi/2+pi/6),sin(pi/2+pi/6)),
-    //     1.15*(cos(pi/6),sin(pi/6))
-    // ), arrow=Arrow(TeXHead), blue);
+    label("$\kappa_j$", 0.75*dr(-pi/12), blue);
+    draw((0,0) -- -1.4*(cos(pi/2+pi/6),sin(pi/2+pi/6)), mydashdotted+gray);
+    draw((0,0) -- 1.4*(cos(-pi/2),sin(-pi/2)), mydashdotted+gray);
+    draw(arc(
+        (0,0),
+        -1.15*(cos(pi/2+pi/6),sin(pi/2+pi/6)),
+        1.15*(cos(pi/6),sin(pi/6))
+    ), arrow=Arrow(TeXHead), blue);
 
     // direction of positive roller rotation
     label(
-        "$\phi_{ij}$",
+        "$\varphi_j$",
         dr(pi/6) + 0.8*dr(pi/2 + pi/6) + 0.4*dr(pi/2 + pi/6 - pi/4) + 0.2*dr(pi/4),
         purple
     );
@@ -85,7 +85,7 @@ unitsize(1.3cm);
         CW
     ), arrow=Arrow(TeXHead), purple);
 
-    label("$\chi_i$", 1.6*(cos(-pi/12+pi/6),sin(-pi/12+pi/6)), red);
+    label("$\chi$", 1.6*(cos(-pi/12+pi/6),sin(-pi/12+pi/6)), red);
     draw((0,0) -- (1.6,0), mydashdotted+gray);
     
     draw(arc(
@@ -135,7 +135,7 @@ unitsize(1.3cm);
         path rho = (d + c) -- (d - c);
         
         // teh label!
-        label("$\rho_i$", ((a+b)/2 - half_roller_axis*0.2), heavygreen);
+        label("$\rho$", ((a+b)/2 - half_roller_axis*0.2), heavygreen);
         
         // axis line
         draw(
@@ -160,9 +160,11 @@ unitsize(1.3cm);
 // DOTS -- Should be done on top for PMM
 ////////////////////////////////////////////////
 
-    label("$P_i$", 0.4*dr(pi/2 - pi/12));
+    label("$P$", 0.4*dr(pi/2 - pi/12));
     drawdot((0,0));
 
-    label("$C_i$", contact_point + 0.2*(1, 1));
+    label("$C$", contact_point + 0.2*(1, 1));
     drawdot(contact_point);
 
+    label("$K$", roller_center + 0.27*dr(pi - pi/8));
+    drawdot(roller_center);

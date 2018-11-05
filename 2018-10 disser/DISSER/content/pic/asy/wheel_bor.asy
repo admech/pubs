@@ -180,7 +180,7 @@ vector(5Y + 3X, -8Y, gray, na = true);
 draw(circle(wheel_center, R, X), darkgray + opacity(0.2));
 vector(O, 4.6Y, gray, na = true);
 
-name("$\mathbf{i}$", position = contact_point + roller_axis * 3 + 0.6Y, black);
+name("$\mathbf{e}$", position = contact_point + roller_axis * 3 + 0.6Y, black);
 vector(O, 3 * roller_axis, black);
 
 triple vp = cross(Z, roller_axis);

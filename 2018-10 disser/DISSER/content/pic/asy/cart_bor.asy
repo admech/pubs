@@ -202,12 +202,12 @@ vector(cart_center, mass_center_rel, black);
 name("$\mathbf{r}_i$", position = wheel_center - 0.65X - 0.25Y, black);
 vector(cart_center, wheel_center_rel, black);
 
-name("$\mathbf{e}_i$", position = wheel_center + roller_axis + 0.35X, black);
+name("$\mathbf{e}_{i}$", position = wheel_center + roller_axis + 0.35X, black);
 vector(wheel_center, roller_axis, black);
 
-name("$\mathbf{e}_{2}$", position = cart_center - 0.5X + Y - 0.2X - 0.5Y, black);
+name("$\mathbf{e}_{\eta}$", position = cart_center - 0.5X + Y - 0.2X - 0.5Y, black);
 vector(cart_center, -0.5X + Y, black, one = true);
-name("$\mathbf{e}_{1}$", position = cart_center + X + 0.5Y - 0.4Y, black);
+name("$\mathbf{e}_{\xi}$", position = cart_center + X + 0.5Y - 0.4Y, black);
 vector(cart_center, X + 0.5Y, black, one = true);
 
 triple diag = 0.5X + 0.1Y;

@@ -105,4 +105,12 @@ label("$S(x, y)$", (-0.1, -0.2));
 label("$O$", (-1.2 - delta, -1.2) - (0.4, 0.4));
 filldraw(shift(-1.4 - delta, -1.4) * DOT, white);
 
+filldraw(shift(1.2*dr(pi/6)) * DOT, white);
+label("$P_1$", 1.2*dr(pi/6) + 0.45*dr(-pi/12));
+
+filldraw(shift(0, -1.2) * DOT, white);
+label("$P_N$", (0, -1.6));
+
+filldraw(shift(1.2*dr(pi - pi/6)) * DOT, white);
+
 

@@ -30,6 +30,7 @@
 usepackage("textgreek", "euler");
 //
 ////////////////////////////////////////////////////////
+usepackage("bm"); // for bold greeks
 
 pair dr(real angle) {
     return (cos(angle), sin(angle));
