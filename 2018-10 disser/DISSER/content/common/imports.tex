@@ -153,12 +153,12 @@
   \endgroup
 }
 
-% NOT CLEAR HOW TO MAKE EQ NUMBERS LIKE (chapter.equation)
-% \usepackage{chngcntr}
-% % \counterwithin{equation}{chapter}
-% % \numberwithin{equation}{chapter}
-% \newcounter{eqchapter}
-% \renewcommand{\theequation}{\theeqchapter.\arabic{equation}}
+\usepackage{chngcntr}
+\counterwithout{equation}{section}
+\counterwithout{figure}{chapter}   % Убираем связанность номера рисунка с номером главы/раздела
+\counterwithout{table}{chapter}    % Убираем связанность номера таблицы с номером главы/раздела
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
 
 \input{content/common/commands}
 

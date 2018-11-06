@@ -5,9 +5,9 @@
 
 Для вывода уравнений движения системы воспользуемся лаконичным методом получения уравнений движения для систем с дифференциальными связями, предложенным Я.В.~Татариновым \cite{Tatarinov,Zobova2011}. Уравнения имеют вид:
 \begin{equation}\label{Tatarinov}
-    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha}  + \{P_\alpha, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\alpha, \nu_\mu P_\mu\},\quad \alpha = 1,\dots, K
+    \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\beta}  + \{P_\beta, L^{*}\} = \sum\limits_{\mu = 1}^{K}\{P_\beta, \nu_\mu P_\mu\},\quad \beta = 1,\dots, K
 \end{equation}
-Здесь $L$ -- лагранжиан, $L^*$ -- он же с учетом связей (здесь и далее верхний индекс $*$ означает учет связей, то есть подстановку выражений обобщенных скоростей через псевдоскорости), $P_\alpha$ -- линейные комбинации формальных канонических импульсов $p_i$, определяемые из соотношения
+Здесь $L$ -- лагранжиан, $L^*$ -- он же с учетом связей (здесь и далее верхний индекс $*$ означает учет связей, то есть подстановку выражений обобщенных скоростей через псевдоскорости), $P_\beta$ -- линейные комбинации формальных канонических импульсов $p_i$, определяемые из соотношения
 \begin{equation}\label{eq:tatimp}
     \sum\limits_{\mu=1}^{K}\nu_\mu P_\mu \equiv \sum\limits_{i=1}^{N(n+1)+3}\dot{q_i} p_i
 \end{equation}
@@ -19,6 +19,7 @@ $$
 
 Как отмечено ранее, расстояния от осей колес до опорной плоскости постоянны во все время движения. В силу этого факта, однородности всех тел и геометрии расположения колес относительно платформы, потенциальная энергия системы во время движения не меняется, и лагранжиан равен кинетической энергии:
 \begin{equation}\label{kin_en}
+    \hspace{-8pt}
     2L = 2T = M\vec{v}_S^2 + I_S\dot{\theta}^2 + J\sum_i\dot{\chi}_i^2 + B\sum_{i,j}(\dot{\phi}_{ij}^2 + 2\dot{\theta}\sin(\kappa_j + \chi_i)\dot{\phi}_{ij})=\dot{\vec{q}}^\mathrm{T}\M\dot{\vec{q}}
 \end{equation}
 %\sout{Здесь полная масса системы -- $M = \mathring{M} + Nnm$, момент инерции всей системы относительно $SZ$ -- $I_S = \mathring{I_S} + Nn(\frac{A+B}{2} + mR^2 + \frac{mr^2}{2})$, момент инерции колеса (с роликами) относительно его оси $J = \mathring{J} + n(A + mr^2)$, где $\mathring{M}, \mathring{I_S}, \mathring{J}$ -- масса и моменты инерции системы и колес без учета роликов; $m$ -- масса ролика; $A$ -- момент инерции ролика относительно любой оси, перпендикулярной его оси собственного вращения и проходящей через его центр масс; $r$ -- радиус диска колеса (расстояние от центра колеса до центра ролика),}
@@ -50,7 +51,11 @@ $$
 \widetilde{\M}_{23} = O_{N \times Nn}
 \vsp
 $$
-Здесь $O_{(\boldsymbol{\cdot})}$ и $E_{(\boldsymbol{\cdot})}$ --- нулевые и единичные матрицы, в индексах которых указаны их размерности. В третьей строке матрицы $\widetilde{\M}_{13}$ сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам; элементы упорядочены по возрастанию индексов, так что ролики одного колеса соседствуют. Лагранжиан при учете связей определяется соотношением:
+Здесь $O_{(\boldsymbol{\cdot})}$ и $E_{(\boldsymbol{\cdot})}$ --- нулевые и единичные матрицы, в индексах которых указаны их размерности. В третьей строке матрицы $\widetilde{\M}_{13}$ сначала указаны элементы, соответствующие роликам, находящимся в контакте, а затем соответствующие ``свободным'' роликам; элементы упорядочены по возрастанию индексов, так что ролики одного колеса соседствуют. Т.е. третья строка матрицы $\widetilde{\M}_{13}$ имеет вид:
+$$
+    \left( B\sin\chi_{11} \ldots, B\sin\chi_{N1}, B\sin\chi_{12}, \ldots, B\sin\chi_{1n}, B\sin\chi_{22}, \ldots B\sin\chi_{Nn} \right).
+$$
+Лагранжиан при учете связей определяется соотношением:
 $$ 2L^{*}  = \vnu^\mathrm{T} V^\mathrm{T}\M V\vnu = \vnu^\mathrm{T} \M^*(\chi_i)\vnu $$
 
 Структура симметрической матрицы $\M^*$ кинетической энергии, выраженной в псевдоскоростях, следующая:
@@ -85,6 +90,7 @@ $$
 
 Элементы $m^*_{ij}$ матрицы $\widetilde{\M}^*_{11}$ зависят только от координат $\chi_i$, которые входят в отношения $\ddfrac{B}{\rho_i^2(\chi_i)}$ и $B\sin\ddfrac{\chi_i}{\rho_i(\chi_i)}$, имеющие разрывы второго рода при смене роликов, т.е. при переходе с одного ролика на другой (см. равенство (\ref{constraint_roller_contact})). Действительно, явный вид элементов матрицы $\widetilde{\M}^*_{11}$ таков:
 \begin{equation}\label{mstar}
+    \hspace{-15pt}
     \begin{array}{rcl}
         m^*_{11} & = & MR^2 + \sum\limits_i \bigg( J\ddfrac{R^2}{l^2}\sin^2\alpha_i + B\ddfrac{R^2}{\rho_i^2}\cos^2\alpha_i\bigg)\quad(11 \leftrightarrow 22, \sin\alpha_i \leftrightarrow \cos\alpha_i)\vsp
         m^*_{33} & = & \ddfrac{1}{\Lambda}\bigg(I_S + \sum\limits_i J\ddfrac{R^2}{l^2}\bigg),\quad
@@ -97,6 +103,7 @@ $$
 
 Первое слагаемое в левой части равенства (\ref{Tatarinov}) получается дифференцированием лагранжиана:
 \begin{equation}\label{DLStarDnuDdt}
+    \hspace{-10pt}
     \frac{d}{dt}\frac{\partial L^{*}}{\partial \vnu} = \frac{d}{dt}(\M^*(\chi)\vnu) = 
     \M^*(\chi)\dot{\vnu} +
     \frac{d}{dt}(\M^*(\chi))\vnu =
@@ -105,7 +112,7 @@ $$
 \end{equation}
 где $\M^*_i = \ddfrac{\partial \M^*}{\partial \chi_i}.$
 
-Последнее слагаемое -- $\sum_{i=1}^{N}\dot{\chi}_i^*\M^*_i\vnu$ -- является суммой векторов размерности $K$, где $K = \dim\vnu$ -- число степеней свободы системы. Компоненты этих векторов с номерами $\alpha = 4,\dots, K$, то есть компоненты, соответствующие свободным роликам, имеют вид $\dot{\chi}_i^*\nu_3B\Lambda^{-1}\cos\chi_{ij},$ где индексы $i,j$ связаны с индексом $\alpha$ по формуле $\alpha = 3 + s(i, j)$ (см. формулу\upr{eq:num}).
+Последнее слагаемое -- $\sum_{i=1}^{N}\dot{\chi}_i^*\M^*_i\vnu$ -- является суммой векторов размерности $K$, где $K = \dim\vnu$ -- число степеней свободы системы. Компоненты этих векторов с номерами $\beta = 4,\dots, K$, то есть компоненты, соответствующие свободным роликам, имеют вид $\dot{\chi}_i^*\nu_3B\Lambda^{-1}\cos\chi_{ij},$ где индексы $i,j$ связаны с индексом $\beta$ по формуле\upr{eq:num}: $\beta = s(i, j)$.
 
 Для величин $P_\mu$ во втором слагаемом левой части~\ref{Tatarinov}, подставляя в их определение~\ref{eq:tatimp} выражения обобщенных скоростей через псевдоскорости~\ref{constraints_V} и применяя метод неопределенных коэффициентов, получим выражения:
 \begin{equation}\label{P}
@@ -126,7 +133,7 @@ $$
 \{P_3, L^*\} = \frac{R}{2l\Lambda}\vnu^\mathrm{T}\M^*_i\vnu,\quad \{P_s,L^*\} = 0, s>3
 $$
 
-Для завершения вывода уравнений движения рассмотрим правую часть равенства (\ref{Tatarinov}). Она отлична от нуля лишь при $\alpha = 1,\ 2,\ 3$. Сперва выразим импульсы $\vec{p}$ через псевдоскорости $\vnu$. Обозначим
+Для завершения вывода уравнений движения рассмотрим правую часть равенства (\ref{Tatarinov}). Она отлична от нуля лишь при $\beta = 1,\ 2,\ 3$. Сперва выразим импульсы $\vec{p}$ через псевдоскорости $\vnu$. Обозначим
 $$
     \xi_\pm(\alpha) = \nu_1\cos\alpha \pm \nu_2\sin\alpha, \quad \eta_\pm(\alpha) = \nu_1\sin\alpha \pm \nu_2\cos\alpha.
 $$
@@ -145,6 +152,7 @@ $$
 \sigma[f(\alpha,\chi)] = \sum\limits_{k=1}^{N} f(\alpha_k,\chi_k) \frac{\sin\chi_k}{\rho_k^3(\chi_k)}
 $$
 Тогда скобки Пуассона в правой части системы\upr{Tatarinov} имеют вид (звездочкой обозначена подстановка импульсов $p_i$ из~\ref{p})
+\hspace{-35pt}
 \begin{eqnarray*}
     (\{P_1,P_2\})^* &=& \left(-\sum\limits_{k=1}^{N} R^2\tau_kp_{\phi_k}\right)^* \\
                     &=& -BR^2(R\nu_1 \sigma[\cos\alpha] + R\nu_2 \sigma[\sin\alpha] + \Lambda^{-1}\nu_3\sigma[\rho\sin\chi]) = \\
@@ -152,14 +160,13 @@ $$
     \prhs_{12}      &=& (\sigma[\cos\alpha], R\sigma[\sin\alpha], \Lambda^{-1}\sigma[\rho\sin\chi], 0,\dots,0) \\
     (\{P_1,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-p_x\sin\theta + p_y\cos\theta - \sum\limits_{k=1}^{N} R\cos\alpha_k\tau_kp_{\phi_k}\right)^* \\
                     &=& {MR^2}{\Lambda}^{-1}\nu_2 - \\
-                    &-& {BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] + 
-                        \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi]) = \\
+                    &-& {BR^2}{\Lambda}^{-1}(R\nu_1 \sigma[\cos^2\alpha] + R\nu_2 \sigma[\sin\alpha\cos\alpha] +\\
+                    &+& \Lambda^{-1}\nu_3\sigma[\rho\cos\alpha\sin\chi]) = \\
                     &=& {MR^2}{\Lambda}^{-1}\nu_2-{BR^2} \prhs_{13}\vnu \\
     \prhs_{13}      &=& \Lambda^{-1} (R\sigma[\cos^2\alpha], R\sigma[\sin\alpha\cos\alpha], \Lambda^{-1}\sigma[\rho\cos\alpha\sin\chi], 0,\dots,0) \\
-    (\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-p_x\cos\theta - p_y\sin\theta - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^* =    
-                        -{MR^2}{\Lambda}^{-1}\nu_1 - \\
-                    &-& {BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha]
-                        + \Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] = \\
+    (\{P_2,P_3\})^* &=& {R}{\Lambda}^{-1}\left(-p_x\cos\theta - p_y\sin\theta - \sum\limits_{k=1}^{N} R\sin\alpha_k\tau_kp_{\phi_k}\right)^* = \\
+                    &=& -{MR^2}{\Lambda}^{-1}\nu_1 - {BR^2}{\Lambda}^{-1}(R\nu_1\sigma[\sin\alpha\cos\alpha] + R\nu_2\sigma[\sin^2\alpha] \\
+                    &+& \Lambda^{-1}\nu_3\sigma[\rho\sin\alpha\sin\chi] = \\
                     &=& -{MR^2}{\Lambda}^{-1}\nu_1 -{BR^2}\prhs_{23}\vnu\\
     \prhs_{23}      &=& \Lambda^{-1}(R\sigma[\sin\alpha\cos\alpha], R\sigma[\sin^2\alpha], \Lambda^{-1}\sigma[\rho\sin\alpha\sin\chi], 0,\dots,0)
 \end{eqnarray*}
@@ -214,7 +221,7 @@ $$
 \begin{equation}\label{eq:full_system}
 \end{equation}
 \fontdimen16\textfont2=1.79999pt
-Поясним символ $\star$ в правой части уравнений движения. В равенствах (\ref{DLStarDnuDdt}) последнее слагаемое -- сумма векторов $\dot{\chi}_i^*\M^*_i\vnu, \enspace i = 1 \ldots N$. Символ $\star$ заменяет суммы компонент $\alpha = 1,2,3$ этих векторов. Матрицы $\Prhs_\alpha$ размера $K\times K$ составлены из строк $\prhs_{\alpha\beta}$, определенных в Приложении и зависящих от геометрии экипажа и углов поворота колес $\chi_i$:
+Поясним символ $\star$ в правой части уравнений движения. В равенствах (\ref{DLStarDnuDdt}) последнее слагаемое -- сумма векторов $\dot{\chi}_i^*\M^*_i\vnu, \enspace i = 1 \ldots N$. Символ $\star$ заменяет суммы компонент $\beta = 1,2,3$ этих векторов. Матрицы $\Prhs_\beta$ размера $K\times K$ составлены из строк $\prhs_{\alpha\beta}$, определенных выше и зависящих от геометрии экипажа и углов поворота колес $\chi_i$:
 $$ 
 \Prhs_1 = \left(
 \begin{matrix}
