@@ -518,7 +518,7 @@ FUNCTION {format.names}
        { "{vv~}{ll}{~jj}{~ff}" format.name$ 't := }
        { curlanguage "english" =
          { "{vv~}{ll}{~jj}{~f.}" format.name$ 't := }
-         { "language is not defined: " language  "{vv~}{ll}{~jj}{~ff}" * * warning$ "{vv~}{ll}{~jj}{~ff}" }
+         { "language is not defined: " language  "{vv~}{ll}{~jj}{~f.}" * * warning$ "{vv~}{ll}{~jj}{~f.}" }
         if$}
       if$
       nameptr #1 >
@@ -559,10 +559,10 @@ FUNCTION {format.names.rev}
     { namesleft #0 > }
     { s nameptr
       curlanguage "ukrainian" = curlanguage "russian" = or
-       { "{ff}{~vv}{~ll}{, jj}"  format.name$ 't := }
+       { "{vv~}{ll}{~jj}{~ff}"  format.name$ 't := }
        { curlanguage "english" =
-         { "{f.}{~vv}{~ll}{, jj}" format.name$ 't := }
-         { "language is not defined: " language  "{ff}{~vv}{~ll}{, jj}" * * warning$ "{ff}{~vv}{~ll}{, jj}" }
+         { "{vv~}{ll}{~jj}{~f.}" format.name$ 't := }
+         { "language is not defined: " language  "{vv~}{ll}{~jj}{~f.}" * * warning$ "{vv~}{ll}{~jj}{~f.}" }
         if$}
       if$
 
@@ -1023,12 +1023,13 @@ FUNCTION {editor.organization.after}
   if$
 }
 
+%    { after.sentence 'output.state :=
+%      "URL:  " url * "" *
+%    }
 FUNCTION {format.url}
 { url empty$
     { "" }
-    { after.sentence 'output.state :=
-      "URL:  " url * "" *
-    }
+    { "" } % above was here
   if$
 }
 

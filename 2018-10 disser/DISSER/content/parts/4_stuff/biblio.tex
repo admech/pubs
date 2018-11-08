@@ -1,5 +1,5 @@
 
-\newpage
+% \newpage
 
 
 \bibliographystyle{./util/BibTeX-Styles/utf8gost705u}  %% стилевой файл для оформления по ГОСТу
@@ -7,5 +7,13 @@
 % \bibliography{content/omni}   % name your BibTeX data base
 
 \addcontentsline{toc}{chapter}{Литература}
+
+% reduce space before bibliography
+% \makeatletter
+% \patchcmd{\@makeschapterhead}{\vspace*{50\pt@}}{}{}{}
+% \makeatother
+
+\newgeometry{bottom=3.5cm}
 \bibliography{content/library}   % name your BibTeX data base
+\restoregeometry
 
