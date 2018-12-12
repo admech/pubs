@@ -1,0 +1,159 @@
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+
+% A marvellous poster template from Brian Amberg -- baposter
+% http://www.brian-amberg.de/uni/poster/
+
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+
+% --------------------------------------------------------------------------- %
+% Poster for the ECCS 2011 Conference about Elementary Dynamic Networks.      %
+% --------------------------------------------------------------------------- %
+% Created with Brian Amberg's LaTeX Poster Template. Please refer for the     %
+% attached README.md file for the details how to compile with `pdflatex`.     %
+% --------------------------------------------------------------------------- %
+% $LastChangedDate:: 2011-09-11 10:57:12 +0200 (V, 11 szept. 2011)          $ %
+% $LastChangedRevision:: 128                                                $ %
+% $LastChangedBy:: rlegendi                                                 $ %
+% $Id:: poster.tex 128 2011-09-11 08:57:12Z rlegendi                        $ %
+% --------------------------------------------------------------------------- %
+\documentclass[a0paper,portrait]{util/baposter}
+
+
+\usepackage{relsize}		% For \smaller
+\usepackage{url}			% For \url
+% \usepackage{epstopdf}	% Included EPS files automatically converted to PDF to include with pdflatex
+
+%%% Global Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{pix/}}	% Root directory of the pictures 
+% \tracingstats=2			% Enabled LaTeX logging with conditionals
+
+%%% Color Definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{bordercol}{RGB}{40,40,40}
+\definecolor{headercol1}{RGB}{186,215,230}
+\definecolor{headercol2}{RGB}{186,215,230}
+\definecolor{headerfontcol}{RGB}{0,0,0}
+\definecolor{boxcolor}{RGB}{255,255,255}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Utility functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Save space in lists. Use this after the opening of the list %%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+}
+
+\newenvironment{myposter}[1]
+{
+    %%% Setting Background Image %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \background{
+    
+    }
+    
+    %%% General Poster Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%% Eye Catcher, Title, Authors and University Images %%%%%%%%%%%%%%%%%%%%%%
+    \begin{poster}{
+    	grid=false,
+    	% Option is left on true though the eyecatcher is not used. The reason is
+    	% that we have a bit nicer looking title and author formatting in the headercol
+    	% this way
+    	%eyecatcher=false, 
+    	borderColor=bordercol,
+    	headerColorOne=headercol1,
+    	headerColorTwo=headercol2,
+    	headerFontColor=headerfontcol,
+    	% Only simple background color used, no shading, so boxColorTwo isn't necessary
+    	boxColorOne=boxcolor,
+    	headershape=roundedright,
+    	headerfont=\huge\sf\bf,
+    	textborder=rectangle,
+    	background=user,
+    	headerborder=open,
+        boxshade=plain
+    }
+    %%% Eye Cacther %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {
+        % leave this here -- it's not rendered, but due to it the next is.
+    	Eye Catcher, empty if option eyecatcher=false - unused
+    }
+    %%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {
+        {\Huge\sf\bf
+    	    #1
+        }
+    }
+    %%% Authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {
+    % 	\vspace{1em} Richard O. Legendi, Laszlo Gulyas, George Kampis\\
+    % 	{\smaller legendi@inf.elte.hu, lgulyas@colbud.hu, gkampis@colbud.hu}
+    }
+    % %% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % {
+    % %     % The logos are compressed a bit into a simple box to make them smaller on the result
+    % %     % (Wasn't able to find any bigger of them.)
+    % %     \setlength\fboxsep{0pt}
+    % %     \setlength\fboxrule{0.5pt}
+    % % 	\fbox{
+    % % 		\begin{minipage}{14em}
+    % % 			\includegraphics[width=10em,height=4em]{colbud_logo}
+    % % 			\includegraphics[width=4em,height=4em]{elte_logo} \\
+    % % 			\includegraphics[width=10em,height=4em]{dynanets_logo}
+    % % 			\includegraphics[width=4em,height=4em]{aitia_logo}
+    % % 		\end{minipage}
+    % % 	}
+    % }
+    
+}
+{
+    \vspace{10pt}
+    \end{poster}
+}
+
+\newenvironment{mynotitleposter}[0]
+{
+    \background{
+    
+    }
+    \begin{poster}{
+        	grid=false,
+        	borderColor=bordercol,
+        	headerColorOne=headercol1,
+        	headerColorTwo=headercol2,
+        	headerFontColor=headerfontcol,
+        	boxColorOne=boxcolor,
+        	headershape=roundedright,
+        	headerfont=\huge\sf\bf,
+        	textborder=rectangle,
+        	background=user,
+        	headerborder=open,
+            boxshade=plain
+        }
+        {
+        }
+        {
+        }
+        {
+        }
+        {
+        }
+        \setlength{\colheight}{\textheight}
+}
+{
+    \end{poster}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

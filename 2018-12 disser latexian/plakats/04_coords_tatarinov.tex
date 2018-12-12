@@ -1,0 +1,55 @@
+\begin{myposter}{
+    Глава 1. Постановка задачи. Уравнения Я.В.Татаринова
+}
+
+    \headerbox
+    {Глава 1. Постановка задачи. }
+    {name=first,column=0,row=0,span=3}
+    {
+        {\huge\bf
+            \vspace{10pt}
+            \begin{itemize}
+                \item {
+                    Обобщенные координаты: \\
+                    $q = (x, y, \theta, \chi_i, \phi_k, \phi_s),$ где $i,k = 1\dots N$, \\
+                    индекс $s$ означает ролики вне контакта.
+                }
+                \item{
+                    Псевдоскорости:\\
+                    \hspace{-15pt}
+                    $\nu = (\nu_1, \nu_2, \nu_3, \nu_s), \enspace \vec{v}_S = R\nu_1\vec{e}_\xi + R\nu_2\vec{e}_\eta, \enspace \nu_3 = \Lambda\dot{\theta}, \enspace \nu_s = \dot{\phi}_s$
+                }
+                \item {
+                    Связи:
+                    $$ \dot{x} = R \nu_1\cos\theta-R\nu_2\sin\theta, \hspace{15pt} \dot{y} = R\nu_1\sin\theta+R\nu_2\cos\theta,$$
+                    $$\dot{\theta} = \frac{\nu_3}{\Lambda}, \hspace{15pt} \dot{\chi}_i = \frac{R}{l}(\nu_1\sin\alpha_i - \nu_2\cos\alpha_i - \frac{\nu_3}{\Lambda}), $$
+                    $$ \dot{\phi_k} = \frac{R}{l\cos\chi_k-r}(\nu_1\cos\alpha_k + \nu_2\sin\alpha_k), \hspace{15pt} \dot{\phi}_s = \nu_s $$
+                }
+            \end{itemize}
+            \vspace{10pt}
+        }
+    }
+    
+    \headerbox
+    {Уравнения Я.В.Татаринова}
+    {name=second,column=0,row=1,below=first,span=3}
+    {
+        {\huge\bf
+            \vspace{10pt}
+            \begin{itemize}
+                \item {
+                    Лаконичная форма уравнений движения для систем с дифференциальными связями:
+                    \begin{equation}\label{Tatarinov}
+                        \frac{d}{dt}\frac{\partial L^{*}}{\partial \nu_\alpha}  + \{P_\alpha, L^{*}\} = \{P_\alpha, \nu_\mu P_\mu\},
+                    \end{equation}
+                    $$ \nu_\mu P_\mu = \dot{q_i} p_i, \hspace{10pt} p_i = \frac{\partial L}{\partial \dot{q}_i} $$
+                }
+                \item {
+                    $(\cdot)^{*}$ -- подстановка выражений обобщенных скоростей $\dotq$ через псевдоскорости $\nuvec$
+                }
+            \end{itemize}
+            \vspace{10pt}
+        }
+    }
+
+\end{myposter}
