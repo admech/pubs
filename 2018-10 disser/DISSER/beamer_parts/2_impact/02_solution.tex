@@ -1,0 +1,31 @@
+\begin{frame}{Глава 2. Нахождение обобщенных скоростей после удара}{В том числе, после кратного удара}
+    \begin{columns}
+        \hspace{15pt}
+        \begin{column}{0.35\textwidth}
+            $$ \eqnuposleproj $$
+            
+            Действительно, т.к.
+            $$ \mke\deltadq = \Q, \enspace \Q^T\delta\qposle = 0,$$
+            $$ \dqposle = \dqdo -\ \deltadq = \mathbf{V}\nuposle \in \subspace,$$
+            то
+            \begin{eqnarray*}
+                0 & = & \dotp{\mke\deltadq}{\cstr} \\
+                  & = & \dotp{\mke\left(\cstr\nuposle - \dqdo\right)}{\cstr} \\
+                  & = & \dotp{\mke\cstr\nuposle - \mke\dqdo}{\cstr} \\
+                  & = & \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo, \enspace \text{ч.т.д.}
+            \end{eqnarray*}
+        \end{column}
+        \hspace{55pt}
+        \begin{column}{0.65\textwidth}
+            \begin{figure}
+                % \centering
+                \hspace{-65pt}
+                \asyinclude{content/pic/asy/pic_project}
+                \caption{
+                    $\dqposle$ -- проекция $\dqdo$ на $\subspace$,\newline
+                    ортогональная в метрике $\mke$
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}

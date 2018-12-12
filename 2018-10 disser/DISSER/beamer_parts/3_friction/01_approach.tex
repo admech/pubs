@@ -1,0 +1,24 @@
+\begin{frame}{Глава 3. Подход к моделированию динамики систем тел}
+    \begin{itemize}
+        \item {
+            Введем избыточные координаты. Для каждого твердого тела системы: \quad
+            $ \vec{r}, \enspace \vec{v}, \enspace \vec{q}, \enspace \vec{\omega} $
+        }
+        \item {
+            % Для каждого твердого тела -- 6 ОДУ Ньютона для движения центра масс и 7 ОДУ Эйлера для вращательного движения тела, задаваемого в кватернионах
+            Для каждого твердого тела -- уравнения Ньютона-Эйлера:
+            $$ m\dot{\vec{v}} = \vec{F} + \vec{R}, \quad \dot{\vec{r}} = \vec{v} $$
+            $$ J\dot{\vec{\omega}} + [ \vec{\omega}, J\vec{\omega} ] = \vec{M} + \vec{L}, \quad \dot{\vec{q}} = (0, \enspace \vec{\omega}) $$
+        }
+        \item {
+            Уравнения связей
+            \vspace{-15pt}
+            $$ f(\vec{r}, \vec{v}, \vec{q}, \vec{\omega}) = 0 $$
+        }
+        \item {
+            Модель реакций связей
+            \vspace{-15pt}
+            $$ g(\vec{R}, \vec{r}, \vec{v}, \vec{L}, \vec{q}, \vec{\omega}) = 0 $$
+        }
+    \end{itemize}
+\end{frame}

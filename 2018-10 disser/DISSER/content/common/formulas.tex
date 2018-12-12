@@ -1,0 +1,293 @@
+
+% \newcommand{\imm}[1]{ \ifmmode #1 \fi }
+
+% ------------------------------------------------------------------
+% SYMBOLS
+% ------------------------------------------------------------------
+
+\newcommand{\q}{\mathbf{q}}
+\newcommand{\qdo}{\q^-}
+\newcommand{\qposle}{\q^+}
+
+\newcommand{\dotq}{\dot{\mathbf{q}}}
+\newcommand{\dqdo}{\dotq^-}
+\newcommand{\dqposle}{\dotq^+}
+
+\newcommand{\nuvec}{\vec{\nu}} % {\vec{\nu}}
+\newcommand{\vecrho}{\vec{s}} % {\vec{\nu}}
+\renewcommand{\vnu}{\nuvec}
+\newcommand{\nudo}{\nuvec^-}
+\newcommand{\nuposle}{\nuvec^+}
+
+\newcommand{\subspace}{\widetilde{V}}
+\newcommand{\deltadq}{\Delta\dotq}
+
+\newcommand{\cstr}{\mathbf{V}}
+\newcommand{\mke}{\mathbf{M}}
+\newcommand{\mK}{\mathbf{K}}
+\renewcommand{\O}{\mathbf{O}}
+\newcommand{\E}{\mathbf{E}}
+
+% \renewcommand{\kappa}{\varkappa} % disabled due to asymptote
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\massrel}{\ddfrac{m_{\text{рол}}}{m_{\text{k}}}}
+
+% not bold so that matrices themselves and their blocks were denoted uniformly
+% \newcommand{\cstr}{V}
+% \newcommand{\mke}{M}
+% \newcommand{\mK}{K}
+
+\newcommand{\mvk}{\left(\mke\cstr; \enspace -\mK\right)}
+\newcommand{\mvJt}{\left(\mke\cstr; \enspace -\J^T\right)}
+
+\newcommand{\dotp}[2]{\left( #1, \enspace #2 \right)}
+\newcommand{\mdotp}[2]{(#1)^T #2}
+\newcommand{\inv}[1]{\left( #1 \right)^{-1}}
+
+\newcommand{\ke}{\mathbf{T}}
+
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\F}{\mathbf{F}}
+
+\newcommand{\J}{\mathbf{A}}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\lagr}{\vec{\lambda}}
+
+
+% ------------------------------------------------------------------
+% EQUATIONS
+% ------------------------------------------------------------------
+
+% Impact -- classical
+
+\newcommand
+{ \eqDeltaqQ }
+{ \mke (\dqposle - \dqdo) = \Q }
+
+\newcommand
+{ \eqQKF }
+{ \Q = \mK\F }
+
+\newcommand
+{ \eqQJtF }
+{ \Q = \J^T\F }
+
+\newcommand
+{ \eqQKFmat }
+{ \eqQKF = \K \Fcomp }
+% { \eqQKF, \quad \mK = \mKblock, \quad \eqF }
+
+\newcommand
+{ \eqqnu }
+{ \dqposle = \cstr\nuposle }
+
+\newcommand
+{ \eqMVnuKF }
+{ \mke\cstr\nuposle - \mK\F = \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtF }
+{ \mke\cstr\nuposle - \J^T\F = \mke\dqdo }
+
+\newcommand{\nuFT}{\left(\nuposle ; \mathbf{F}\right)^T}
+
+\newcommand
+{ \eqMVnuKFmat }
+{ \mvk \nuFT = \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtFmat }
+{ \mvJt \nuFT = \mke\dqdo }
+
+\newcommand
+{ \eqMVnuKFmatres }
+{ \nuFT = \mvk^{-1} \mke\dqdo }
+
+\newcommand
+{ \eqMVnuJtFmatres }
+{ \nuFT = \mvJt^{-1} \mke\dqdo }
+
+% Impact -- analytical
+
+\newcommand
+{ \eqDelta }
+{ \deltadq = \cstr\nuposle - \dqdo }
+
+\newcommand
+{ \logicDeltaOrth }
+{ 0 = \cstr^T\mke\deltadq = \cstr^T\mke(\cstr\nuposle - \dqdo) = \cstr^T\mke\cstr\nuposle - \cstr^T\mke\dqdo }
+
+\newcommand
+{ \eqnuposleproj }
+{ \nuposle = \inv{\cstr^T\mke\cstr}\cstr^T\mke\dqdo }
+
+\newcommand
+{ \eqFproj }
+{ \F = -\inv{\J\mke^{-1}\J^T}\J\dqdo }
+
+% Energy
+
+\newcommand
+{ \eqTquad }
+{ \ke = \ddfrac{1}{2}\dotp{\mke\dotq}{\dotq} }
+
+\newcommand
+{ \eqDqVnu }
+{ \dqposle = \cstr\nuposle }
+
+\newcommand
+{ \edQposleDelta }
+{ \dqposle = \dqdo + \deltadq }
+
+\newcommand
+{ \eqDqposleInSubspace }
+{ \dqposle \in \subspace }
+
+\newcommand
+{ \eqDeltaOrth }
+{ \deltadq \perp_\mke \subspace }
+
+\newcommand
+{ \edMkeSim }
+{ \mke = \mke^T }
+
+\newcommand
+{\logicWorkZero}
+{\dotp{\mke\dqposle}{\deltadq} = \dotp{\mke\deltadq}{\dqposle} = \dotp{\Q}{\dqposle} = 0}
+
+\newcommand
+{\logicDeltaT}
+{ 2\Delta\ke & = & 2\left(\ke^+ - \ke^-\right) = \dotp{\mke\dqposle}{\dqposle} - \dotp{\mke\dqdo}{\dqdo} = \dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqdo}{\deltadq} \\
+ & = & -\dotp{\mke\deltadq}{\deltadq} + 2\dotp{\mke\dqposle}{\deltadq} = -\dotp{\mke\deltadq}{\deltadq} }
+
+\newcommand
+{\eqDeltaT}
+{ \Delta\ke = -\ddfrac{1}{2}\dotp{\mke\deltadq}{\deltadq} \leq 0 }
+
+% ------------------------------------------------------------------
+% EXPLICIT EXPRESSIONS
+% ------------------------------------------------------------------
+
+\newcommand
+{\Kthree}
+{
+\begin{bmatrix}
+1 & 0 & 1 & 0 & 1 & 0\cr
+0 & 1 & 0 & 1 & 0 & 1\cr
+-\mathrm{sin}\left( \theta+{\alpha_1}\right)  R & \mathrm{cos}\left( \theta+{\alpha_1}\right)  R & -\mathrm{sin}\left( \theta+{\alpha_2}\right)  R & \mathrm{cos}\left( \theta+{\alpha_2}\right)  R & -\mathrm{sin}\left(\theta+{\alpha_3}\right)  R & \mathrm{cos}\left(\theta+{\alpha_3}\right)  R \cr
+-l \mathrm{sin}\left(\theta+{\alpha_1}\right)  & l \mathrm{cos}\left(\theta+{\alpha_1}\right)  & 0 & 0 & 0 & 0\cr
+0 & 0 & -l \mathrm{sin}\left(\theta+{\alpha_2}\right)  & l \mathrm{cos}\left(\theta+{\alpha_2}\right)  & 0 & 0\cr 0 & 0 & 0 & 0 & -l \mathrm{sin}\left(\theta+{\alpha_3}\right)  & l \mathrm{cos}\left(\theta+{\alpha_3}\right) \cr
+-\rho_1  \mathrm{cos}\left(\theta+{\alpha_1}\right)  & -\rho_1  \mathrm{sin}\left(\theta+{\alpha_1}\right)  & 0 & 0 & 0 & 0\cr
+0 & 0 & -\rho_2  \mathrm{cos}\left(\theta+{\alpha_2}\right)  & -\rho_2  \mathrm{sin}\left(\theta+{\alpha_2}\right)  & 0 & 0\cr
+0 & 0 & 0 & 0 & -\rho_3  \mathrm{cos}\left(\theta+{\alpha_3}\right)  & -\rho_3  \mathrm{sin}\left(\theta+{\alpha_3}\right)
+\end{bmatrix}
+}
+
+\newcommand
+{\K}
+{
+\begin{bmatrix}
+1 & 0 & \ldots & 1 & 0 \\
+0 & 1 & \ldots & 0 & 1 \\
+-R\sin\left( \theta + \alpha_1 \right) & R\cos\left( \theta + \alpha_1 \right) & \ldots & -R\sin\left( \theta + \alpha_N \right) & R\cos\left( \theta + \alpha_N \right) \\
+-l\sin\left( \theta + \alpha_1 \right) & l \cos\left( \theta + \alpha_1 \right) & \ldots & 0 & 0 \\
+0 & 0 & \ddots & 0 & 0 \\
+0 & 0 & \ldots & -l \sin\left( \theta + \alpha_N \right) & l \cos\left( \theta + \alpha_N \right) \\
+-\rho_1 \cos\left( \theta + \alpha_1 \right) & -\rho_1 \sin\left( \theta + \alpha_1 \right) & \ldots & 0 & 0 \\
+0 & 0 & \ddots & 0 & 0 \\
+0 & 0 & \ldots & -\rho_N \cos\left( \theta + \alpha_N \right) & -\rho_N \sin\left( \theta + \alpha_N \right) \\
+0 & 0 & \ldots & 0 & 0 \\
+0 & 0 & \ddots & 0 & 0 \\
+0 & 0 & \ldots & 0 & 0 \\
+\end{bmatrix}
+}
+
+\newcommand {\Fix} { F^x_i }
+\newcommand {\Fiy} { F^y_i }
+% \newcommand {\eqQiOne} { Q^i_1 & = & \Fix }
+% \newcommand {\eqQiTwo} { Q^i_2 & = & \Fiy }
+% \newcommand {\eqQiTheta} { Q^i_\theta & = & R \left(-\Fix\sin(\theta + \alpha_i) + \Fiy\cos(\theta + \alpha_i)\right) }
+\newcommand {\eqQiOne} { Q_1 & = & \sum_{i=1}^N \Fix }
+\newcommand {\eqQiTwo} { Q_2 & = & \sum_{i=1}^N \Fiy }
+\newcommand {\eqQiTheta} { Q_\theta & = & \sum_{i=1}^N Q^i_\theta \enspace = \enspace \sum_{i=1}^N R \left(-\Fix\sin(\theta + \alpha_i) + \Fiy\cos(\theta + \alpha_i)\right) }
+\newcommand {\eqQChii} { Q_{\chi_i} & = & \ddfrac{l}{R} Q^i_\theta }
+\newcommand {\eqQPhii} { Q_{\phi_i} & = & -\rho_i \left( \Fix\cos(\theta + \alpha_i) + \Fiy\sin(\theta + \alpha_i) \right) }
+\newcommand {\eqQs} { Q_s & = & 0 }
+
+\newcommand
+{ \eqQ }
+% { \Q = \left( \enspace \sum_{i=1}^N Q^i_1, \enspace \sum_{i=1}^N Q^i_2, \enspace \sum_{i=1}^N Q^i_\theta, \enspace Q_{\chi_i}|_{i=1}^N, \enspace Q_{\phi_i}|_{i=1}^N, \enspace Q_s \enspace \right)^T }
+{ \Q = \left( \enspace Q_1, \enspace Q_2, \enspace Q_\theta, \enspace Q_{\chi_i}|_{i=1}^N, \enspace Q_{\phi_i}|_{i=1}^N, \enspace Q_s \enspace \right)^T }
+
+\newcommand
+{ \eqF }
+{ \F = \left( \enspace F_x^1, \enspace F_y^1, \enspace \ldots, \enspace F_x^N, \enspace F_y^N \enspace \right)^T }
+
+\newcommand
+{ \Fcomp }
+{
+    \begin{bmatrix}
+        F_x^1 \\
+        F_y^1 \\
+        \vdots \\
+        F_x^N \\
+        F_y^N
+    \end{bmatrix}
+}
+
+\newcommand
+{ \mKblock }
+{ \left( \enspace \mK_1, \enspace \mK_N \enspace \right) }
+
+\newcommand
+{ \mKone }
+{
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        -R\sin\left( \theta + \alpha_1 \right) & R\cos\left( \theta + \alpha_1 \right) \\
+        -l\sin\left( \theta + \alpha_1 \right) & l\cos\left( \theta + \alpha_1 \right) \\
+        0 & 0 \\
+        \ldots & \\
+        0 & 0 \\
+        -\rho_1 \cos\left( \theta + \alpha_1 \right) & -\rho_1 \sin\left( \theta + \alpha_1 \right) \\
+        0 & 0 \\
+        \ldots & \\
+        0 & 0 
+    \end{bmatrix}
+}
+
+\newcommand
+{ \mKtwo }
+{
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        -R\sin\left( \theta + \alpha_2 \right) & R\cos\left( \theta + \alpha_2 \right) \\
+        0 & 0 \\
+        -l\sin\left( \theta + \alpha_2 \right) & l\cos\left( \theta + \alpha_2 \right) \\
+        0 & 0 \\
+        0 & 0 \\
+        -\rho_2 \cos\left( \theta + \alpha_2 \right) & -\rho_2 \sin\left( \theta + \alpha_2 \right) \\
+        0 & 0 
+    \end{bmatrix}
+}
+
+\newcommand
+{ \mKN }
+{
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        -R\sin\left( \theta + \alpha_N \right) & R\cos\left( \theta + \alpha_N \right) \\
+        0 & 0 \\
+        \ldots & \\
+        0 & 0 \\
+        -l\sin\left( \theta + \alpha_N \right) & l\cos\left( \theta + \alpha_N \right) \\
+        0 & 0 \\
+        \ldots & \\
+        0 & 0 \\
+        -\rho_N \cos\left( \theta + \alpha_N \right) & -\rho_N \sin\left( \theta + \alpha_N \right)
+    \end{bmatrix}
+}

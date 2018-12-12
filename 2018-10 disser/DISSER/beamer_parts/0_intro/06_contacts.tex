@@ -1,0 +1,44 @@
+\begin{frame}{Модели контакта}
+    \begin{itemize}
+        \item {
+            Главы 1 и 2. Абсолютно шероховатая плоскость
+            \begin{itemize}
+                \item {
+                    Скорости точек контакта равны нулю:
+                    $$ \vec{v}_{C_i} = 0, \quad i = 1 \dots N $$
+                }
+                \item {
+                    Количество степеней свободы
+                    $$ 3 + N(n-1) $$
+                }
+            \end{itemize}
+        }
+        \item {
+            Глава 3. Плоскость с трением
+            \begin{itemize}
+                \item {
+                    Вязкое трение
+                    $$
+                        \vec{F} = -\gamma\vec{v}_{C_i}
+                    $$
+                }
+                \item {
+                    Регуляризованное сухое трение
+                    $$
+                        \vec{F} = -\mu N \vec{v}_{C_i}
+                            \left\{
+                                \begin{array}{ll}
+                                    \ddfrac{1}{\delta}, \enspace |\vec{v}_{C_i}| < \delta \ll 1 \vspace{7pt}\\
+                                    \ddfrac{1}{|\vec{v}_{C_i}|}\enspace \text{иначе}
+                                \end{array}
+                            \right.
+                    $$
+                }
+                \item {
+                    Количество степеней свободы: \enspace 
+                    $ 3 + N(n + 1) $
+                }
+            \end{itemize}
+        }
+    \end{itemize}
+\end{frame}

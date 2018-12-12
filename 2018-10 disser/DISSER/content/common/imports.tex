@@ -1,0 +1,190 @@
+\RequirePackage{fix-cm}
+
+% \documentclass[12pt]{extarticle}
+\documentclass[a4paper,14pt]{extreport}
+
+% \smartqed  % flush right qed marks, e.g. at end of proof
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Specially for PMM: to have straight (upright) greek letters for vectors
+%--------------------------------------
+% \usepackage{upgreek}
+% \usepackage[artemisia]{textgreek}
+\usepackage[euler]{textgreek} %use upsilon instead of nu
+%--------------------------------------
+
+% Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%--------------------------------------
+
+% Asymptote for pictures
+%--------------------------------------
+\usepackage{asymptote} %% comes with options inline and attach
+%--------------------------------------
+
+% graphicx for graphs
+%--------------------------------------
+\usepackage{graphicx}
+%--------------------------------------
+
+% so that it was possible to fix a figure's placement with [H]: \begin{figure}[H]
+%--------------------------------------
+\usepackage{float}
+%--------------------------------------
+
+% to put Fig.N on the margins
+%-------------------------------------
+\usepackage{marginnote}
+\reversemarginpar
+%-------------------------------------
+
+%--------------------------------------
+% Specially for PMM: make all imported EPS grayscale:
+%--------------------------------------
+% \usepackage[gray]{epspdfconversion}
+%--------------------------------------
+
+% Subfigures that can be called in Russian
+%--------------------------------------
+% \usepackage{subfig} % incompatible with subcaption package
+% \renewcommand{\thesubfigure}{\asbuk{subfigure}}
+% \renewcommand{\thesubtable}{\asbuk{subtable}}
+%--------------------------------------
+
+% \graphicspath{ % not used here
+    % {./pic/,./asy/}
+% }
+%--------------------------------------
+
+% subcaption for many figures under one big caption
+% each having its own small caption
+%--------------------------------------
+% \usepackage{caption}
+\usepackage{subcaption}
+%--------------------------------------
+
+
+% so that refs were [1-10], not [1,2,3,4,5,...]
+%--------------------------------------
+\usepackage{cite}
+%--------------------------------------
+
+% to get \bigstar
+%--------------------------------------
+\usepackage{amssymb}
+%--------------------------------------
+
+% to customize itemize
+%--------------------------------------
+\usepackage{enumitem}
+%--------------------------------------
+
+% to set text width
+%--------------------------------------
+% \usepackage{geometry}
+\usepackage{changepage}
+%--------------------------------------
+
+% For figures in PMM
+%--------------------------------------
+\usepackage[labelsep=period]{caption}
+%\renewcommand{\figurename}{Фиг.}
+% \addto\captionsrussian{\renewcommand{\figurename}{Фиг. }}
+%--------------------------------------
+
+% For strikethrough text
+%--------------------------------------
+\usepackage{ulem}
+%--------------------------------------
+
+
+% \usepackage[backend=bibtex,firstinits=true,style=numeric-comp]{biblatex}
+
+% BIBLIO HACKS FOR PMM
+% -------------------------------------
+
+    % % biblio hacks -- noindent bibitems
+    % \makeatletter
+    % \renewenvironment{thebibliography}[1]
+    %       {\section*{\refname}%
+    %       \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+    %       \list{\@biblabel{\@arabic\c@enumiv}}%
+    %             {\settowidth\labelwidth{\@biblabel{#1}}%
+    %              \leftmargin\labelwidth
+    %              \advance\leftmargin-25pt% change 20 pt according to your needs
+    %              \advance\leftmargin\labelsep
+    %              \setlength\itemindent{25pt}% change using the inverse of the length used before
+    %              \@openbib@code
+    %              \usecounter{enumiv}%
+    %              \let\p@enumiv\@empty
+    %              \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    %       \sloppy
+    %       \clubpenalty4000
+    %       \@clubpenalty \clubpenalty
+    %       \widowpenalty4000%
+    %       \sfcode`\.\@m}
+    %       {\def\@noitemerr
+    %         {\@latex@warning{Empty `thebibliography' environment}}%
+    %       \endlist}
+    % \renewcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+    % \makeatother
+    
+    
+    % \voffset=-15mm \textwidth=17cm \textheight=24cm
+    % \oddsidemargin=0cm \topmargin=+0cm \headsep=10pt \evensidemargin=0mm
+    % \renewcommand{\baselinestretch}{2}
+    
+    % \makeatletter \@addtoreset{equation}{section} \makeatother
+    % \makeatletter
+    
+    % % bibliography hacks
+    % \renewcommand{\@biblabel}[1]{#1. \hfill}
+    % \makeatother
+    % \addto\captionsrussian{\def\refname{Литература}}
+    % % \renewcommand{\refname}{}
+
+% -------------------------------------
+
+% to reduce space before bibliography
+% -------------------------------------
+% \usepackage{etoolbox}
+% -------------------------------------
+
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\usepackage{chngcntr}
+\counterwithout{equation}{section}
+\counterwithout{figure}{chapter}   % Убираем связанность номера рисунка с номером главы/раздела
+\counterwithout{table}{chapter}    % Убираем связанность номера таблицы с номером главы/раздела
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+\input{content/common/commands}
+
+% \renewcommand{\baselinestretch}{1.5}
+
+% IMPORTS FOR THE MECANUM PART FROM MODELICA 2015 TEX FILE
+% \usepackage{mathptmx}        %% use fitting times fonts also in formulas
+% \usepackage{amsmath,amssymb} %% Nice maths
+% \usepackage{bm}
+
+% for table of contents style
+% -------------------------------------
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{-8em}
+% -------------------------------------
+
+\usepackage{geometry}
+
+\def\IMPORTS{A FLAG VARIABLE TO LET USERS KNOW THAT imports WERE ALREADY INCLUDED}
